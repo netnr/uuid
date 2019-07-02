@@ -1,0 +1,18 @@
+.uuidbox .card-header {
+    padding: .4rem 1rem;
+}
+
+.uuidbox .card-body {
+    padding: .4rem;
+}
+
+    .uuidbox .card-body a {
+        float: left;
+        margin: .4rem 1rem;
+        white-space: nowrap;
+    }
+
+        .uuidbox .card-body a img {
+            height: 18px;
+            max-width: 30px;
+        }

@@ -1,0 +1,6 @@
+- [75CDN https://lib.baomitu.com/favicon.ico](https://cdn.baomitu.com)
+- [BootCDN https://www.bootcdn.cn/assets/ico/favicon.ico](https://www.bootcdn.cn)
+- [Staticfile CDN https://staticfile.org/assets/images/logo.png](https://staticfile.org)
+- [cdnjs](https://cdnjs.com)
+- [jsDelivr](https://www.jsdelivr.com)
+- [新浪CDN](https://lib.sinaapp.com)
