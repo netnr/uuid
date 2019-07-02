@@ -1,7 +1,7 @@
 # uuid
 基于 GitHub 实现的收藏夹
 
-### [更新日志](CHANGELOG)
+### [更新日志](CHANGELOG.md)
 
 ### 使用
 - Fork项目
