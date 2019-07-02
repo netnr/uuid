@@ -1,6 +1,8 @@
 # uuid
 基于 GitHub 实现的收藏夹
 
+### [更新日志](CHANGELOG)
+
 ### 使用
 - Fork项目
 - 修改 `libs` 目录下的 `md`文件

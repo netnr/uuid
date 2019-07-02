@@ -30,9 +30,36 @@
             //访问路径
             this.dir = this.api + this.name + "/" + this.reps + "/contents/" + this.libs;
 
+            this.search();
+
             this.build();
 
             return this;
+        },
+        //搜索
+        search: function () {
+            var that = this;
+            var sh = document.createElement("input");
+            sh.className = "form-control my-3";
+            sh.placeholder = "Search ...";
+            sh.oninput = function () {
+                var key = this.value.toLowerCase();
+                var cb = that.id.getElementsByClassName('card-body');
+                for (var i = 0; i < cb.length; i++) {
+                    var anode = cb[i].getElementsByTagName('a'), hasa = 0;
+                    for (var j = 0; j < anode.length; j++) {
+                        var anj = anode[j];
+                        if (anj.href.toLowerCase().indexOf(key) >= 0 || anj.innerHTML.toLowerCase().indexOf(key) >= 0) {
+                            anj.style.display = "";
+                            hasa = 1;
+                        } else {
+                            anj.style.display = "none";
+                        }
+                    }
+                    cb[i].parentNode.style.display = hasa ? "" : "none";
+                }
+            }
+            that.id.appendChild(sh);
         },
         //构建
         build: function () {
@@ -91,10 +118,22 @@
                                         var hrefs = ahref.split('/');
                                         aicon = hrefs[0] + "//" + hrefs[2] + "/favicon.ico";
                                     }
-                                    ahtm.push('<a href="' + ahref + '"><img src="' + aicon + '" onerror="this.src=\'src/net.svg\';this.onerror=null;" /> ' + atext + '</a>');
+                                    ahtm.push('<a href="' + ahref + '"><img data-src="' + aicon + '" src="src/net.svg"/> ' + atext + '</a>');
                                 }
                             })
                             card.lastChild.innerHTML = ahtm.join('');
+
+                            //加载图标
+                            var cardimg = card.lastChild.getElementsByTagName('img');
+                            for (var i = 0; i < cardimg.length; i++) {
+                                var img = new Image();
+                                img.that = cardimg[i];
+                                img.onload = function () { this.that.src = this.src; };
+                                img.onerror = function () { this.that.src = "src/net.svg"; this.onerror = null; };
+                                var iconsrc = img.that.getAttribute('data-src');
+                                //代理http图片请求为https
+                                img.src = iconsrc.replace("http://", "https://proxy.zme.ink/");
+                            }
                         });
                     }
                 });

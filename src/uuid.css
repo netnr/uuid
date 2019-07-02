@@ -14,5 +14,7 @@
 
         .uuidbox .card-body a img {
             height: 18px;
+            min-width: 18px;
             max-width: 30px;
+            display: inline-block;
         }
