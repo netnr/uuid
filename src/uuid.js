@@ -20,11 +20,11 @@
             //接口源
             this.api = ops.api || "https://api.github.com/repos/";
 
-            var pns = location.hash.substring(1).split('/');
+            var pns = location.pathname.split('/');
             //账号
             this.name = ops.name || (pns[0] == "" ? "netnr" : pns[0]);
             //仓库
-            this.reps = ops.reps || ((pns[1] == "" || pns[1] == null) ? "uuid" : pns[1]);
+            this.reps = ops.reps || (pns[1] == "" ? "uuid" : pns[1]);
             //包
             this.libs = ops.libs || ((pns[2] == "" || pns[2] == null) ? "libs" : pns[2]);
             //访问路径
