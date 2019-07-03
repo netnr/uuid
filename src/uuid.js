@@ -22,11 +22,11 @@
 
             var pns = location.pathname.split('/');
             //账号
-            this.name = ops.name || (pns[0] == "" ? "netnr" : pns[0]);
+            this.name = ops.name || (pns[1] == "" ? "netnr" : pns[1]);
             //仓库
-            this.reps = ops.reps || (pns[1] == "" ? "uuid" : pns[1]);
+            this.reps = ops.reps || (pns[2] == "" ? "uuid" : pns[2]);
             //包
-            this.libs = ops.libs || ((pns[2] == "" || pns[2] == null) ? "libs" : pns[2]);
+            this.libs = ops.libs || ((pns[3] == "" || pns[3] == null) ? "libs" : pns[3]);
             //访问路径
             this.dir = this.api + this.name + "/" + this.reps + "/contents/" + this.libs;
 
