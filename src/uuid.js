@@ -259,4 +259,4 @@
 
 })(window);
 
-var uu = uuid({name:"netnr"});
+var uu = uuid();
