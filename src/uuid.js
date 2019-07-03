@@ -48,7 +48,7 @@
             this.downFile(this.apiuser + this.name, function (data) {
                 data = JSON.parse(data);
                 document.title = data.login + " - " + document.title;
-                
+
                 var indhtm = [];
                 indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'favicon.svg\';this.onerror=null;" />');
                 indhtm.push('<a class="text-muted h4" href="https://github.com/' + data.login + '">' + data.login + '</a><br/>');
@@ -145,7 +145,7 @@
                                         var hrefs = ahref.split('/');
                                         aicon = hrefs[0] + "//" + hrefs[2] + "/favicon.ico";
                                     }
-                                    ahtm.push('<a href="' + ahref + '"><img data-src="' + aicon + '" src="src/net.svg"/> ' + atext + '</a>');
+                                    ahtm.push('<a href="' + ahref + '"><img data-src="' + aicon + '" src="/src/net.svg"/> ' + atext + '</a>');
                                 }
                             })
                             card.lastChild.innerHTML = ahtm.join('');
@@ -156,7 +156,7 @@
                                 var img = new Image();
                                 img.that = cardimg[i];
                                 img.onload = function () { this.that.src = this.src; };
-                                img.onerror = function () { this.that.src = "src/net.svg"; this.onerror = null; };
+                                img.onerror = function () { this.that.src = "/src/net.svg"; this.onerror = null; };
                                 var iconsrc = img.that.getAttribute('data-src');
                                 //代理http图片请求为https
                                 img.src = iconsrc.replace("http://", "https://proxy.zme.ink/");
@@ -172,7 +172,10 @@
         },
         //显示消息
         showMessage: function (msg) {
-            this.id.innerHTML = "<h2 class='text-info text-center my-5'>" + msg + "</h2>";
+            var h2 = document.createElement('h2');
+            h2.className = "text-danger text-center my-5";
+            h2.innerHTML = msg;
+            this.id.appendChild(h2)
         },
         //获取目录
         fetchContent: function (path, callback) {
@@ -193,7 +196,7 @@
                             callback(cg.value);
                         } else {
                             console.log(e);
-                            that.showMessage("Invalid library");
+                            that.showMessage("Not found");
                         }
                     })
             }
