@@ -8,6 +8,12 @@
 - 修改 `libs` 目录下的 `md`文件
 - 查看
     - <https://uuid.fun/{name}>，`{name}` 是你的账号，默认`netnr`
+    - <https://uuid.fun/{name}/{repos}/{libs}>，`{repos}` 仓库，默认`uuid`；`{libs}`根文件夹，默认`libs`
+    - 如：
+    - <https://uuid.fun>
+    - <https://uuid.fun/netnr>
+    - <https://uuid.fun/netnr/uuid>
+    - <https://uuid.fun/netnr/uuid/libs>
 
 ### 说明
 - 可查看全局变量更多信息：`uu`
