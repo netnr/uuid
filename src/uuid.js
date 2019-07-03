@@ -1,8 +1,9 @@
 /*
- * uuid core
+ * uuid
  * 2019-07
  * 
  * by netnr
+ * https://github.com/netnr/uuid
  */
 
 (function (window) {
@@ -41,11 +42,13 @@
         //个人信息
         info: function () {
             var that = this;
+            var ind = document.createElement("div");
+            ind.className = "mt-2 mb-4";
+            this.id.appendChild(ind);
             this.downFile(this.apiuser + this.name, function (data) {
                 data = JSON.parse(data);
                 document.title = data.login + " - " + document.title;
-                var ind = document.createElement("div");
-                ind.className = "mt-2 mb-4";
+                
                 var indhtm = [];
                 indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'favicon.svg\';this.onerror=null;" />');
                 indhtm.push('<a class="text-muted h4" href="https://github.com/' + data.login + '">' + data.login + '</a><br/>');
@@ -55,7 +58,6 @@
                     indhtm.push('<a class="small text-muted">no blog</a>');
                 }
                 ind.innerHTML = indhtm.join('');
-                that.id.appendChild(ind);
 
                 that.search();
             })
@@ -195,7 +197,6 @@
                         }
                     })
             }
-
         },
         //获取文件内容
         downFile: function (src, callback) {
@@ -258,4 +259,4 @@
 
 })(window);
 
-var uu = uuid();
+var uu = uuid({name:"netnr"});
