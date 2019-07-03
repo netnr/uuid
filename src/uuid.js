@@ -21,12 +21,13 @@
             this.api = ops.api || "https://api.github.com/repos/";
 
             var pns = location.pathname.split('/');
+            console.log(pns);
             //账号
             this.name = ops.name || (pns[1] == "" ? "netnr" : pns[1]);
             //仓库
-            this.reps = ops.reps || ((pns[2] == "" || pns[2] == null) ? "uuid" : pns[2]);
+            this.reps = ops.reps || ((!pns[2] || pns[2] == "") ? "uuid" : pns[2]);
             //包
-            this.libs = ops.libs || ((pns[3] == "" || pns[3] == null) ? "libs" : pns[3]);
+            this.libs = ops.libs || ((!pns[3] || pns[3] == "") ? "libs" : pns[3]);
             //访问路径
             this.dir = this.api + this.name + "/" + this.reps + "/contents/" + this.libs;
 
