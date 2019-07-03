@@ -1,15 +1,22 @@
+.uuidbox .uphoto {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+}
+
 .uuidbox .card-header {
-    padding: .4rem 1rem;
+    padding: .1rem .8rem;
 }
 
 .uuidbox .card-body {
-    padding: .4rem;
+    padding: .3rem;
 }
 
     .uuidbox .card-body a {
         float: left;
-        margin: .4rem 1rem;
         white-space: nowrap;
+        margin: .4rem 1.4rem .4rem .4rem;
     }
 
         .uuidbox .card-body a img {

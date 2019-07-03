@@ -17,11 +17,12 @@
             ops = ops || {};
             //容器
             this.id = ops.id || document.querySelector(".uuidbox");
-            //接口源
-            this.api = ops.api || "https://api.github.com/repos/";
+            //个人信息接口源
+            this.apiuser = ops.apiuser || "https://api.github.com/users/";
+            //仓库接口源
+            this.apirepos = ops.apirepos || "https://api.github.com/repos/";
 
             var pns = location.pathname.split('/');
-            console.log(pns);
             //账号
             this.name = ops.name || (pns[1] == "" ? "netnr" : pns[1]);
             //仓库
@@ -29,19 +30,42 @@
             //包
             this.libs = ops.libs || ((!pns[3] || pns[3] == "") ? "libs" : pns[3]);
             //访问路径
-            this.dir = this.api + this.name + "/" + this.reps + "/contents/" + this.libs;
+            this.dir = this.apirepos + this.name + "/" + this.reps + "/contents/" + this.libs;
 
-            this.search();
+            this.info();
 
             this.build();
 
             return this;
         },
+        //个人信息
+        info: function () {
+            var that = this;
+            this.downFile(this.apiuser + this.name, function (data) {
+                data = JSON.parse(data);
+                document.title = data.login + " - " + document.title;
+                var ind = document.createElement("div");
+                ind.className = "mt-2 mb-4";
+                var indhtm = [];
+                indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'favicon.svg\';this.onerror=null;" />');
+                indhtm.push('<a class="text-muted h4" href="https://github.com/' + data.login + '">' + data.login + '</a><br/>');
+                if (data.blog) {
+                    indhtm.push('<a class="small" href="' + data.blog + '">' + data.blog + '</a>');
+                } else {
+                    indhtm.push('<a class="small text-muted">no blog</a>');
+                }
+                ind.innerHTML = indhtm.join('');
+                that.id.appendChild(ind);
+
+                that.search();
+            })
+        },
         //搜索
         search: function () {
             var that = this;
             var sh = document.createElement("input");
-            sh.className = "form-control my-3";
+            sh.className = "form-control form-control-sm mt-2";
+            sh.style.width = "55%";
             sh.placeholder = "Search ...";
             sh.oninput = function () {
                 var key = this.value.toLowerCase();
@@ -60,7 +84,7 @@
                     cb[i].parentNode.style.display = hasa ? "" : "none";
                 }
             }
-            that.id.appendChild(sh);
+            that.id.firstChild.appendChild(sh);
         },
         //构建
         build: function () {
@@ -88,7 +112,7 @@
                         var cardhtml = [];
                         cardhtml.push('<div class="card-header border-success"><a href="' + typelink + '" >' + type + '</a></div>');
                         cardhtml.push('<div class="card-body">');
-                        cardhtml.push('<p class="card-text"> loading 。。</p>');
+                        cardhtml.push('<p class="card-text"> loading </p>');
                         cardhtml.push('</div>');
 
                         card.innerHTML = cardhtml.join('');
@@ -234,4 +258,6 @@
 
 })(window);
 
-var uu = uuid();
+var uu = uuid({
+    name: "netnr"
+});
