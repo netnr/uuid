@@ -43,7 +43,7 @@
         info: function () {
             var that = this;
             var ind = document.createElement("div");
-            ind.className = "mt-2 mb-4";
+            ind.className = "mt-3 mb-4";
             this.id.appendChild(ind);
             this.downFile(this.apiuser + this.name, function (data) {
                 data = JSON.parse(data);
