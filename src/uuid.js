@@ -26,6 +26,7 @@
             var pns = location.pathname.split('/');
             //账号
             this.name = ops.name || (pns[1] == "" ? "netnr" : pns[1]);
+            this.name = this.name == "index.html" ? "netnr" : this.name;
             //仓库
             this.reps = ops.reps || ((!pns[2] || pns[2] == "") ? "uuid" : pns[2]);
             //包
@@ -33,9 +34,13 @@
             //访问路径
             this.dir = this.apirepos + this.name + "/" + this.reps + "/contents/" + this.libs;
 
+            this.dataCache = {};
+
             this.info();
 
             this.build();
+
+            this.jump();
 
             return this;
         },
@@ -68,7 +73,7 @@
             var sh = document.createElement("input");
             sh.className = "form-control form-control-sm mt-2";
             sh.style.width = "55%";
-            sh.placeholder = "Search ...";
+            sh.placeholder = "搜索，支持静默搜索";
             sh.oninput = function () {
                 var key = this.value.toLowerCase();
                 var cb = that.id.getElementsByClassName('card-body');
@@ -86,14 +91,150 @@
                     cb[i].parentNode.style.display = hasa ? "" : "none";
                 }
             }
+            sh.title = "静默搜索，支持快捷方式：Esc、↑、↓、Enter，可直接打开网址";
             that.id.firstChild.appendChild(sh);
+        },
+        //跳转
+        jump: function () {
+            var that = this;
+            //静默搜索
+            that.dataCache.jumpkey = that.dataCache.jumpkey || "";
+
+            window.addEventListener('keypress', function (e) {
+                if (document.activeElement.nodeName != "INPUT") {
+                    if (that.dataCache.jumpkey.length < 28) {
+                        that.dataCache.jumpkey += String.fromCharCode(e.keyCode);
+                    }
+                    that.jumpView();
+                }
+            });
+            window.addEventListener('keydown', function (e) {
+                if (document.activeElement.nodeName != "INPUT") {
+                    switch (e.keyCode) {
+                        //退格
+                        case 8:
+                            if (that.dataCache.jumpkey != "") {
+                                that.dataCache.jumpkey = that.dataCache.jumpkey.substring(0, that.dataCache.jumpkey.length - 1);
+                            }
+                            that.jumpView();
+                            that.stopDefault(e);
+                            break;
+                        //回车
+                        case 13:
+                            var openuri = that.jumpnode.firstChild.innerText;
+                            var ali = that.jumpnode.getElementsByClassName('active')[0];
+                            if (ali) {
+                                openuri = ali.firstChild.innerText;
+                            }
+                            if (openuri.indexOf('.') == -1) {
+                                var dq = "https://www.baidu.com/s?&wd=";
+                                openuri = dq + encodeURIComponent(openuri);
+                            } else if (openuri.toLowerCase().indexOf("http") != 0) {
+                                openuri = "http://" + openuri;
+                            }
+                            that.dataCache.jumpkey = "";
+                            that.jumpView();
+                            that.stopDefault(e);
+                            window.open(openuri.trim());
+                            break;
+                        //ESC
+                        case 27:
+                            that.dataCache.jumpkey = "";
+                            that.jumpView();
+                            that.stopDefault(e);
+                            break;
+                        //up
+                        case 38:
+                        //down
+                        case 40:
+                            var ali = that.jumpnode.getElementsByClassName('active')[0];
+                            if (ali) {
+                                var newli;
+                                e.keyCode == 38 && (newli = ali.previousSibling);
+                                e.keyCode == 40 && (newli = ali.nextSibling);
+                                if (newli) {
+                                    newli.className = "active";
+                                    ali.className = "";
+                                }
+                                that.stopDefault(e);
+                            }
+                            break;
+                    }
+                }
+            })
+        },
+        //跳转显示
+        jumpView: function () {
+            var that = this;
+            if (!that.jumpnode) {
+                var jv = document.createElement('div');
+                jv.className = "uuidjump";
+                document.body.appendChild(jv);
+                jv.onclick = function (e) {
+                    e = e || window.event;
+                    var target = e.target || e.srcElement;
+                    var lis = this.getElementsByTagName('li');
+                    for (var j = 0; j < lis.length; j++) {
+                        if (lis[j].contains(target)) {
+                            window.open(lis[j].firstChild.innerText.trim());
+                            that.dataCache.jumpkey = "";
+                            that.jumpView();
+                            break;
+                        }
+                    }
+                }
+                jv.autopost = function () {
+                    jv.style.left = (document.documentElement.clientWidth / 2 - jv.clientWidth / 2) + "px";
+                };
+                jv.autopost();
+                window.addEventListener('resize', jv.autopost);
+                that.jumpnode = jv;
+            }
+            if (that.dataCache.jumpkey.trim() != "") {
+                that.jumpnode.style.display = "";
+                var htm = [], cn = 0;
+                for (var i = 0; i < document.links.length; i++) {
+                    if (cn > 6) {
+                        break;
+                    }
+                    var link = document.links[i];
+                    if (link.href.toLowerCase().indexOf(that.dataCache.jumpkey.toLowerCase()) >= 0 || link.innerText.toLowerCase().indexOf(that.dataCache.jumpkey.toLowerCase()) >= 0) {
+                        cn++;
+                        if (htm.length) {
+                            htm.push('<li>')
+                        } else {
+                            htm.push('<li class="active">')
+                        }
+                        var jicon = link.firstChild.src || "/src/net.svg";
+                        htm.push('<div class="text-info"><img src="' + jicon + '" onerror="this.src=\'/src/net.svg\';this.onerror=null;" />' + link.href + '</div>')
+                        htm.push('<div>' + link.innerText + '</div>')
+                        htm.push('</li>')
+                    }
+                }
+                var jnhtml = '<div class="h4 pt-1 px-3">' + that.dataCache.jumpkey + '</div>';
+                if (htm.length) {
+                    jnhtml = jnhtml + "<ul>" + htm.join('') + "</ul>";
+                }
+                that.jumpnode.innerHTML = jnhtml;
+                that.jumpnode.autopost();
+            } else {
+                that.jumpnode.style.display = "none";
+                that.jumpnode.innerHTML = "";
+            }
+        },
+        //阻止默认行为
+        stopDefault: function (e) {
+            if (e && e.preventDefault) {
+                e.preventDefault()
+            } else {
+                window.event.returnValue = false
+            }
         },
         //构建
         build: function () {
             var that = this;
             that.fetchContent("", function (data) {
                 //缓存
-                that.dataCache = {};
                 that.dataCache.content = data;
 
                 var hasfile = false;

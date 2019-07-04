@@ -24,5 +24,68 @@
             height: 18px;
             min-width: 18px;
             max-width: 30px;
+            border-radius: 3px;
             display: inline-block;
         }
+
+.uuidjump {
+    position: fixed;
+    top: 2%;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 6px;
+    border: 1px solid #d6efcc;
+    box-shadow: 0px 2px 6px 0px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+    .uuidjump > div {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .uuidjump ul {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border-top: 1px solid #ddd;
+    }
+
+        .uuidjump ul li {
+            width: 100%;
+            color: #666;
+            cursor: pointer;
+            list-style: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .uuidjump ul li:hover {
+                background-color: #f3e6d5;
+            }
+
+            .uuidjump ul li.active {
+                font-weight: 600;
+                background-color: #fbe1c0;
+            }
+
+            .uuidjump ul li div {
+                width: 40%;
+                overflow: hidden;
+                padding: 0 15px;
+                white-space: nowrap;
+                display: inline-block;
+                text-overflow: ellipsis;
+            }
+
+                .uuidjump ul li div:first-child {
+                    width: 59%;
+                }
+
+                .uuidjump ul li div img {
+                    height: 18px;
+                    max-width: 30px;
+                    margin-right: 8px;
+                    text-align: center;
+                    border-radius: 3px;
+                }
