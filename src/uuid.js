@@ -211,7 +211,7 @@
                         htm.push('</li>')
                     }
                 }
-                var jnhtml = '<div class="h4 pt-1 px-3">' + that.dataCache.jumpkey + '</div>';
+                var jnhtml = '<div class="h4 py-1 px-3">' + that.dataCache.jumpkey + '</div>';
                 if (htm.length) {
                     jnhtml = jnhtml + "<ul>" + htm.join('') + "</ul>";
                 }
