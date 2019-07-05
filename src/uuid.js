@@ -94,15 +94,18 @@
             //优先取缓存
             var cg = that.cacheGet(src);
             if (cg.ok && cg.value) {
+                that.iscache = true;
                 callback(cg.value);
             } else {
                 fetch(src)
                     .then(x => x.json())
                     .then(function (data) {
+                        that.iscache = false;
                         callback(data);
                         that.cacheSet(src, data);
                     }).catch(function (e) {
                         if (cg.value) {
+                            that.iscache = true;
                             callback(cg.value);
                         } else {
                             console.log(e);
@@ -435,6 +438,13 @@
                 //为空时
                 if (!hasfile) {
                     that.showMessage("Is empty");
+                } else {
+                    var cp = document.createElement("p");
+                    cp.className = "small text-muted";
+                    if (that.iscache) {
+                        cp.innerHTML = '当前信息从缓存中读取，<span class="text-primary" style="cursor:pointer" onclick="uu.cacheClear()">刷新缓存</span>';
+                    }
+                    that.id.appendChild(cp);
                 }
             })
         },
@@ -475,6 +485,7 @@
         //清除当前用户的本地存储
         cacheClear: function () {
             localStorage.removeItem("uuid_" + this.name);
+            location.reload(false);
         }
     }
 
