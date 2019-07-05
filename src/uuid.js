@@ -3,6 +3,8 @@
  * 2019-07
  * 
  * by netnr
+ * 
+ * https://gitee.com/netnr/uuid
  * https://github.com/netnr/uuid
  */
 
@@ -18,21 +20,29 @@
             ops = ops || {};
             //容器
             this.id = ops.id || document.querySelector(".uuidbox");
-            //个人信息接口源
-            this.apiuser = ops.apiuser || "https://api.github.com/users/";
-            //仓库接口源
-            this.apirepos = ops.apirepos || "https://api.github.com/repos/";
+            //git托管
+            this.githost = ops.githost;
+            if (!this.githost) {
+                var hts = location.host.split('.');
+                if (hts.length == 3) {
+                    this.githost = hts[0];
+                } else {
+                    this.githost = "github";
+                }
+            }
+            if (["github", "gitee"].indexOf(this.githost) == -1) {
+                this.showMessage("This git hosting is not supported");
+                return;
+            }
 
             var pns = location.pathname.split('/');
             //账号
             this.name = ops.name || (pns[1] == "" ? "netnr" : pns[1]);
             this.name = this.name == "index.html" ? "netnr" : this.name;
             //仓库
-            this.reps = ops.reps || ((!pns[2] || pns[2] == "") ? "uuid" : pns[2]);
+            this.repos = ops.repos || ((!pns[2] || pns[2] == "") ? "uuid" : pns[2]);
             //包
             this.libs = ops.libs || ((!pns[3] || pns[3] == "") ? "libs" : pns[3]);
-            //访问路径
-            this.dir = this.apirepos + this.name + "/" + this.reps + "/contents/" + this.libs;
 
             this.dataCache = {};
 
@@ -44,19 +54,104 @@
 
             return this;
         },
+        //获取用户信息
+        getUser: function (callback) {
+            var src = "https://api.github.com/users/" + this.name;
+            switch (this.githost) {
+                case "gitee":
+                    src = "https://gitee.com/api/v5/users/" + this.name;
+                    break;
+            }
+            var that = this;
+            //优先取缓存
+            var cg = that.cacheGet(src);
+            if (cg.ok && cg.value) {
+                callback(cg.value);
+            } else {
+                fetch(src)
+                    .then(x => x.text())
+                    .then(function (data) {
+                        callback(data);
+                        that.cacheSet(src, data);
+                    }).catch(function (e) {
+                        if (cg.value) {
+                            callback(cg.value);
+                        } else {
+                            console.log(e);
+                        }
+                    })
+            }
+        },
+        //获取目录
+        getDir: function (callback) {
+            var that = this;
+            var src = "https://api.github.com/repos/" + this.name + "/" + this.repos + "/contents/" + this.libs;
+            switch (this.githost) {
+                case "gitee":
+                    src = "https://gitee.com/api/v5/repos/" + this.name + "/" + this.repos + "/git/trees/master?recursive=1";
+                    break;
+            }
+            //优先取缓存
+            var cg = that.cacheGet(src);
+            if (cg.ok && cg.value) {
+                callback(cg.value);
+            } else {
+                fetch(src)
+                    .then(x => x.json())
+                    .then(function (data) {
+                        callback(data);
+                        that.cacheSet(src, data);
+                    }).catch(function (e) {
+                        if (cg.value) {
+                            callback(cg.value);
+                        } else {
+                            console.log(e);
+                            that.showMessage("Not found");
+                        }
+                    })
+            }
+        },
+        //获取文件内容
+        getFile: function (src, callback) {
+            var that = this;
+            //优先取缓存
+            var cg = that.cacheGet(src);
+            if (cg.ok && cg.value) {
+                callback(cg.value);
+            } else {
+                fetch(src)
+                    .then(x => x.text())
+                    .then(function (data) {
+                        callback(data);
+                        that.cacheSet(src, data);
+                    }).catch(function (e) {
+                        if (cg.value) {
+                            callback(cg.value);
+                        } else {
+                            console.log(e);
+                        }
+                    })
+            }
+        },
         //个人信息
         info: function () {
             var that = this;
             var ind = document.createElement("div");
             ind.className = "mt-3 mb-4";
             this.id.appendChild(ind);
-            this.downFile(this.apiuser + this.name, function (data) {
+            this.getUser(function (data) {
                 data = JSON.parse(data);
+                if (!data.login) {
+                    return;
+                }
+
                 document.title = data.login + " - " + document.title;
+
+                var nhref = "https://" + that.githost + ".com/";
 
                 var indhtm = [];
                 indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'favicon.svg\';this.onerror=null;" />');
-                indhtm.push('<a class="text-muted h4" href="https://github.com/' + data.login + '">' + data.login + '</a><br/>');
+                indhtm.push('<a class="text-muted h4" href="' + nhref + data.login + '">' + data.login + '</a><br/>');
                 if (data.blog) {
                     indhtm.push('<a class="small" href="' + data.blog + '">' + data.blog + '</a>');
                 } else {
@@ -233,20 +328,45 @@
         //构建
         build: function () {
             var that = this;
-            that.fetchContent("", function (data) {
+            that.getDir(function (data) {
                 //缓存
-                that.dataCache.content = data;
+                that.dataCache.dir = data;
+                switch (that.githost) {
+                    case "gitee":
+                        data = data.tree;
+                        break;
+                }
 
                 var hasfile = false;
                 //遍历目录
                 data.forEach(function (item) {
                     //是文件
-                    if (item.type == "file") {
+                    var isfile = false;
+                    switch (that.githost) {
+                        case "github":
+                            isfile = item.type == "file";
+                            break;
+                        case "gitee":
+                            isfile = (item.type == "blob" && item.path.indexOf(that.libs + "/") == 0);
+                            break;
+                    }
+                    if (isfile) {
                         hasfile = true;
 
-                        //card 标题，链接
-                        var type = item.name.substr(0, item.name.lastIndexOf('.'));
-                        var typelink = item.html_url;
+                        //card 标题，标题链接,文件链接
+                        var type, typelink, filesrc;
+                        switch (that.githost) {
+                            case "github":
+                                type = item.name.substr(0, item.name.lastIndexOf('.'));
+                                typelink = item.html_url;
+                                filesrc = item.download_url;
+                                break;
+                            case "gitee":
+                                type = item.path.substr(0, item.path.lastIndexOf('.')).substring(that.libs.length + 1);
+                                typelink = "https://gitee.com/" + that.name + "/" + that.repos + "/blob/master/" + that.libs + "/" + type + ".md";
+                                filesrc = item.url;
+                                break;
+                        }
 
                         //创建卡片
                         var card = document.createElement("div");
@@ -263,7 +383,14 @@
                         that.id.appendChild(card);
 
                         //加载卡片下的链接，一个卡片对应一个文件
-                        that.downFile(item.download_url, function (data) {
+                        that.getFile(filesrc, function (data) {
+                            switch (that.githost) {
+                                case "gitee":
+                                    {
+                                        data = decodeURIComponent(escape(atob(JSON.parse(data).content)));
+                                    }
+                                    break;
+                            }
                             var list = data.split('\n');
                             var ahtm = [];
                             //遍历每一行，解析成A标签
@@ -317,52 +444,6 @@
             h2.className = "text-danger text-center my-5";
             h2.innerHTML = msg;
             this.id.appendChild(h2)
-        },
-        //获取目录
-        fetchContent: function (path, callback) {
-            var that = this;
-            var uri = that.dir + path;
-            //优先取缓存
-            var cg = that.cacheGet(uri);
-            if (cg.ok && cg.value) {
-                callback(cg.value);
-            } else {
-                fetch(uri)
-                    .then(x => x.json())
-                    .then(function (data) {
-                        callback(data);
-                        that.cacheSet(uri, data);
-                    }).catch(function (e) {
-                        if (cg.value) {
-                            callback(cg.value);
-                        } else {
-                            console.log(e);
-                            that.showMessage("Not found");
-                        }
-                    })
-            }
-        },
-        //获取文件内容
-        downFile: function (src, callback) {
-            var that = this;
-            //优先取缓存
-            var cg = that.cacheGet(src);
-            if (cg.ok && cg.value) {
-                callback(cg.value);
-            } else {
-                fetch(src)
-                    .then(x => x.text())
-                    .then(function (data) {
-                        callback(data);
-                        that.cacheSet(src, data);
-                    }).catch(function (e) {
-                        if (cg.value) {
-                            callback(cg.value);
-                        } else {
-                            console.log(e);
-                        }
-                    })
-            }
         },
         //获取本地存储记录
         cacheGet: function (key) {
