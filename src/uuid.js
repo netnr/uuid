@@ -41,11 +41,6 @@
             switch (lpn) {
                 //fork
                 case "/_fork":
-                    this.name = "netnr";
-                    this.repos = "uuid";
-
-                    this.nr = this.name + "/" + this.repos;
-
                     this.forkList();
                     break;
                 default:
@@ -82,10 +77,10 @@
         //获取仓库
         getRepos: function (callback) {
             var that = this;
-            var src = "https://api.github.com/repos/" + this.nr;
+            var src = "https://api.github.com/repos" + uuid.defaultRepos;
             switch (this.githost) {
                 case "gitee":
-                    src = "https://gitee.com/api/v5/repos/" + this.nr;
+                    src = "https://gitee.com/api/v5/repos" + uuid.defaultRepos;
                     break;
             }
             uuid.fetch(this.name, src, callback, 'json', function () {
@@ -108,10 +103,10 @@
         //获取分支
         getFork: function (callback) {
             var that = this;
-            var src = "https://api.github.com/repos/" + this.nr + "/forks";
+            var src = "https://api.github.com/repos" + uuid.defaultRepos + "/forks";
             switch (this.githost) {
                 case "gitee":
-                    src = "https://gitee.com/api/v5/repos/" + this.nr + "/forks?sort=newest&page=1&per_page=30";
+                    src = "https://gitee.com/api/v5/repos" + uuid.defaultRepos + "/forks?sort=newest&page=1&per_page=30";
                     break;
             }
             uuid.fetch(this.name, src, callback, 'json', function () {
@@ -491,6 +486,8 @@
 
     //默认的图标
     uuid.defaultFavicon = "/src/net.svg";
+    //源仓库
+    uuid.defaultRepos = "/netnr/uuid";
 
     /**
      * 阻止默认行为
