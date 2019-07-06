@@ -34,27 +34,42 @@
                 this.showMessage("This git hosting is not supported");
                 return;
             }
-
-            var pns = location.pathname.split('/');
-            //账号
-            this.name = ops.name || (pns[1] == "" ? "netnr" : pns[1]);
-            this.name = this.name == "index.html" ? "netnr" : this.name;
-            //仓库
-            this.repos = ops.repos || ((!pns[2] || pns[2] == "") ? "uuid" : pns[2]);
-            //包
-            this.libs = ops.libs || ((!pns[3] || pns[3] == "") ? "libs" : pns[3]);
-
+            //缓存
             this.dataCache = {};
 
-            this.info();
+            var lpn = location.pathname;
+            switch (lpn) {
+                //fork
+                case "_fork":
+                    this.name = "netnr";
+                    this.repos = "uuid";
 
-            this.build();
+                    this.nr = this.name + "/" + this.repos;
+
+                    this.forkList();
+                    break;
+                default:
+                    var pns = lpn.split('/');
+                    //账号
+                    this.name = ops.name || (pns[1] == "" ? "netnr" : pns[1]);
+                    this.name = this.name == "index.html" ? "netnr" : this.name;
+                    //仓库
+                    this.repos = ops.repos || ((!pns[2] || pns[2] == "") ? "uuid" : pns[2]);
+                    //包
+                    this.libs = ops.libs || ((!pns[3] || pns[3] == "") ? "libs" : pns[3]);
+
+                    this.nr = this.name + "/" + this.repos;
+
+                    this.info();
+
+                    this.build();
+            }
 
             this.jump();
 
             return this;
         },
-        //获取用户信息
+        //获取用户
         getUser: function (callback) {
             var src = "https://api.github.com/users/" + this.name;
             switch (this.githost) {
@@ -62,79 +77,88 @@
                     src = "https://gitee.com/api/v5/users/" + this.name;
                     break;
             }
+            uuid.fetch(this.name, src, callback, "text");
+        },
+        //获取仓库
+        getRepos: function (callback) {
             var that = this;
-            //优先取缓存
-            var cg = that.cacheGet(src);
-            if (cg.ok && cg.value) {
-                callback(cg.value);
-            } else {
-                fetch(src)
-                    .then(x => x.text())
-                    .then(function (data) {
-                        callback(data);
-                        that.cacheSet(src, data);
-                    }).catch(function (e) {
-                        if (cg.value) {
-                            callback(cg.value);
-                        } else {
-                            console.log(e);
-                        }
-                    })
+            var src = "https://api.github.com/repos/" + this.nr;
+            switch (this.githost) {
+                case "gitee":
+                    src = "https://gitee.com/api/v5/repos/" + this.nr;
+                    break;
             }
+            uuid.fetch(this.name, src, callback, 'json', function () {
+                that.showMessage("Not found");
+            })
         },
         //获取目录
         getDir: function (callback) {
             var that = this;
-            var src = "https://api.github.com/repos/" + this.name + "/" + this.repos + "/contents/" + this.libs;
+            var src = "https://api.github.com/repos/" + this.nr + "/contents/" + this.libs;
             switch (this.githost) {
                 case "gitee":
-                    src = "https://gitee.com/api/v5/repos/" + this.name + "/" + this.repos + "/git/trees/master?recursive=1";
+                    src = "https://gitee.com/api/v5/repos/" + this.nr + "/git/trees/master?recursive=1";
                     break;
             }
-            //优先取缓存
-            var cg = that.cacheGet(src);
-            if (cg.ok && cg.value) {
-                that.iscache = true;
-                callback(cg.value);
-            } else {
-                fetch(src)
-                    .then(x => x.json())
-                    .then(function (data) {
-                        that.iscache = false;
-                        callback(data);
-                        that.cacheSet(src, data);
-                    }).catch(function (e) {
-                        if (cg.value) {
-                            that.iscache = true;
-                            callback(cg.value);
-                        } else {
-                            console.log(e);
-                            that.showMessage("Not found");
-                        }
-                    })
-            }
+            uuid.fetch(this.name, src, callback, 'json', function () {
+                that.showMessage("Not found");
+            })
         },
-        //获取文件内容
-        getFile: function (src, callback) {
+        //获取分支
+        getFork: function (callback) {
             var that = this;
-            //优先取缓存
-            var cg = that.cacheGet(src);
-            if (cg.ok && cg.value) {
-                callback(cg.value);
-            } else {
-                fetch(src)
-                    .then(x => x.text())
-                    .then(function (data) {
-                        callback(data);
-                        that.cacheSet(src, data);
-                    }).catch(function (e) {
-                        if (cg.value) {
-                            callback(cg.value);
-                        } else {
-                            console.log(e);
-                        }
-                    })
+            var src = "https://api.github.com/repos/" + this.nr + "/forks";
+            switch (this.githost) {
+                case "gitee":
+                    src = "https://gitee.com/api/v5/repos/" + this.nr + "/forks?sort=newest&page=1&per_page=30";
+                    break;
             }
+            uuid.fetch(this.name, src, callback, 'json', function () {
+                that.showMessage("Not found");
+            })
+        },
+        //显示fork列表
+        forkList: function () {
+            var that = this;
+            document.title += "-fork";
+            this.getFork(function (data) {
+
+                if (data.length) {
+                    that.id.innerHTML = '<h2 class="text-center mt-3">Fork</h2><hr/>';
+                }
+
+                data.forEach(function (item) {
+                    var icon = item.owner.avatar_url;
+                    var name = item.owner.login;
+
+                    var cf = document.createElement("div");
+                    cf.className = "card-fork";
+                    cf.innerHTML = '<a href="' + location.origin + '/' + name + '"><img data-src="' + icon + '" src="' + uuid.defaultFavicon + '" /><br/>' + name + '</a>';
+                    that.id.appendChild(cf);
+
+                    var cfimg = cf.getElementsByTagName('img')[0];
+                    var img = new Image();
+                    img.src = cfimg.getAttribute('data-src');
+                    img.onload = function () { cfimg.src = this.src }
+                })
+
+                if (data.length) {
+                    var morefork = "https://github.com/" + that.nr + "/network/members";
+                    switch (that.githost) {
+                        case "gitee":
+                            morefork = "https://gitee.com/" + that.nr + "/members";
+                            break;
+                    }
+
+                    var cf = document.createElement("div");
+                    cf.className = "card-fork";
+                    cf.innerHTML = '<a href="' + morefork + '"><img src="/favicon.svg" /><br/>More fork</a>';
+                    that.id.appendChild(cf);
+                } else {
+                    that.showMessage('No fork')
+                }
+            })
         },
         //个人信息
         info: function () {
@@ -163,6 +187,16 @@
                 ind.innerHTML = indhtm.join('');
 
                 that.search();
+
+                //fork按钮
+                that.getRepos(function (data) {
+                    var btn = document.createElement('a');
+                    btn.href = location.origin + "/_fork";
+                    btn.className = "badge badge-info float-right";
+                    btn.style.fontSize = "1rem";
+                    btn.innerHTML = 'Fork &nbsp;' + data.forks_count;
+                    ind.insertBefore(btn, ind.firstChild);
+                })
             })
         },
         //搜索
@@ -215,7 +249,7 @@
                                 that.dataCache.jumpkey = that.dataCache.jumpkey.substring(0, that.dataCache.jumpkey.length - 1);
                             }
                             that.jumpView();
-                            that.stopDefault(e);
+                            uuid.stopDefault(e);
                             break;
                         //回车
                         case 13:
@@ -232,14 +266,14 @@
                             }
                             that.dataCache.jumpkey = "";
                             that.jumpView();
-                            that.stopDefault(e);
+                            uuid.stopDefault(e);
                             window.open(openuri.trim());
                             break;
                         //ESC
                         case 27:
                             that.dataCache.jumpkey = "";
                             that.jumpView();
-                            that.stopDefault(e);
+                            uuid.stopDefault(e);
                             break;
                         //up
                         case 38:
@@ -254,7 +288,7 @@
                                     newli.className = "active";
                                     ali.className = "";
                                 }
-                                that.stopDefault(e);
+                                uuid.stopDefault(e);
                             }
                             break;
                     }
@@ -303,8 +337,8 @@
                         } else {
                             htm.push('<li class="active">')
                         }
-                        var jicon = link.firstChild.src || "/src/net.svg";
-                        htm.push('<div class="text-info"><img src="' + jicon + '" onerror="this.src=\'/src/net.svg\';this.onerror=null;" />' + link.href + '</div>')
+                        var jicon = link.firstChild.src || uuid.defaultFavicon;
+                        htm.push('<div class="text-info"><img src="' + jicon + '" onerror="this.src=\'' + uuid.defaultFavicon + '\';this.onerror=null;" />' + link.href + '</div>')
                         htm.push('<div>' + link.innerText + '</div>')
                         htm.push('</li>')
                     }
@@ -318,14 +352,6 @@
             } else {
                 that.jumpnode.style.display = "none";
                 that.jumpnode.innerHTML = "";
-            }
-        },
-        //阻止默认行为
-        stopDefault: function (e) {
-            if (e && e.preventDefault) {
-                e.preventDefault()
-            } else {
-                window.event.returnValue = false
             }
         },
         //构建
@@ -378,7 +404,7 @@
                         var cardhtml = [];
                         cardhtml.push('<div class="card-header border-success"><a href="' + typelink + '" >' + type + '</a></div>');
                         cardhtml.push('<div class="card-body">');
-                        cardhtml.push('<p class="card-text"> loading </p>');
+                        cardhtml.push('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
                         cardhtml.push('</div>');
 
                         card.innerHTML = cardhtml.join('');
@@ -386,7 +412,7 @@
                         that.id.appendChild(card);
 
                         //加载卡片下的链接，一个卡片对应一个文件
-                        that.getFile(filesrc, function (data) {
+                        uuid.fetch(that.name, filesrc, function (data) {
                             switch (that.githost) {
                                 case "gitee":
                                     {
@@ -416,7 +442,7 @@
                                         var hrefs = ahref.split('/');
                                         aicon = hrefs[0] + "//" + hrefs[2] + "/favicon.ico";
                                     }
-                                    ahtm.push('<a href="' + ahref + '"><img data-src="' + aicon + '" src="/src/net.svg"/> ' + atext + '</a>');
+                                    ahtm.push('<a href="' + ahref + '"><img data-src="' + aicon + '" src="' + uuid.defaultFavicon + '"/> ' + atext + '</a>');
                                 }
                             })
                             card.lastChild.innerHTML = ahtm.join('');
@@ -427,12 +453,12 @@
                                 var img = new Image();
                                 img.that = cardimg[i];
                                 img.onload = function () { this.that.src = this.src; };
-                                img.onerror = function () { this.that.src = "/src/net.svg"; this.onerror = null; };
+                                img.onerror = function () { this.that.src = uuid.defaultFavicon; this.onerror = null; };
                                 var iconsrc = img.that.getAttribute('data-src');
                                 //代理http图片请求为https
                                 img.src = iconsrc.replace("http://", "https://proxy.zme.ink/");
                             }
-                        });
+                        }, 'text');
                     }
                 });
                 //为空时
@@ -441,8 +467,8 @@
                 } else {
                     var cp = document.createElement("p");
                     cp.className = "small text-muted";
-                    if (that.iscache) {
-                        cp.innerHTML = '当前信息从缓存中读取，<span class="text-primary" style="cursor:pointer" onclick="uu.cacheClear()">刷新缓存</span>';
+                    if (uuid.iscache) {
+                        cp.innerHTML = '当前信息从本地读取，<span class="text-primary" style="cursor:pointer" onclick="uu.cacheClear()">刷新</span>';
                     }
                     that.id.appendChild(cp);
                 }
@@ -455,44 +481,109 @@
             h2.innerHTML = msg;
             this.id.appendChild(h2)
         },
-        //获取本地存储记录
-        cacheGet: function (key) {
-            var result = {
-                ok: false,
-                value: null
-            };
-            var udata = localStorage.getItem("uuid_" + this.name);
-            if (udata && udata != "") {
-                var ujson = JSON.parse(udata);
-                //缓存30分钟
-                result.ok = new Date().valueOf() - ujson["__create_time__" + key] < 1000 * 60 * 30;
-                //值
-                result.value = ujson[key];
-            }
-            return result;
-        },
-        //设置本地存储记录
-        cacheSet: function (key, value) {
-            var udata = localStorage.getItem("uuid_" + this.name);
-            var ujson = {};
-            if (udata && udata != "") {
-                ujson = JSON.parse(udata);
-            }
-            ujson["__create_time__" + key] = new Date().valueOf();
-            ujson[key] = value;
-            localStorage.setItem("uuid_" + this.name, JSON.stringify(ujson));
-        },
         //清除当前用户的本地存储
         cacheClear: function () {
-            localStorage.removeItem("uuid_" + this.name);
-            location.reload(false);
+            uuid.cacheClear(this.name);
         }
     }
 
     uuid.fn.init.prototype = uuid.fn;
 
+    //默认的图标
+    uuid.defaultFavicon = "/src/net.svg";
+
+    /**
+     * 阻止默认行为
+     * @param {any} e
+     */
+    uuid.stopDefault = function (e) {
+        if (e && e.preventDefault) {
+            e.preventDefault()
+        } else {
+            window.event.returnValue = false
+        }
+    };
+
+    /**
+     * 获取本地存储记录
+     * @param {any} name 账号
+     * @param {any} key 键
+     */
+    uuid.cacheGet = function (name, key) {
+        var result = { ok: false, value: null };
+
+        var udata = localStorage.getItem("uuid_" + name);
+        if (udata && udata != "") {
+            var ujson = JSON.parse(udata);
+            //缓存30分钟
+            result.ok = new Date().valueOf() - ujson["__create_time__" + key] < 1000 * 60 * 30;
+            //值
+            result.value = ujson[key];
+        }
+        return result;
+    };
+
+    /**
+     * 设置本地存储记录
+     * @param {any} name 账号
+     * @param {any} key 键
+     * @param {any} value 值
+     */
+    uuid.cacheSet = function (name, key, value) {
+        var udata = localStorage.getItem("uuid_" + name);
+        var ujson = {};
+        if (udata && udata != "") {
+            ujson = JSON.parse(udata);
+        }
+        ujson["__create_time__" + key] = new Date().valueOf();
+        ujson[key] = value;
+        localStorage.setItem("uuid_" + name, JSON.stringify(ujson));
+    };
+
+    /**
+     * 清除当前用户的本地存储
+     * @param {any} name 账号
+     */
+    uuid.cacheClear = function (name) {
+        localStorage.removeItem("uuid_" + name);
+        location.reload(false);
+    }
+
+    /**
+     * /**
+     * 请求
+     * @param {any} name 账号
+     * @param {any} src 链接
+     * @param {any} callback 回调
+     * @param {any} dataType 数据类型
+     * @param {any} error 错误回调
+     */
+    uuid.fetch = function (name, src, callback, dataType, error) {
+        //优先取缓存
+        var cg = uuid.cacheGet(name, src);
+        if (cg.ok && cg.value) {
+            uuid.iscache = true;
+            callback(cg.value);
+        } else {
+            fetch(src)
+                .then(x => x[dataType]())
+                .then(function (data) {
+                    uuid.iscache = false;
+                    callback(data);
+                    uuid.cacheSet(name, src, data);
+                }).catch(function (e) {
+                    if (cg.value) {
+                        uuid.iscache = true;
+                        callback(cg.value);
+                    } else {
+                        error && error(e);
+                    }
+                })
+        }
+    }
+
     window.uuid = uuid;
 
 })(window);
 
-var uu = uuid();
+var uu = uuid({ githost: "gitee" });

@@ -1,3 +1,4 @@
+/*Í·Ïñ*/
 .uuidbox .uphoto {
     float: left;
     width: 95px;
@@ -5,11 +6,11 @@
     margin-right: 15px;
     border-radius: 6px;
 }
-
+/*¿¨Æ¬Í·²¿*/
 .uuidbox .card-header {
     padding: .1rem .8rem;
 }
-
+/*¿¨Æ¬Ö÷Ìå*/
 .uuidbox .card-body {
     padding: .3rem;
 }
@@ -27,7 +28,7 @@
             border-radius: 3px;
             display: inline-block;
         }
-
+/*¾²Ä¬ËÑË÷*/
 .uuidjump {
     position: fixed;
     top: 2%;
@@ -89,3 +90,38 @@
                     text-align: center;
                     border-radius: 3px;
                 }
+
+
+/*fork*/
+.uuidbox .card-fork {
+    float: left;
+    width: 120px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 2rem 0 1rem 2rem;
+}
+
+    .uuidbox .card-fork img {
+        margin: 5px;
+        width: 72px;
+        height: 72px;
+        border-radius: 72px;
+    }
+
+        .uuidbox .card-fork img:hover {
+            animation: myrotate 5s infinite linear;
+        }
+
+
+/*Ðý×ª*/
+@keyframes myrotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
