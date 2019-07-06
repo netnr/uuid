@@ -37,10 +37,10 @@
             //缓存
             this.dataCache = {};
 
-            var lpn = location.pathname.substring(1);
+            var lpn = location.pathname;
             switch (lpn) {
                 //fork
-                case "_fork":
+                case "/_fork":
                     this.name = "netnr";
                     this.repos = "uuid";
 
