@@ -586,4 +586,4 @@
 
 })(window);
 
-var uu = uuid({ githost: "gitee" });
+var uu = uuid();
