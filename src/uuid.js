@@ -37,7 +37,7 @@
             //缓存
             this.dataCache = {};
 
-            var lpn = location.pathname;
+            var lpn = location.pathname.substring(1);
             switch (lpn) {
                 //fork
                 case "_fork":
