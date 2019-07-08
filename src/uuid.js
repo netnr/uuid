@@ -37,10 +37,11 @@
             this.dataCache = {};
 
             var lpn = location.pathname;
-            //lpn = "/_fork";
             switch (lpn) {
                 //fork
                 case "/_fork":
+                    this.name = 'netnr';
+                    this.repos = 'uuid';
                     this.forkList();
                     break;
                 default:
@@ -52,12 +53,12 @@
                     //包
                     this.libs = uuid.setDv(ops.libs || pns[3], 'libs');
 
-                    this.nr = this.name + "/" + this.repos;
-
                     this.info();
 
                     this.build();
             }
+
+            this.nr = this.name + "/" + this.repos;
 
             this.jump();
 
