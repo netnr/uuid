@@ -468,7 +468,7 @@
                 //载入配置
                 if (that.configUrl) {
                     uuid.fetch(that.name, that.configUrl, function (data) {
-                        that.dataCache.config = data;
+                        that.dataCache.config = data = JSON.parse(decodeURIComponent(escape(atob(data.content))));
 
                         //背景图片
                         var bgi = uuid.getJSONValue(data, 'theme:background-image');
