@@ -23,7 +23,7 @@
 
 ### 说明
 - 可查看全局变量更多信息：`uu`
-- 由于API有速率限制，以`localStorage`作为本地存储，30分钟有效期，手动执行 `uu.cacheClear()` 方法可清理本地存储
+- 以`localStorage`作为本地存储，30分钟有效期
 - 域名`uuid.fun`已购买10年，只要github+cloudflare还在
 
 ### 收集

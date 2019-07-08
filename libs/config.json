@@ -1,0 +1,13 @@
+{
+  "config": "配置文件，由于JS不能直接解析带注释的JSON文件，所以注释以“# key”作为说明",
+
+  "# theme": "主题",
+  "theme": {
+
+    "# background-image": "背景图片",
+    "background-image": "https://gs.zme.ink/static/wallpaper/01.jpg"
+  },
+
+  "# searchapi": "搜索引擎，默认百度，谷歌：https://www.google.com/search?q=",
+  "searchapi": "https://www.baidu.com/s?&wd="
+}

@@ -26,10 +26,9 @@
                 var hts = location.host.split('.');
                 if (hts.length == 3) {
                     this.githost = hts[0];
-                } else {
-                    this.githost = "github";
                 }
             }
+            this.githost = this.githost || "github";
             if (["github", "gitee"].indexOf(this.githost) == -1) {
                 this.showMessage("This git hosting is not supported");
                 return;
@@ -38,6 +37,7 @@
             this.dataCache = {};
 
             var lpn = location.pathname;
+            //lpn = "/_fork";
             switch (lpn) {
                 //fork
                 case "/_fork":
@@ -46,12 +46,11 @@
                 default:
                     var pns = lpn.split('/');
                     //账号
-                    this.name = ops.name || (pns[1] == "" ? "netnr" : pns[1]);
-                    this.name = this.name == "index.html" ? "netnr" : this.name;
+                    this.name = uuid.setDv(ops.name || pns[1], 'netnr');
                     //仓库
-                    this.repos = ops.repos || ((!pns[2] || pns[2] == "") ? "uuid" : pns[2]);
+                    this.repos = uuid.setDv(ops.repos || pns[2], 'uuid');
                     //包
-                    this.libs = ops.libs || ((!pns[3] || pns[3] == "") ? "libs" : pns[3]);
+                    this.libs = uuid.setDv(ops.libs || pns[3], 'libs');
 
                     this.nr = this.name + "/" + this.repos;
 
@@ -150,6 +149,8 @@
                     cf.className = "card-fork";
                     cf.innerHTML = '<a href="' + morefork + '"><img src="/favicon.svg" /><br/>More fork</a>';
                     that.id.appendChild(cf);
+
+                    that.showCacheInfo();
                 } else {
                     that.showMessage('No fork')
                 }
@@ -172,10 +173,12 @@
                 var nhref = "https://" + that.githost + ".com/";
 
                 var indhtm = [];
-                indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'favicon.svg\';this.onerror=null;" />');
+                indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'/favicon.svg\';this.onerror=null;" />');
                 indhtm.push('<a class="text-muted h4" href="' + nhref + data.login + '">' + data.login + '</a><br/>');
-                if (data.blog) {
-                    indhtm.push('<a class="small" href="' + data.blog + '">' + data.blog + '</a>');
+                var blog = data.blog;
+                if (blog) {
+                    blog = blog.indexOf('//') > 0 ? blog : ('http://' + blog);
+                    indhtm.push('<a class="small" href="' + blog + '">' + data.blog + '</a>');
                 } else {
                     indhtm.push('<a class="small text-muted">no blog</a>');
                 }
@@ -218,7 +221,7 @@
                     cb[i].parentNode.style.display = hasa ? "" : "none";
                 }
             }
-            sh.title = "静默搜索，支持快捷方式：Esc、↑、↓、Enter，可直接打开网址";
+            sh.title = "静默搜索，支持快捷方式：Esc、↑、↓、Enter，可直达网址";
             that.id.firstChild.appendChild(sh);
         },
         //跳转
@@ -254,7 +257,7 @@
                                 openuri = ali.firstChild.innerText;
                             }
                             if (openuri.indexOf('.') == -1) {
-                                var dq = "https://www.baidu.com/s?&wd=";
+                                var dq = that.dataCache.config.searchapi || uuid.defaultSearch;
                                 openuri = dq + encodeURIComponent(openuri);
                             } else if (openuri.toLowerCase().indexOf("http") != 0) {
                                 openuri = "http://" + openuri;
@@ -364,108 +367,119 @@
                 var hasfile = false;
                 //遍历目录
                 data.forEach(function (item) {
-                    //是文件
-                    var isfile = false;
-                    switch (that.githost) {
-                        case "github":
-                            isfile = item.type == "file";
-                            break;
-                        case "gitee":
-                            isfile = (item.type == "blob" && item.path.indexOf(that.libs + "/") == 0);
-                            break;
-                    }
-                    if (isfile) {
-                        hasfile = true;
-
-                        //card 标题，标题链接,文件链接
-                        var type, typelink, filesrc;
+                    //是配置文件                    
+                    if (item.path == that.libs + "/" + uuid.defaultConfig) {
+                        that.configUrl = item.url;
+                    } else {
+                        //是文件
+                        var isfile = false;
                         switch (that.githost) {
                             case "github":
-                                type = item.name.substr(0, item.name.lastIndexOf('.'));
-                                typelink = item.html_url;
-                                filesrc = item.download_url;
+                                isfile = item.type == "file";
                                 break;
                             case "gitee":
-                                type = item.path.substr(0, item.path.lastIndexOf('.')).substring(that.libs.length + 1);
-                                typelink = "https://gitee.com/" + that.name + "/" + that.repos + "/blob/master/" + that.libs + "/" + type + ".md";
-                                filesrc = item.url;
+                                isfile = (item.type == "blob" && item.path.indexOf(that.libs + "/") == 0);
                                 break;
                         }
+                        if (isfile) {
+                            hasfile = true;
 
-                        //创建卡片
-                        var card = document.createElement("div");
-                        card.className = "card border-success my-3";
-
-                        var cardhtml = [];
-                        cardhtml.push('<div class="card-header border-success"><a href="' + typelink + '" >' + type + '</a></div>');
-                        cardhtml.push('<div class="card-body">');
-                        cardhtml.push('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-                        cardhtml.push('</div>');
-
-                        card.innerHTML = cardhtml.join('');
-                        //显示卡片
-                        that.id.appendChild(card);
-
-                        //加载卡片下的链接，一个卡片对应一个文件
-                        uuid.fetch(that.name, filesrc, function (data) {
+                            //card 标题，标题链接,文件链接
+                            var type, typelink, filesrc;
                             switch (that.githost) {
+                                case "github":
+                                    type = item.name.substr(0, item.name.lastIndexOf('.'));
+                                    typelink = item.html_url;
+                                    filesrc = item.url;
+                                    break;
                                 case "gitee":
-                                    {
-                                        data = decodeURIComponent(escape(atob(JSON.parse(data).content)));
-                                    }
+                                    type = item.path.substr(0, item.path.lastIndexOf('.')).substring(that.libs.length + 1);
+                                    typelink = "https://gitee.com/" + that.name + "/" + that.repos + "/blob/master/" + that.libs + "/" + type + ".md";
+                                    filesrc = item.url;
                                     break;
                             }
-                            var list = data.split('\n');
-                            var ahtm = [];
-                            //遍历每一行，解析成A标签
-                            list.forEach(function (line) {
-                                //满足Markdown的链接格式，有效行
-                                if (/\[.*?\]\(http.*?\)/.test(line)) {
-                                    //A标签显示的文本、图标、链接
-                                    var atext, aicon, ahref;
-                                    line.replace(/\(http.*?\)/, function (x) {
-                                        ahref = x.substring(1, x.length - 1).trim();
-                                    })
-                                    line.replace(/\[.*?\]/, function (x) {
-                                        atext = x.substring(1, x.length - 1).trim();
-                                    })
-                                    atext.replace(/ http.*/, function (x) {
-                                        atext = atext.replace(x, "");
-                                        aicon = x.trim();
-                                    })
-                                    if (!aicon) {
-                                        var hrefs = ahref.split('/');
-                                        aicon = hrefs[0] + "//" + hrefs[2] + "/favicon.ico";
-                                    }
-                                    ahtm.push('<a href="' + ahref + '"><img data-src="' + aicon + '" src="' + uuid.defaultFavicon + '"/> ' + atext + '</a>');
-                                }
-                            })
-                            card.lastChild.innerHTML = ahtm.join('');
 
-                            //加载图标
-                            var cardimg = card.lastChild.getElementsByTagName('img');
-                            for (var i = 0; i < cardimg.length; i++) {
-                                var img = new Image();
-                                img.that = cardimg[i];
-                                img.onload = function () { this.that.src = this.src; };
-                                img.onerror = function () { this.that.src = uuid.defaultFavicon; this.onerror = null; };
-                                var iconsrc = img.that.getAttribute('data-src');
-                                //代理http图片请求为https
-                                img.src = iconsrc.replace("http://", "https://proxy.zme.ink/");
-                            }
-                        }, 'text');
+                            //创建卡片
+                            var card = document.createElement("div");
+                            card.className = "card border-success my-3";
+
+                            var cardhtml = [];
+                            cardhtml.push('<div class="card-header border-success"><a href="' + typelink + '" >' + type + '</a></div>');
+                            cardhtml.push('<div class="card-body">');
+                            cardhtml.push('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
+                            cardhtml.push('</div>');
+
+                            card.innerHTML = cardhtml.join('');
+                            //显示卡片
+                            that.id.appendChild(card);
+
+                            //加载卡片下的链接，一个卡片对应一个文件
+                            uuid.fetch(that.name, filesrc, function (data) {
+                                data = decodeURIComponent(escape(atob(data.content)));
+
+                                var list = data.split('\n');
+                                var ahtm = [];
+                                //遍历每一行，解析成A标签
+                                list.forEach(function (line) {
+                                    //满足Markdown的链接格式，有效行
+                                    if (/\[.*?\]\(http.*?\)/.test(line)) {
+                                        //A标签显示的文本、图标、链接
+                                        var atext, aicon, ahref;
+                                        line.replace(/\(http.*?\)/, function (x) {
+                                            ahref = x.substring(1, x.length - 1).trim();
+                                        })
+                                        line.replace(/\[.*?\]/, function (x) {
+                                            atext = x.substring(1, x.length - 1).trim();
+                                        })
+                                        atext.replace(/ http.*/, function (x) {
+                                            atext = atext.replace(x, "");
+                                            aicon = x.trim();
+                                        })
+                                        if (!aicon) {
+                                            var hrefs = ahref.split('/');
+                                            aicon = hrefs[0] + "//" + hrefs[2] + "/favicon.ico";
+                                        }
+                                        ahtm.push('<a href="' + ahref + '"><img data-src="' + aicon + '" src="' + uuid.defaultFavicon + '"/> ' + atext + '</a>');
+                                    }
+                                })
+                                card.lastChild.innerHTML = ahtm.join('');
+
+                                //加载图标
+                                var cardimg = card.lastChild.getElementsByTagName('img');
+                                for (var i = 0; i < cardimg.length; i++) {
+                                    var img = new Image();
+                                    img.that = cardimg[i];
+                                    img.onload = function () { this.that.src = this.src; };
+                                    var iconsrc = img.that.getAttribute('data-src');
+                                    //代理http图片请求为https
+                                    img.src = iconsrc.replace("http://", "https://proxy.zme.ink/");
+                                }
+                            }, 'json');
+                        }
                     }
                 });
                 //为空时
                 if (!hasfile) {
                     that.showMessage("Is empty");
-                } else {
-                    var cp = document.createElement("p");
-                    cp.className = "small text-muted";
-                    if (uuid.iscache) {
-                        cp.innerHTML = '当前信息从本地读取，<span class="text-primary" style="cursor:pointer" onclick="uu.cacheClear()">刷新</span>';
-                    }
-                    that.id.appendChild(cp);
+                }
+
+                that.showCacheInfo();
+
+                //载入配置
+                if (that.configUrl) {
+                    uuid.fetch(that.name, that.configUrl, function (data) {
+                        that.dataCache.config = data;
+
+                        //背景图片
+                        var bgi = uuid.getJSONValue(data, 'theme:background-image');
+                        if (bgi) {
+                            var img = new Image();
+                            img.src = bgi;
+                            img.onload = function () {
+                                document.body.style.backgroundImage = "url('" + this.src + "')";
+                            }
+                        }
+                    }, 'json')
                 }
             })
         },
@@ -475,6 +489,17 @@
             h2.className = "text-danger text-center my-5";
             h2.innerHTML = msg;
             this.id.appendChild(h2)
+        },
+        //显示缓存信息
+        showCacheInfo: function () {
+            var cp = document.createElement("p");
+            cp.className = "small text-muted";
+            cp.style.clear = "both";
+            cp.style.opacity = .7;
+            if (uuid.iscache) {
+                cp.innerHTML = '当前信息从本地读取，<span class="text-primary" style="cursor:pointer" onclick="uu.cacheClear()">刷新</span>';
+            }
+            this.id.appendChild(cp);
         },
         //清除当前用户的本地存储
         cacheClear: function () {
@@ -486,8 +511,37 @@
 
     //默认的图标
     uuid.defaultFavicon = "/src/net.svg";
-    //源仓库
+    //默认源仓库
     uuid.defaultRepos = "/netnr/uuid";
+    //默认配置文件
+    uuid.defaultConfig = "config.json";
+    //默认搜索
+    uuid.defaultSearch = "https://www.baidu.com/s?&wd=";
+
+    /**
+     * 赋值默认值
+     * @param {any} val 值
+     * @param {any} dv 默认值
+     */
+    uuid.setDv = function (val, dv) {
+        if (!val || val == "" || val == "index.html") {
+            val = dv;
+        }
+        return val;
+    }
+
+    /**
+     * 获取JSON的值
+     * @param {any} data 数据源
+     * @param {any} keyPath 键路径
+     */
+    uuid.getJSONValue = function (data, keyPath) {
+        var kps = keyPath.split(':'), di = 0, val;
+        while (di < kps.length && data && typeof data == "object") {
+            val = (val || data)[kps[di++]];
+        }
+        return val;
+    }
 
     /**
      * 阻止默认行为
