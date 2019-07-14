@@ -28,13 +28,14 @@
                     this.githost = hts[0];
                 }
             }
-            this.githost = this.githost || "github";
             if (["github", "gitee"].indexOf(this.githost) == -1) {
-                this.showMessage("This git hosting is not supported");
-                return;
+                this.githost = "github";
             }
             //缓存
             this.dataCache = {};
+
+            //token
+            this.token = localStorage.getItem("uuid_token");
 
             var lpn = location.pathname;
             switch (lpn) {
@@ -42,6 +43,10 @@
                 case "/_fork":
                     this.nr = uuid.defaultRepos;
                     this.forkList();
+                    break;
+                //token
+                case "/_token":
+                    this.tokens();
                     break;
                 default:
                     var pns = lpn.split('/');
@@ -71,7 +76,7 @@
                     src = "https://gitee.com/api/v5/users/" + this.name;
                     break;
             }
-            uuid.fetch(this.name, src, callback, "text");
+            uuid.fetch(this, src, callback, "text");
         },
         //获取仓库
         getRepos: function (callback) {
@@ -82,7 +87,7 @@
                     src = "https://gitee.com/api/v5/repos" + uuid.defaultRepos;
                     break;
             }
-            uuid.fetch(this.name, src, callback, 'json', function () {
+            uuid.fetch(this, src, callback, 'json', function () {
                 that.showMessage("Not found");
             })
         },
@@ -95,7 +100,7 @@
                     src = "https://gitee.com/api/v5/repos/" + this.nr + "/git/trees/master?recursive=1";
                     break;
             }
-            uuid.fetch(this.name, src, callback, 'json', function () {
+            uuid.fetch(this, src, callback, 'json', function () {
                 that.showMessage("Not found");
             })
         },
@@ -108,7 +113,7 @@
                     src = "https://gitee.com/api/v5/repos" + uuid.defaultRepos + "/forks?sort=newest&page=1&per_page=30";
                     break;
             }
-            uuid.fetch(this.name, src, callback, 'json', function () {
+            uuid.fetch(this, src, callback, 'json', function () {
                 that.showMessage("Not found");
             })
         },
@@ -168,7 +173,7 @@
                     return;
                 }
 
-                document.title = data.login + " - " + document.title;
+                document.title += "-" + data.login;
 
                 var nhref = "https://" + that.githost + ".com/";
 
@@ -185,6 +190,14 @@
                 ind.innerHTML = indhtm.join('');
 
                 that.search();
+
+                //token按钮
+                var btn = document.createElement('a');
+                btn.href = location.origin + "/_token";
+                btn.className = "badge badge-dark float-right mr-2";
+                btn.style.fontSize = "1rem";
+                btn.innerHTML = 'token';
+                ind.insertBefore(btn, ind.firstChild);
 
                 //fork按钮
                 that.getRepos(function (data) {
@@ -403,18 +416,19 @@
                             var card = document.createElement("div");
                             card.className = "card border-success my-3";
 
-                            var cardhtml = [];
-                            cardhtml.push('<div class="card-header border-success"><a href="' + typelink + '" >' + type + '</a></div>');
-                            cardhtml.push('<div class="card-body">');
-                            cardhtml.push('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-                            cardhtml.push('</div>');
+                            var cardhtml = [
+                                '<div class="card-header border-success"><a href="' + typelink + '" >' + type + '</a></div>',
+                                '<div class="card-body">',
+                                '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>',
+                                '</div>'
+                            ];
 
                             card.innerHTML = cardhtml.join('');
                             //显示卡片
                             that.id.appendChild(card);
 
                             //加载卡片下的链接，一个卡片对应一个文件
-                            uuid.fetch(that.name, filesrc, function (data) {
+                            uuid.fetch(that, filesrc, function (data) {
                                 data = decodeURIComponent(escape(atob(data.content)));
 
                                 var list = data.split('\n');
@@ -467,7 +481,7 @@
 
                 //载入配置
                 if (that.configUrl) {
-                    uuid.fetch(that.name, that.configUrl, function (data) {
+                    uuid.fetch(that, that.configUrl, function (data) {
                         that.dataCache.config = data = JSON.parse(decodeURIComponent(escape(atob(data.content))));
 
                         //背景图片
@@ -483,6 +497,46 @@
                 }
             })
         },
+        //设置token
+        tokens: function () {
+            document.title += "-token";
+            var dr = document.createElement("div");
+            dr.style.cssText = "max-width:500px;margin:5% auto";
+            var htm = [
+                '<h4 class="py-3">Personal access tokens（令牌）</h4>',
+                '<div class="form-group">',
+                '<input class="form-control form-control-lg" placeholder="粘贴 空token，长度40位" maxlength="40">',
+                '</div>',
+                '<div>',
+                '粘贴后，刷新你的uuid</br>',
+                '匿名访问有速率限制（GitHub每小时60次）</br>',
+                '如果超出限制会返回 <code>403</code> 错误</br>',
+                '需要设置令牌（Personal access tokens）</br>',
+                '创建一个命名为 <code>uuid</code> 的 <code>空令牌</code> （不用勾选任何项）</br>',
+                '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>',
+                '</div>'
+            ];
+
+            dr.innerHTML = htm.join('');
+            var inp = dr.getElementsByTagName('input')[0];
+            inp.oninput = function () {
+                if (this.value.length == 40) {
+                    localStorage.setItem("uuid_token", this.value);
+                } else {
+                    localStorage.removeItem("uuid_token");
+                }
+            }
+            inp.onblur = function () {
+                if (this.value.length != 40) {
+                    this.value = '';
+                }
+            }
+            if (this.token && this.token.length == 40) {
+                inp.value = this.token;
+            }
+
+            this.id.appendChild(dr);
+        },
         //显示消息
         showMessage: function (msg) {
             var h2 = document.createElement('h2');
@@ -496,7 +550,7 @@
             cp.className = "small text-muted";
             cp.style.clear = "both";
             cp.style.opacity = .7;
-            if (uuid.iscache) {
+            if (this.iscache) {
                 cp.innerHTML = '当前信息从本地读取，<span class="text-primary" style="cursor:pointer" onclick="uu.cacheClear()">刷新</span>';
             }
             this.id.appendChild(cp);
@@ -603,33 +657,58 @@
     /**
      * /**
      * 请求
-     * @param {any} name 账号
+     * @param {any} uu uuid对象
      * @param {any} src 链接
      * @param {any} callback 回调
      * @param {any} dataType 数据类型
      * @param {any} error 错误回调
      */
-    uuid.fetch = function (name, src, callback, dataType, error) {
+    uuid.fetch = function (uu, src, callback, dataType, error) {
         //优先取缓存
-        var cg = uuid.cacheGet(name, src);
+        var cg = uuid.cacheGet(uu.name, src);
         if (cg.ok && cg.value) {
-            uuid.iscache = true;
+            uu.iscache = true;
             callback(cg.value);
         } else {
-            fetch(src)
-                .then(x => x[dataType]())
-                .then(function (data) {
-                    uuid.iscache = false;
-                    callback(data);
-                    uuid.cacheSet(name, src, data);
-                }).catch(function (e) {
-                    if (cg.value) {
-                        uuid.iscache = true;
-                        callback(cg.value);
+            var init = {};
+            if (uu.githost == "github" && uu.token && uu.token.length == 40) {
+                init["headers"] = {
+                    "Authorization": "token " + uu.token,
+                }
+            }
+            if (uu.islimit) {
+                return
+            }
+            fetch(src, init).then(function (res) {
+                if (res.ok) {
+                    return res[dataType]();
+                } else {
+                    if (res.status == 403) {
+                        if (!uu.islimit) {
+                            var htm = [
+                                res.statusText + "(" + res.status + ")</br><hr/>",
+                                '<div class="small text-muted">受限制，',
+                                '<a href="/_token">设置token</a></div>'
+                            ];
+                            uu.showMessage(htm.join(''));
+                        }
+                        uu.islimit = true;
                     } else {
-                        error && error(e);
+                        throw new Error(res)
                     }
-                })
+                }
+            }).then(function (data) {
+                uu.iscache = false;
+                callback(data);
+                uuid.cacheSet(uu.name, src, data);
+            }).catch(function (e) {
+                if (cg.value) {
+                    uu.iscache = true;
+                    callback(cg.value);
+                } else if (!uu.islimit) {
+                    error && error(e)
+                }
+            })
         }
     }
 
