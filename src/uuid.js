@@ -512,7 +512,7 @@
                 '匿名访问有速率限制（GitHub每小时60次）</br>',
                 '如果超出限制会返回 <code>403</code> 错误</br>',
                 '需要设置令牌（Personal access tokens）</br>',
-                '创建一个命名为 <code>uuid</code> 的 <code>空令牌</code> （不用勾选任何项）</br>',
+                '创建一个命名为 <code>empty</code> 的 <code>空令牌</code> （不用勾选任何项）</br>',
                 '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>',
                 '</div>'
             ];
