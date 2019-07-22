@@ -195,6 +195,7 @@
                 var btn = document.createElement('a');
                 btn.href = location.origin + "/_token";
                 btn.className = "badge badge-" + (that.token ? "success" : "dark") + " float-right mr-2";
+                btn.title = that.token ? "已设置token" : "未设置token，访问速率受限制";
                 btn.style.fontSize = "1rem";
                 btn.innerHTML = 'token';
                 ind.insertBefore(btn, ind.firstChild);
@@ -213,8 +214,15 @@
         //搜索
         search: function () {
             var that = this;
+            var ig = document.createElement('div');
+            ig.className = "input-group";
+            ig.style.width = "55%";
+            ig.innerHTML = '<div class="input-group-prepend">'
+                + '<select class="custom-select custom-select-sm" style="width:120px;" id="seGroup">'
+                + '<option value="">全部</option>'
+                + '</select>';
             var sh = document.createElement("input");
-            sh.className = "form-control form-control-sm mt-2";
+            sh.className = "form-control form-control-sm";
             sh.style.width = "55%";
             sh.placeholder = "搜索，支持静默搜索";
             sh.oninput = function () {
@@ -235,7 +243,22 @@
                 }
             }
             sh.title = "静默搜索，支持快捷方式：Esc、↑、↓、Enter，可直达网址";
-            that.id.firstChild.appendChild(sh);
+
+            ig.appendChild(sh)
+            that.id.firstChild.appendChild(ig);
+
+            //分类选择
+            document.getElementById('seGroup').onchange = function () {
+                var cards = document.querySelectorAll('.card');
+                for (var i = 0; i < cards.length; i++) {
+                    var ci = cards[i];
+                    var type = ci.children[0].children[0].innerHTML;
+                    ci.className = ci.className.replace(" d-none", "");
+                    if (this.value != "" && this.value != type) {
+                        ci.className += " d-none";
+                    }
+                }
+            }
         },
         //跳转
         jump: function () {
@@ -290,16 +313,18 @@
                         case 38:
                         //down
                         case 40:
-                            var ali = that.jumpnode.getElementsByClassName('active')[0];
-                            if (ali) {
-                                var newli;
-                                e.keyCode == 38 && (newli = ali.previousSibling);
-                                e.keyCode == 40 && (newli = ali.nextSibling);
-                                if (newli) {
-                                    newli.className = "active";
-                                    ali.className = "";
+                            if (that.jumpnode) {
+                                var ali = that.jumpnode.getElementsByClassName('active')[0];
+                                if (ali) {
+                                    var newli;
+                                    e.keyCode == 38 && (newli = ali.previousSibling);
+                                    e.keyCode == 40 && (newli = ali.nextSibling);
+                                    if (newli) {
+                                        newli.className = "active";
+                                        ali.className = "";
+                                    }
+                                    uuid.stopDefault(e);
                                 }
-                                uuid.stopDefault(e);
                             }
                             break;
                     }
@@ -426,6 +451,10 @@
                             card.innerHTML = cardhtml.join('');
                             //显示卡片
                             that.id.appendChild(card);
+                            //卡片追加到选择框
+                            var seg = document.getElementById('seGroup');
+
+                            seg.add(new Option(type));
 
                             //加载卡片下的链接，一个卡片对应一个文件
                             uuid.fetch(that, filesrc, function (data) {
