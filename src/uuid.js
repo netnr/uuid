@@ -215,7 +215,7 @@
         search: function () {
             var that = this;
             var ig = document.createElement('div');
-            ig.className = "input-group";
+            ig.className = "input-group mt-2";
             ig.style.width = "55%";
             ig.innerHTML = '<div class="input-group-prepend">'
                 + '<select class="custom-select custom-select-sm" style="width:120px;" id="seGroup">'
