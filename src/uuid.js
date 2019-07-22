@@ -194,7 +194,7 @@
                 //token按钮
                 var btn = document.createElement('a');
                 btn.href = location.origin + "/_token";
-                btn.className = "badge badge-dark float-right mr-2";
+                btn.className = "badge badge-" + (that.token ? "success" : "dark") + " float-right mr-2";
                 btn.style.fontSize = "1rem";
                 btn.innerHTML = 'token';
                 ind.insertBefore(btn, ind.firstChild);
