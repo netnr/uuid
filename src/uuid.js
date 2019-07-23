@@ -35,7 +35,7 @@
             this.dataCache = {};
 
             //token
-            this.token = localStorage.getItem("uuid_token");
+            this.token = localStorage.getItem("uuid-token");
 
             var lpn = location.pathname;
             switch (lpn) {
@@ -60,8 +60,6 @@
                     this.nr = this.name + "/" + this.repos;
 
                     this.info();
-
-                    this.build();
             }
 
             this.jump();
@@ -209,6 +207,8 @@
                     btn.innerHTML = 'Fork &nbsp;' + data.forks_count;
                     ind.insertBefore(btn, ind.firstChild);
                 })
+
+                that.build();
             })
         },
         //搜索
@@ -550,9 +550,9 @@
             var inp = dr.getElementsByTagName('input')[0];
             inp.oninput = function () {
                 if (this.value.length == 40) {
-                    localStorage.setItem("uuid_token", this.value);
+                    localStorage.setItem("uuid-token", this.value);
                 } else {
-                    localStorage.removeItem("uuid_token");
+                    localStorage.removeItem("uuid-token");
                 }
             }
             inp.onblur = function () {
