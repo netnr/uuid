@@ -1,0 +1,3 @@
+- [搬瓦工 https://uuid.fun/src/net.svg](https://www.bwh88.net)
+- [阿里云轻量服务器 https://www.aliyun.com/favicon.ico](https://common-buy.aliyun.com/?commodityCode=swas&regionId=cn-hongkong)
+- [国外主机测评](https://www.zhujiceping.com)
