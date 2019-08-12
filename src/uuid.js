@@ -390,6 +390,9 @@
                 that.jumpnode.innerHTML = "";
             }
         },
+        se: function (s) {
+            return s.replace(/"/g, "&quot;").replace(/'/g, "");
+        },
         //构建
         build: function () {
             var that = this;
@@ -467,9 +470,17 @@
                                     //满足Markdown的链接格式，有效行
                                     if (/\[.*?\]\(http.*?\)/.test(line)) {
                                         //A标签显示的文本、图标、链接
-                                        var atext, aicon, ahref;
+                                        var atext, aicon, ahref, atitle = '';
                                         line.replace(/\(http.*?\)/, function (x) {
-                                            ahref = x.substring(1, x.length - 1).trim();
+                                            if (/\(http.*?\ /.test(x)) {
+                                                line.replace(/\(http.*?\ /, function (y) {
+                                                    ahref = y.substring(1).trim();
+                                                    atitle = x.replace(y, "");
+                                                    atitle = atitle.substring(1, atitle.length - 2).trim();
+                                                })
+                                            } else {
+                                                ahref = x.substring(1, x.length - 1).trim();
+                                            }
                                         })
                                         line.replace(/\[.*?\]/, function (x) {
                                             atext = x.substring(1, x.length - 1).trim();
@@ -482,7 +493,7 @@
                                             var hrefs = ahref.split('/');
                                             aicon = hrefs[0] + "//" + hrefs[2] + "/favicon.ico";
                                         }
-                                        ahtm.push('<a href="' + ahref + '"><img data-src="' + aicon + '" src="' + uuid.defaultFavicon + '"/> ' + atext + '</a>');
+                                        ahtm.push('<a href="' + ahref + '" title="' + that.se(atitle) + '"><img data-src="' + aicon + '" src="' + uuid.defaultFavicon + '"/> ' + atext + '</a>');
                                     }
                                 })
                                 card.lastChild.innerHTML = ahtm.join('');
@@ -684,7 +695,6 @@
     }
 
     /**
-     * /**
      * 请求
      * @param {any} uu uuid对象
      * @param {any} src 链接
