@@ -85,7 +85,41 @@
                     src = "https://gitee.com/api/v5/repos" + uuid.defaultRepos;
                     break;
             }
-            uuid.fetch(this, src, callback, 'json', function () {
+
+            var cacheRepos = uuid.cacheGet(that.name, src);
+            uuid.fetch(this, src, function (data) {
+                //仓库未更新
+                var nochange = cacheRepos.ok && cacheRepos.value.updated_at == data.updated_at;
+                var udata = localStorage.getItem("uuid_" + that.name);
+                if (udata && udata != "") {
+                    var ujson = JSON.parse(udata);
+                    for (var i in ujson) {
+                        if (i.indexOf("__create_time__") == 0) {
+                            if (i.indexOf("/contents/") >= 0 || i.indexOf("/git/trees/master?recursive=1") >= 0) {
+                                //未更新，延长缓存过期；已更新，设置超出缓存时间
+                                ujson[i] = nochange ? new Date().valueOf() : 946656000000;
+                            }
+                        }
+                    }
+                    localStorage.setItem("uuid_" + that.name, JSON.stringify(ujson));
+                }
+
+                if (nochange) {
+                    var udata = localStorage.getItem("uuid_" + that.name);
+                    if (udata && udata != "") {
+                        var ujson = JSON.parse(udata);
+                        for (var i in ujson) {
+                            if (i.indexOf("__create_time__") == 0) {
+                                if (i.indexOf("/contents/") >= 0 || i.indexOf("/git/trees/master?recursive=1") >= 0) {
+                                    ujson[i] = new Date().valueOf();
+                                }
+                            }
+                        }
+                        localStorage.setItem("uuid_" + that.name, JSON.stringify(ujson));
+                    }
+                }
+                callback(data);
+            }, 'json', function () {
                 that.showMessage("Not found");
             })
         },
@@ -660,8 +694,8 @@
         var udata = localStorage.getItem("uuid_" + name);
         if (udata && udata != "") {
             var ujson = JSON.parse(udata);
-            //缓存30分钟
-            result.ok = new Date().valueOf() - ujson["__create_time__" + key] < 1000 * 60 * 30;
+            //缓存3天
+            result.ok = new Date().valueOf() - ujson["__create_time__" + key] < 1000 * 3600 * 24 * 3;
             //值
             result.value = ujson[key];
         }
