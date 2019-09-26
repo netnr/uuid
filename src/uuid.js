@@ -542,8 +542,6 @@
                                         img.that = ci;
                                         img.onload = function () { this.that.src = this.src; };
                                         img.src = iconsrc;
-                                    } else {
-                                        console.log(iconsrc)
                                     }
                                 }
                             }, 'json');
