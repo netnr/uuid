@@ -535,12 +535,16 @@
                                 //加载图标
                                 var cardimg = card.lastChild.getElementsByTagName('img');
                                 for (var i = 0; i < cardimg.length; i++) {
-                                    var img = new Image();
-                                    img.that = cardimg[i];
-                                    img.onload = function () { this.that.src = this.src; };
-                                    var iconsrc = img.that.getAttribute('data-src');
-                                    //代理http图片请求为https
-                                    img.src = iconsrc.replace("http://", "https://proxy.zme.ink/");
+                                    var ci = cardimg[i], iconsrc = ci.getAttribute('data-src');
+                                    //仅加载https
+                                    if (iconsrc.indexOf("http://") == -1) {
+                                        var img = new Image();
+                                        img.that = ci;
+                                        img.onload = function () { this.that.src = this.src; };
+                                        img.src = iconsrc;
+                                    } else {
+                                        console.log(iconsrc)
+                                    }
                                 }
                             }, 'json');
                         }
