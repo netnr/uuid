@@ -205,7 +205,7 @@
                     return;
                 }
 
-                document.title += "-" + data.login;
+                document.title += " (" + data.login + ")";
 
                 var nhref = "https://" + that.githost + ".com/";
 
@@ -531,6 +531,12 @@
                                     }
                                 })
                                 card.lastChild.innerHTML = ahtm.join('');
+
+                                //链接数
+                                var itemtotal = document.createElement("span");
+                                itemtotal.className = "badge text-muted ml-2";
+                                itemtotal.innerHTML = "( " + ahtm.length + " )";
+                                card.firstChild.appendChild(itemtotal);
 
                                 //加载图标
                                 var cardimg = card.lastChild.getElementsByTagName('img');
