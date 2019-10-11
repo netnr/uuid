@@ -1,7 +1,4 @@
 /*
- * uuid
- * 2019-07
- * 
  * by netnr
  * 
  * https://gitee.com/netnr/uuid
