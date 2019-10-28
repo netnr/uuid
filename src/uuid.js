@@ -172,10 +172,10 @@
                 })
 
                 if (data.length) {
-                    var morefork = "https://github.com/" + that.nr + "/network/members";
+                    var morefork = "https://github.com" + that.nr + "/network/members";
                     switch (that.githost) {
                         case "gitee":
-                            morefork = "https://gitee.com/" + that.nr + "/members";
+                            morefork = "https://gitee.com" + that.nr + "/members";
                             break;
                     }
 
