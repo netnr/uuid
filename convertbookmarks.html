@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <base target="_blank" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>转换浏览器导出的HTML书签</title>
+
+    <meta name="keywords" content="uuid收藏夹,书签,Bookmark" />
+    <meta name="description" content="一个基于Git托管去中心化的收藏夹" />
+
+    <link rel="stylesheet" href="https://code.bdstatic.com/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 my-2">
+                <div class="custom-file">
+                    <input type="file" id="txtFile" class="custom-file-input" />
+                    <label class="custom-file-label" for="txtFile">请选择浏览器导出的书签（HTML）</label>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div id="editor"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.bdstatic.com/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <link href="https://code.bdstatic.com/npm/netnrmd@2.2.3/src/netnrmd.css" rel="stylesheet" />
+    <script src="https://code.bdstatic.com/npm/netnrmd@2.2.3/src/netnrmd.bundle.min.js"></script>
+    <script src="https://code.bdstatic.com/npm/monaco-editor@0.20.0/min/vs/loader.js"></script>
+
+    <script>
+
+        var cbk = {
+            init: function () {
+                $('#txtFile').change(function () {
+                    var file = this.files[0];
+                    if (file) {
+                        var reader = new FileReader();
+                        reader.onload = function () {
+                            var mds = [];
+                            var $bm = $('<div></div>').append($(this.result));
+
+                            mds.push("# " + $bm.children('h1').html());
+                            mds.push('');
+
+                            cbk.treeEach($bm, mds);
+
+                            window.nmd.setmd(mds.join('\r\n'));
+                        };
+                        reader.readAsText(file);
+                    }
+                });
+
+                require.config({
+                    paths: { vs: "https://code.bdstatic.com/npm/monaco-editor@0.20.0/min/vs" },
+                    'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
+                });
+
+                require(['vs/editor/editor.main'], function () {
+
+                    window.nmd = new netnrmd('#editor');
+
+                    $(window).on('load resize', function () {
+                        var vh = $(window).height() - nmd.obj.container.offset().top - 10;
+                        nmd.height(Math.max(100, vh));
+                    })
+                });
+            },
+            treeEach: function ($bm, mds) {
+                $bm.children().each(function (i, n) {
+                    switch (n.nodeName) {
+                        case "H3":
+                            mds.push('');
+                            mds.push("### " + n.innerHTML);
+                            break;
+                        case "DL":
+                        case "P":
+                            cbk.treeEach($(n), mds);
+                            break;
+                        case "DT":
+                            {
+                                if ($(n).children().length == 1) {
+                                    var na = $(n).children('a');
+                                    mds.push('- [' + na.html() + '](' + na.attr('href') + ')');
+                                } else {
+                                    cbk.treeEach($(n), mds);
+                                }
+                            }
+                            break;
+                    }
+                })
+            }
+        }
+
+        cbk.init();
+    </script>
+
+</body>
+</html>

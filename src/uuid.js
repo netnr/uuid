@@ -220,6 +220,15 @@
 
                 that.search();
 
+                //convert按钮
+                var btn = document.createElement('a');
+                btn.href = location.origin + "/convertbookmarks";
+                btn.className = "badge badge-success float-right mr-2";
+                btn.title = "转换浏览器导出的书签（HTML）";
+                btn.style.fontSize = "1rem";
+                btn.innerHTML = 'Convert';
+                ind.insertBefore(btn, ind.firstChild);
+
                 //token按钮
                 var btn = document.createElement('a');
                 btn.href = location.origin + "/_token";
