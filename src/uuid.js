@@ -223,7 +223,7 @@
                 //convert按钮
                 var btn = document.createElement('a');
                 btn.href = location.origin + "/convertbookmarks";
-                btn.className = "badge badge-success float-right mr-2";
+                btn.className = "badge badge-primary float-right mr-2";
                 btn.title = "转换浏览器导出的书签（HTML）";
                 btn.style.fontSize = "1rem";
                 btn.innerHTML = 'Convert';
