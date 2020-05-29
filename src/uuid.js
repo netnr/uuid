@@ -64,14 +64,14 @@
             return this;
         },
         //获取用户
-        getUser: function (callback) {
+        getUser: function (callback, error) {
             var src = "https://api.github.com/users/" + this.name;
             switch (this.githost) {
                 case "gitee":
                     src = "https://gitee.com/api/v5/users/" + this.name;
                     break;
             }
-            uuid.fetch(this, src, callback, "text");
+            uuid.fetch(this, src, callback, "text", error);
         },
         //获取仓库
         getRepos: function (callback) {
@@ -249,6 +249,8 @@
                 })
 
                 that.build();
+            }, function () {
+                uu.showMessage('获取用户信息失败（请<a target="_self" href="javascript:location.reload(false)">刷新</a>重试）');
             })
         },
         //搜索
