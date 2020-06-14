@@ -25,7 +25,7 @@
                     this.githost = hts[0].toLowerCase();
                 }
             }
-            if (this.githost.indexOf("gitee") >= 0) {
+            if (this.githost && this.githost.indexOf("gitee") >= 0) {
                 this.githost = "gitee";
             } else {
                 this.githost = "github";
