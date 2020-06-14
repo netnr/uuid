@@ -22,10 +22,12 @@
             if (!this.githost) {
                 var hts = location.host.split('.');
                 if (hts.length == 3) {
-                    this.githost = hts[0];
+                    this.githost = hts[0].toLowerCase();
                 }
             }
-            if (["github", "gitee"].indexOf(this.githost) == -1) {
+            if (this.githost.indexOf("gitee") >= 0) {
+                this.githost = "gitee";
+            } else {
                 this.githost = "github";
             }
             //缓存
