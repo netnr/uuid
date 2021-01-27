@@ -1,5 +1,5 @@
 - [75CDN https://lib.baomitu.com/favicon.ico](https://cdn.baomitu.com)
 - [BootCDN https://www.bootcdn.cn/assets/ico/favicon.ico](https://www.bootcdn.cn)
-- [cdnjs https://s1.zme.ink/2019/07/08/101857eed2.png](https://cdnjs.com)
+- [cdnjs https://s1.netnr.eu.org/2019/07/08/101857eed2.png](https://cdnjs.com)
 - [新浪CDN](https://lib.sinaapp.com)
 - [jsDelivr](https://www.jsdelivr.com)

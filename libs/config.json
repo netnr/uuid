@@ -5,7 +5,7 @@
   "theme": {
 
     "# background-image": "背景图片",
-    "background-image": "https://s1.zme.ink/static/wallpaper/01.jpg"
+    "background-image": "https://cdn.jsdelivr.net/gh/netnr/static/static/wallpaper/01.jpg"
   },
 
   "# searchapi": "搜索引擎，默认百度，谷歌：https://www.google.com/search?q=",

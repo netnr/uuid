@@ -34,10 +34,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/netnrmd@2.6.0/src/netnrmd.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/netnrmd@2.6.0/src/netnrmd.bundle.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/netnrmd@2.6.1/src/netnrmd.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/netnrmd@2.6.1/src/netnrmd.bundle.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.21.3/min/vs/loader.js"></script>
 
     <script>
 
@@ -64,7 +64,7 @@
 
                 require.config({
                     paths: {
-                        vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs"
+                        vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.21.3/min/vs"
                     },
                     'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
                 });
@@ -94,7 +94,7 @@
                             {
                                 if ($(n).children().length == 1) {
                                     var na = $(n).children('a');
-                                    mds.push('- [' + na.html() + '](' + na.attr('href') + ')');
+                                    mds.push('- [' + na.html().replace(/`/g,'\\`') + '](' + na.attr('href') + ')');
                                 } else {
                                     cbk.treeEach($(n), mds);
                                 }
