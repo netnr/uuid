@@ -183,7 +183,7 @@
 
                     var cf = document.createElement("div");
                     cf.className = "card-fork";
-                    cf.innerHTML = '<a href="' + morefork + '"><img src="/favicon.svg" /><br/>More fork</a>';
+                    cf.innerHTML = '<a href="' + morefork + '"><img src="/favicon.ico" /><br/>More fork</a>';
                     that.id.appendChild(cf);
 
                     that.showCacheInfo();
@@ -209,7 +209,7 @@
                 var nhref = "https://" + that.githost + ".com/";
 
                 var indhtm = [];
-                indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'/favicon.svg\';this.onerror=null;" />');
+                indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'/favicon.ico\';this.onerror=null;" />');
                 indhtm.push('<a class="text-muted h4" href="' + nhref + data.login + '">' + data.login + '</a><br/>');
                 var blog = data.blog;
                 if (blog) {
