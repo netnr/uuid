@@ -334,7 +334,7 @@
                             var openuri = that.jumpnode.firstChild.innerText;
                             var ali = that.jumpnode.getElementsByClassName('active')[0];
                             if (ali) {
-                                openuri = ali.firstChild.innerText;
+                                openuri = ali.firstChild.innerText.trim();
                             }
                             if (openuri.indexOf('.') == -1) {
                                 var dq = that.dataCache.config.searchapi || uuid.defaultSearch;
@@ -417,8 +417,12 @@
                         } else {
                             htm.push('<li class="active">')
                         }
-                        var jicon = link.firstChild.src || uuid.defaultFavicon;
-                        htm.push('<div class="text-info"><img src="' + jicon + '" onerror="this.src=\'' + uuid.defaultFavicon + '\';this.onerror=null;" />' + link.href + '</div>')
+                        var svgicon = '', iconode = link.children[0];
+
+                        if (iconode) {
+                            svgicon = iconode.outerHTML + ' ';
+                        }
+                        htm.push('<div class="text-info">' + svgicon + link.href + '</div>')
                         htm.push('<div>' + link.innerText + '</div>')
                         htm.push('</li>')
                     }
@@ -537,7 +541,9 @@
                                             var hrefs = ahref.split('/');
                                             aicon = hrefs[0] + "//" + hrefs[2] + "/favicon.ico";
                                         }
-                                        ahtm.push('<a href="' + ahref + '" title="' + that.se(atitle) + '"><img data-src="' + aicon + '" src="' + uuid.defaultFavicon + '"/> ' + atext + '</a>');
+
+                                        var svgicon = uuid.iconident(ahref, 18);
+                                        ahtm.push('<a href="' + ahref + '" title="' + that.se(atitle) + '">' + svgicon + ' ' + atext + '</a>');
                                     }
                                 })
                                 card.lastChild.innerHTML = ahtm.join('');
@@ -548,18 +554,6 @@
                                 itemtotal.innerHTML = "( " + ahtm.length + " )";
                                 card.firstChild.appendChild(itemtotal);
 
-                                //加载图标
-                                var cardimg = card.lastChild.getElementsByTagName('img');
-                                for (var i = 0; i < cardimg.length; i++) {
-                                    var ci = cardimg[i], iconsrc = ci.getAttribute('data-src');
-                                    //仅加载https
-                                    if (iconsrc.indexOf("http://") == -1) {
-                                        var img = new Image();
-                                        img.that = ci;
-                                        img.onload = function () { this.that.src = this.src; };
-                                        img.src = iconsrc;
-                                    }
-                                }
                             }, 'json');
                         }
                     }
@@ -575,16 +569,6 @@
                 if (that.configUrl) {
                     uuid.fetch(that, that.configUrl, function (data) {
                         that.dataCache.config = data = JSON.parse(decodeURIComponent(escape(atob(data.content))));
-
-                        //背景图片
-                        var bgi = uuid.getJSONValue(data, 'theme:background-image');
-                        if (bgi) {
-                            var img = new Image();
-                            img.src = bgi;
-                            img.onload = function () {
-                                document.body.style.backgroundImage = "url('" + this.src + "')";
-                            }
-                        }
                     }, 'json')
                 }
             })
@@ -744,6 +728,19 @@
     uuid.cacheClear = function (name) {
         localStorage.removeItem("uuid_" + name);
         location.reload(false);
+    }
+
+    /**
+     * 身份图标
+     * @param {any} text 内容
+     * @param {any} size 大小
+     */
+    uuid.iconident = function (text, size) {
+        var svgicon = CryptoJS.enc.Base64.parse(new Identicon(CryptoJS.SHA1(text).toString(), {
+            size: size,
+            format: "svg"
+        }).toString()).toString(CryptoJS.enc.Utf8);
+        return svgicon;
     }
 
     /**

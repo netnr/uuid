@@ -1,5 +1,5 @@
 - [jsDelivr](https://www.jsdelivr.com)
-- [字节跳动 https://cdn.bytedance.com/src/res/favicon.png](https://cdn.bytedance.com)
-- [75CDN https://lib.baomitu.com/favicon.ico](https://cdn.baomitu.com)
+- [字节跳动](https://cdn.bytedance.com)
+- [75CDN](https://cdn.baomitu.com)
 - [新浪CDN](https://lib.sinaapp.com)
-- [cdnjs https://s1.netnr.eu.org/2019/07/08/101857eed2.png](https://cdnjs.com)
+- [cdnjs](https://cdnjs.com)

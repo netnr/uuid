@@ -14,7 +14,7 @@
 
 /*卡片头部*/
 .uuidbox .card-header {
-    padding: .1rem .8rem;
+    padding: .2rem .5rem;
 }
 /*卡片主体*/
 .uuidbox .card-body {
@@ -23,11 +23,18 @@
 
     .uuidbox .card-body a {
         float: left;
+        border-radius: 6px;
         white-space: nowrap;
-        margin: .4rem 1.4rem .4rem .4rem;
+        padding: .4rem .8rem;
+        text-decoration: none;
+        border: 3px solid transparent;
     }
 
-        .uuidbox .card-body a img {
+        .uuidbox .card-body a:hover {
+            border-color: orange;
+        }
+
+        .uuidbox .card-body a svg {
             height: 18px;
             min-width: 18px;
             max-width: 30px;
