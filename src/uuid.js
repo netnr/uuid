@@ -735,12 +735,8 @@
      * @param {any} text 内容
      * @param {any} size 大小
      */
-    uuid.iconident = function (text, size) {
-        var svgicon = CryptoJS.enc.Base64.parse(new Identicon(CryptoJS.SHA1(text).toString(), {
-            size: size,
-            format: "svg"
-        }).toString()).toString(CryptoJS.enc.Utf8);
-        return svgicon;
+    uuid.iconident = function (value, size) {
+        return iisvg({ value, size }).outerHTML
     }
 
     /**
