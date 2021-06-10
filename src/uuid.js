@@ -164,7 +164,7 @@
 
                     var cf = document.createElement("div");
                     cf.className = "card-fork";
-                    cf.innerHTML = '<a href="' + location.origin + '/' + name + '"><img data-src="' + icon + '" src="' + uuid.defaultFavicon + '" /><br/>' + name + '</a>';
+                    cf.innerHTML = '<a class="h5" href="' + location.origin + '/' + name + '"><img data-src="' + icon + '" src="' + uuid.defaultFavicon + '" /><br/>' + name + '</a>';
                     that.id.appendChild(cf);
 
                     var cfimg = cf.getElementsByTagName('img')[0];
@@ -225,7 +225,7 @@
                 //convert按钮
                 var btn = document.createElement('a');
                 btn.href = location.origin + "/convertbookmarks";
-                btn.className = "badge badge-primary float-right mr-2";
+                btn.className = "btn btn-sm btn-primary float-end me-2";
                 btn.title = "转换浏览器导出的书签（HTML）";
                 btn.style.fontSize = "1rem";
                 btn.innerHTML = 'Convert';
@@ -234,7 +234,7 @@
                 //token按钮
                 var btn = document.createElement('a');
                 btn.href = location.origin + "/_token";
-                btn.className = "badge badge-" + (that.token ? "success" : "dark") + " float-right mr-2";
+                btn.className = "btn btn-sm btn-" + (that.token ? "success" : "dark") + " float-end me-2";
                 btn.title = that.token ? "已设置token" : "未设置token，访问速率受限制";
                 btn.style.fontSize = "1rem";
                 btn.innerHTML = 'token';
@@ -244,7 +244,7 @@
                 that.getRepos(function (data) {
                     var btn = document.createElement('a');
                     btn.href = location.origin + "/_fork";
-                    btn.className = "badge badge-info float-right";
+                    btn.className = "btn btn-sm btn-dark float-end";
                     btn.style.fontSize = "1rem";
                     btn.innerHTML = 'Fork &nbsp;' + data.forks_count;
                     ind.insertBefore(btn, ind.firstChild);
@@ -258,17 +258,17 @@
         //搜索
         search: function () {
             var that = this;
+
             var ig = document.createElement('div');
-            ig.className = "input-group mt-2";
+            ig.className = "input-group input-group-sm mt-2";
             ig.style.width = "55%";
-            ig.innerHTML = '<div class="input-group-prepend">'
-                + '<select class="custom-select custom-select-sm" style="width:120px;" id="seGroup">'
-                + '<option value="">全部</option>'
-                + '</select>';
+            ig.innerHTML = '<div><select class="form-select" style="width:120px;" id="seGroup"><option value="">全部</option></select></div>';
+
             var sh = document.createElement("input");
-            sh.className = "form-control form-control-sm";
+            sh.className = "form-control";
             sh.style.width = "55%";
             sh.placeholder = "搜索，支持静默搜索";
+
             sh.oninput = function () {
                 var key = this.value.toLowerCase();
                 var cb = that.id.getElementsByClassName('card-body');
@@ -493,9 +493,9 @@
                             card.className = "card border-success my-3";
 
                             var cardhtml = [
-                                '<div class="card-header border-success"><a href="' + typelink + '" >' + type + '</a></div>',
+                                '<div class="card-header border-success"><a class="text-decoration-none" href="' + typelink + '" >' + type + '</a></div>',
                                 '<div class="card-body">',
-                                '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>',
+                                '<div class="spinner-border m-1" role="status"><span class="visually-hidden">Loading...</span></div>',
                                 '</div>'
                             ];
 
@@ -506,6 +506,7 @@
                             var seg = document.getElementById('seGroup');
 
                             seg.add(new Option(type));
+
 
                             //加载卡片下的链接，一个卡片对应一个文件
                             uuid.fetch(that, filesrc, function (data) {
@@ -579,18 +580,14 @@
             var dr = document.createElement("div");
             dr.style.cssText = "max-width:500px;margin:5% auto";
             var htm = [
-                '<h4 class="py-3">Personal access tokens（令牌）</h4>',
-                '<div class="form-group">',
-                '<input class="form-control form-control-lg" placeholder="粘贴 空token，长度40位" maxlength="40">',
-                '</div>',
-                '<div>',
-                '粘贴后，刷新你的uuid</br>',
-                '匿名访问有速率限制（GitHub每小时60次）</br>',
-                '如果超出限制会返回 <code>403</code> 错误</br>',
+                '<h4>Personal access tokens（令牌）</h4>',
+                '<input class="form-control form-control-lg my-3" placeholder="粘贴 空 token，长度 40 位" maxlength="40">',
+                '粘贴后，刷新你的 uuid</br>',
+                '匿名访问有速率限制（GitHub 每小时 60 次）</br>',
+                '如果超出限制会返回 <code>403</code> 错误 </br>',
                 '需要设置令牌（Personal access tokens）</br>',
-                '创建一个命名为 <code>empty</code> 的 <code>空令牌</code> （不用勾选任何项）</br>',
+                '创建一个命名为 <code>empty</code> 的 <code > 空令牌 </code> （不用勾选任何项）</br>',
                 '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>',
-                '</div>'
             ];
 
             dr.innerHTML = htm.join('');
@@ -640,7 +637,7 @@
     uuid.fn.init.prototype = uuid.fn;
 
     //默认的图标
-    uuid.defaultFavicon = "/src/net.svg";
+    uuid.defaultFavicon = "/favicon.ico";
     //默认源仓库
     uuid.defaultRepos = "/netnr/uuid";
     //默认配置文件

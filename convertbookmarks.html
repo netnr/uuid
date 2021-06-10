@@ -14,17 +14,14 @@
     <meta name="keywords" content="uuid收藏夹,书签,Bookmark" />
     <meta name="description" content="一个基于Git托管去中心化的收藏夹" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" />
 
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 my-2">
-                <div class="custom-file">
-                    <input type="file" id="txtFile" class="custom-file-input" />
-                    <label class="custom-file-label" for="txtFile">请选择浏览器导出的书签（HTML）</label>
-                </div>
+                <input type="file" id="txtFile" class="form-control" />
             </div>
             <div class="col-sm-12">
                 <div id="editor">Loading ...</div>
@@ -32,10 +29,8 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/netnrmd@2.6.3/src/netnrmd.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/netnrmd@2.6.3/src/netnrmd.bundle.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/netnrmd@3.0.0/src/netnrmd.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/netnrmd@3.0.0/src/netnrmd.bundle.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.24.0/min/vs/loader.js"></script>
 
@@ -43,24 +38,6 @@
 
         var cbk = {
             init: function () {
-                $('#txtFile').change(function () {
-                    var file = this.files[0];
-                    if (file) {
-                        var reader = new FileReader();
-                        reader.onload = function () {
-                            var mds = [];
-                            var $bm = $('<div></div>').append($(this.result));
-
-                            mds.push("# " + $bm.children('h1').html());
-                            mds.push('');
-
-                            cbk.treeEach($bm, mds);
-
-                            window.nmd.setmd(mds.join('\r\n'));
-                        };
-                        reader.readAsText(file);
-                    }
-                });
 
                 require.config({
                     paths: {
@@ -73,14 +50,32 @@
 
                     window.nmd = new netnrmd('#editor');
 
-                    $(window).on('load resize', function () {
-                        var vh = $(window).height() - nmd.obj.container.offset().top - 10;
-                        nmd.height(Math.max(100, vh));
-                    })
+                    document.querySelector('#txtFile').addEventListener('change', function () {
+                        var file = this.files[0];
+                        if (file) {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                var mds = [];
+                                var bm = netnrmd.createDom('div', null, e.target.result);
+                                mds.push("# " + bm.querySelector('h1').innerHTML);
+
+                                cbk.treeEach(bm, mds);
+
+                                window.nmd.setmd(mds.join('\r\n'));
+                            };
+                            reader.readAsText(file);
+                        }
+                    });
+
+                    cbk.resize();
+                    window.addEventListener('resize', function () {
+                        cbk.resize();
+                    }, false)
                 });
             },
-            treeEach: function ($bm, mds) {
-                $bm.children().each(function (i, n) {
+            treeEach: function (bm, mds) {
+                for (var i = 0; i < bm.children.length; i++) {
+                    var n = bm.children[i];
                     switch (n.nodeName) {
                         case "H3":
                             mds.push('');
@@ -88,20 +83,24 @@
                             break;
                         case "DL":
                         case "P":
-                            cbk.treeEach($(n), mds);
+                            cbk.treeEach(n, mds);
                             break;
                         case "DT":
                             {
-                                if ($(n).children().length == 1) {
-                                    var na = $(n).children('a');
-                                    mds.push('- [' + na.html().replace(/`/g,'\\`') + '](' + na.attr('href') + ')');
+                                if (n.children.length == 1) {
+                                    var na = n.querySelector('a');
+                                    mds.push('- [' + na.innerHTML.replace(/`/g, '\\`') + '](' + na.href + ')');
                                 } else {
-                                    cbk.treeEach($(n), mds);
+                                    cbk.treeEach(n, mds);
                                 }
                             }
                             break;
                     }
-                })
+                }
+            },
+            resize: function () {
+                var vh = document.documentElement.clientHeight - nmd.obj.container.getBoundingClientRect().top - 10;
+                nmd.height(Math.max(100, vh));
             }
         }
 
