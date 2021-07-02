@@ -1,8 +1,8 @@
 /*
  * by netnr
  * 
- * https://gitee.com/netnr/uuid
- * https://github.com/netnr/uuid
+ * https://gitee.com/netnr
+ * https://github.com/netnr
  */
 
 (function (window) {
@@ -196,7 +196,7 @@
         info: function () {
             var that = this;
             var ind = document.createElement("div");
-            ind.className = "mt-3 mb-4";
+            ind.className = "row mt-3";
             this.id.appendChild(ind);
             this.getUser(function (data) {
                 data = JSON.parse(data);
@@ -208,46 +208,34 @@
 
                 var nhref = "https://" + that.githost + ".com/";
 
-                var indhtm = [];
-                indhtm.push('<img class="uphoto" src="' + data.avatar_url + '" onerror="this.src=\'/favicon.ico\';this.onerror=null;" />');
-                indhtm.push('<a class="text-muted h4" href="' + nhref + data.login + '">' + data.login + '</a><br/>');
-                var blog = data.blog;
+                var blog = data.blog, bloghtml;
                 if (blog) {
                     blog = blog.indexOf('//') > 0 ? blog : ('http://' + blog);
-                    indhtm.push('<a class="small" href="' + blog + '">' + data.blog + '</a>');
+                    bloghtml = '<a class="small" href="' + blog + '">' + data.blog + '</a>';
                 } else {
-                    indhtm.push('<a class="small text-muted">no blog</a>');
+                    bloghtml = '<a class="small text-muted">no blog</a>';
                 }
-                ind.innerHTML = indhtm.join('');
+
+                ind.innerHTML = `
+                    <div class="col-md-auto mb-2">
+                        <img class="uphoto" src="${data.avatar_url}" onerror="this.src=\'/favicon.ico\';this.onerror=null;" />
+                    </div>
+                    <div class="col-md mb-2">
+                        <div class="mb-1"><a class="text-muted h4" href="${nhref + data.login}">${data.login}</a></div>
+                        <div class="mb-3">${bloghtml}</div>
+                    </div>
+                    <div class="col-md-2 mb-2 text-end">
+                        <a href="/convertbookmarks" class="mb-2 btn btn-sm btn-primary" title="转换浏览器导出的书签（HTML）">Convert</a>
+                        <a href="/_token" class="mb-2 btn btn-sm btn-${(that.token ? "success" : "secondary")}" title="${that.token ? '已设置token' : '未设置token，访问速率受限制'}">Token</a>
+                        <a href="/_fork" class="mb-2 btn btn-sm btn-dark nr-btn-fork">Fork</a>
+                    </div>
+                `;
 
                 that.search();
 
-                //convert按钮
-                var btn = document.createElement('a');
-                btn.href = location.origin + "/convertbookmarks";
-                btn.className = "btn btn-sm btn-primary float-end me-2";
-                btn.title = "转换浏览器导出的书签（HTML）";
-                btn.style.fontSize = "1rem";
-                btn.innerHTML = 'Convert';
-                ind.insertBefore(btn, ind.firstChild);
-
-                //token按钮
-                var btn = document.createElement('a');
-                btn.href = location.origin + "/_token";
-                btn.className = "btn btn-sm btn-" + (that.token ? "success" : "dark") + " float-end me-2";
-                btn.title = that.token ? "已设置token" : "未设置token，访问速率受限制";
-                btn.style.fontSize = "1rem";
-                btn.innerHTML = 'token';
-                ind.insertBefore(btn, ind.firstChild);
-
                 //fork按钮
                 that.getRepos(function (data) {
-                    var btn = document.createElement('a');
-                    btn.href = location.origin + "/_fork";
-                    btn.className = "btn btn-sm btn-dark float-end";
-                    btn.style.fontSize = "1rem";
-                    btn.innerHTML = 'Fork &nbsp;' + data.forks_count;
-                    ind.insertBefore(btn, ind.firstChild);
+                    ind.querySelector('.nr-btn-fork').innerHTML = 'Fork &nbsp;' + data.forks_count;
                 })
 
                 that.build();
@@ -260,14 +248,13 @@
             var that = this;
 
             var ig = document.createElement('div');
-            ig.className = "input-group input-group-sm mt-2";
-            ig.style.width = "55%";
-            ig.innerHTML = '<div><select class="form-select" style="width:120px;" id="seGroup"><option value="">全部</option></select></div>';
+            ig.className = "row";
+            ig.innerHTML = `
+                <div class="col-auto"><select class="form-select" id="seGroup"><option value="">全部</option></select></div>
+                <div class="col"><input class="form-control" placeholder="搜索，支持静默搜索"/></div>
+            `;
 
-            var sh = document.createElement("input");
-            sh.className = "form-control";
-            sh.style.width = "55%";
-            sh.placeholder = "搜索，支持静默搜索";
+            var sh = ig.querySelector("input");
 
             sh.oninput = function () {
                 var key = this.value.toLowerCase();
@@ -288,8 +275,7 @@
             }
             sh.title = "静默搜索，支持快捷方式：Esc、↑、↓、Enter，可直达网址";
 
-            ig.appendChild(sh)
-            that.id.firstChild.appendChild(ig);
+            that.id.firstElementChild.children[1].appendChild(ig);
 
             //分类选择
             document.getElementById('seGroup').onchange = function () {
@@ -490,7 +476,7 @@
 
                             //创建卡片
                             var card = document.createElement("div");
-                            card.className = "card border-success my-3";
+                            card.className = "card border-success mb-3";
 
                             var cardhtml = [
                                 '<div class="card-header border-success"><a class="text-decoration-none" href="' + typelink + '" >' + type + '</a></div>',
