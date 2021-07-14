@@ -564,7 +564,7 @@
         tokens: function () {
             document.title += "-token";
             var dr = document.createElement("div");
-            dr.style.cssText = "max-width:500px;margin:5% auto";
+            dr.style.cssText = "max-width:600px;margin:5% auto";
             var htm = [
                 '<h4>Personal access tokens（令牌）</h4>',
                 '<input class="form-control form-control-lg my-3" placeholder="粘贴 空 token，长度 40 位" maxlength="40">',
