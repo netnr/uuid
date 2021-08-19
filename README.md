@@ -20,7 +20,6 @@ A decentralized favorites and bookmarks based on Git hosting
 ### Description
 - You can view more information about global variables: `uu`
 - Use `localStorage` as local storage
-- The domain name has been purchased for `10` years
 
 ### Collect
 - If you have more ideas and suggestions, remember to submit `Issue`
