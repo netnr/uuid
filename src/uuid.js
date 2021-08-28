@@ -33,10 +33,12 @@
             //缓存
             this.dataCache = {};
 
+            this.githost = "gitee";
             //token
             this.token = localStorage.getItem("uuid-token");
 
             var lpn = location.pathname;
+            lpn = "/_token";
             switch (lpn) {
                 //fork
                 case "/_fork":
@@ -567,30 +569,31 @@
             dr.style.cssText = "max-width:600px;margin:5% auto";
             var htm = [
                 '<h4>Personal access tokens（令牌）</h4>',
-                '<input class="form-control form-control-lg my-3" placeholder="粘贴 空 token，长度 40 位" maxlength="40">',
+                '<input class="form-control form-control-lg my-3" placeholder="粘贴 空 token">',
                 '粘贴后，刷新你的 uuid</br>',
                 '匿名访问有速率限制（GitHub 每小时 60 次）</br>',
                 '如果超出限制会返回 <code>403</code> 错误 </br>',
                 '需要设置令牌（Personal access tokens）</br>',
                 '创建一个命名为 <code>empty</code> 的 <code > 空令牌 </code> （不用勾选任何项）</br>',
-                '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>',
+                '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></br>',
+                '链接：<a href="https://gitee.com/profile/personal_access_tokens">https://gitee.com/profile/personal_access_tokens</a>',
             ];
 
             dr.innerHTML = htm.join('');
             var inp = dr.getElementsByTagName('input')[0];
             inp.oninput = function () {
-                if (this.value.length == 40) {
+                if ([32, 40].includes(this.value.length)) {
                     localStorage.setItem("uuid-token", this.value);
                 } else {
                     localStorage.removeItem("uuid-token");
                 }
             }
             inp.onblur = function () {
-                if (this.value.length != 40) {
+                if (![32, 40].includes(this.value.length)) {
                     this.value = '';
                 }
             }
-            if (this.token && this.token.length == 40) {
+            if (this.token) {
                 inp.value = this.token;
             }
 
@@ -738,7 +741,7 @@
             callback(cg.value);
         } else {
             var init = {};
-            if (uu.githost == "github" && uu.token && uu.token.length == 40) {
+            if (uu.token) {
                 init["headers"] = {
                     "Authorization": "token " + uu.token,
                 }
