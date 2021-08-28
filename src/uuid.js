@@ -33,7 +33,6 @@
             //缓存
             this.dataCache = {};
 
-            this.githost = "gitee";
             //token
             this.token = localStorage.getItem("uuid-token");
 
