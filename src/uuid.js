@@ -1,7 +1,6 @@
 /*
  * by netnr
  * 
- * https://gitee.com/netnr
  * https://github.com/netnr
  */
 
@@ -18,25 +17,15 @@
             //容器
             this.id = ops.id || document.querySelector(".uuidbox");
             //git托管
-            this.githost = ops.githost;
-            if (!this.githost) {
-                var hts = location.host.split('.');
-                if (hts.length == 3) {
-                    this.githost = hts[0].toLowerCase();
-                }
-            }
-            if (this.githost && this.githost.indexOf("gitee") >= 0) {
-                this.githost = "gitee";
-            } else {
-                this.githost = "github";
-            }
+            this.githost = localStorage.getItem("uuid-githost") || "github";
+            //token
+            this.token = localStorage.getItem("uuid-token-" + this.githost);
+
             //缓存
             this.dataCache = {};
 
-            //token
-            this.token = localStorage.getItem("uuid-token");
-
             var lpn = location.pathname;
+            //lpn = "/_token";
             switch (lpn) {
                 //fork
                 case "/_fork":
@@ -85,7 +74,7 @@
                     break;
             }
 
-            var cacheRepos = uuid.cacheGet(that.name, src);
+            var cacheRepos = uuid.cacheGet(that.githost, that.name, src);
             uuid.fetch(this, src, function (data) {
                 //仓库未更新
                 var nochange = cacheRepos.ok && cacheRepos.value.updated_at == data.updated_at;
@@ -93,7 +82,7 @@
                 if (udata && udata != "") {
                     var ujson = JSON.parse(udata);
                     for (var i in ujson) {
-                        if (i.indexOf("__create_time__") == 0) {
+                        if (i.indexOf("__create__") == 0) {
                             if (i.indexOf("/contents/") >= 0 || i.indexOf("/git/trees/master?recursive=1") >= 0) {
                                 //未更新，延长缓存过期；已更新，设置超出缓存时间
                                 ujson[i] = nochange ? new Date().valueOf() : 946656000000;
@@ -108,7 +97,7 @@
                     if (udata && udata != "") {
                         var ujson = JSON.parse(udata);
                         for (var i in ujson) {
-                            if (i.indexOf("__create_time__") == 0) {
+                            if (i.indexOf("__create__") == 0) {
                                 if (i.indexOf("/contents/") >= 0 || i.indexOf("/git/trees/master?recursive=1") >= 0) {
                                     ujson[i] = new Date().valueOf();
                                 }
@@ -220,16 +209,36 @@
                     <div class="col-md-auto mb-2">
                         <img class="uphoto" src="${data.avatar_url}" onerror="this.src=\'/favicon.ico\';this.onerror=null;" />
                     </div>
-                    <div class="col-md mb-2">
-                        <div class="mb-1"><a class="text-muted h4" href="${nhref + data.login}">${data.login}</a></div>
-                        <div class="mb-3">${bloghtml}</div>
+                    <div class="col-md-auto mb-2">
+                        <div class=""><a class="text-muted h5" href="${nhref + data.login}">${data.login}</a></div>
+                        <div class="">${bloghtml}</div>
                     </div>
-                    <div class="col-md-2 mb-2 text-end">
-                        <a href="/convertbookmarks" class="mb-2 btn btn-sm btn-primary" title="转换浏览器导出的书签（HTML）">Convert</a>
-                        <a href="/_token" class="mb-2 btn btn-sm btn-${(that.token ? "success" : "secondary")}" title="${that.token ? '已设置token' : '未设置token，访问速率受限制'}">Token</a>
-                        <a href="/_fork" class="mb-2 btn btn-sm btn-dark nr-btn-fork">Fork</a>
+                    <div class="col-auto mb-2"><select class="form-select form-select-lg nrGroup"><option value="">全部</option></select></div>
+                    <div class="col-auto mb-2"><input class="form-control form-control-lg nr-txtSearch" placeholder="搜索，支持静默搜索"/></div>                    
+                    <div class="col-auto mb-2">
+                        <a href="/convertbookmarks" class="btn btn-lg btn-primary" title="转换浏览器导出的书签（HTML）">Convert</a>
+                    </div>
+                    <div class="col-auto mb-2">
+                        <a href="/_token" class="btn btn-lg btn-${(that.token ? "success" : "secondary")}" title="${that.token ? '已设置token' : '未设置token，访问速率受限制'}">Token</a>
+                    </div>
+                    <div class="col-auto mb-2">
+                        <a href="/_fork" class="btn btn-lg btn-dark nr-btn-fork">Fork</a>
+                    </div>
+                    <div class="col-auto mb-2">
+                        <select class="form-select form-select-lg nrSource">
+                            <optgroup label="选择源">
+                                <option value="github">GitHub</option>
+                                <option value="gitee">Gitee</option>
+                            </optgroup>
+                        </select>
                     </div>
                 `;
+
+                document.querySelector('.nrSource').onchange = function () {
+                    localStorage.setItem("uuid-githost", this.value);
+                    location.reload(false);
+                }
+                document.querySelector('.nrSource').value = that.githost;
 
                 that.search();
 
@@ -247,14 +256,7 @@
         search: function () {
             var that = this;
 
-            var ig = document.createElement('div');
-            ig.className = "row";
-            ig.innerHTML = `
-                <div class="col-auto"><select class="form-select" id="seGroup"><option value="">全部</option></select></div>
-                <div class="col"><input class="form-control" placeholder="搜索，支持静默搜索"/></div>
-            `;
-
-            var sh = ig.querySelector("input");
+            var sh = document.querySelector('.nr-txtSearch');
 
             sh.oninput = function () {
                 var key = this.value.toLowerCase();
@@ -275,10 +277,8 @@
             }
             sh.title = "静默搜索，支持快捷方式：Esc、↑、↓、Enter，可直达网址";
 
-            that.id.firstElementChild.children[1].appendChild(ig);
-
             //分类选择
-            document.getElementById('seGroup').onchange = function () {
+            document.querySelector('.nrGroup').onchange = function () {
                 var cards = document.querySelectorAll('.card');
                 for (var i = 0; i < cards.length; i++) {
                     var ci = cards[i];
@@ -489,7 +489,7 @@
                             //显示卡片
                             that.id.appendChild(card);
                             //卡片追加到选择框
-                            var seg = document.getElementById('seGroup');
+                            var seg = document.querySelector('.nrGroup');
 
                             seg.add(new Option(type));
 
@@ -567,33 +567,30 @@
             dr.style.cssText = "max-width:600px;margin:5% auto";
             var htm = [
                 '<h4>Personal access tokens（令牌）</h4>',
-                '<input class="form-control form-control-lg my-3" placeholder="粘贴 空 token">',
                 '粘贴后，刷新你的 uuid</br>',
                 '匿名访问有速率限制（GitHub 每小时 60 次）</br>',
                 '如果超出限制会返回 <code>403</code> 错误 </br>',
-                '需要设置令牌（Personal access tokens）</br>',
-                '创建一个命名为 <code>empty</code> 的 <code > 空令牌 </code> （不用勾选任何项）</br>',
-                '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></br>',
-                '链接：<a href="https://gitee.com/profile/personal_access_tokens">https://gitee.com/profile/personal_access_tokens</a>',
+                '<input class="form-control form-control-lg my-3 nr-token-github" placeholder="GitHub Token">',
+                '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>',
+                '<input class="form-control form-control-lg my-3 nr-token-gitee" placeholder="Gitee Token">',
+                '链接：<a href="https://gitee.com/profile/personal_access_tokens">https://gitee.com/profile/personal_access_tokens</a>'
             ];
 
             dr.innerHTML = htm.join('');
-            var inp = dr.getElementsByTagName('input')[0];
-            inp.oninput = function () {
-                if ([32, 40].includes(this.value.length)) {
-                    localStorage.setItem("uuid-token", this.value);
-                } else {
-                    localStorage.removeItem("uuid-token");
+
+            dr.querySelectorAll('input').forEach(inp => {
+                inp.oninput = function () {
+                    var gs = this.className.includes("github") ? "github" : "gitee";
+                    if (this.value.length > 30) {
+                        localStorage.setItem("uuid-token-" + gs, this.value);
+                    } else {
+                        localStorage.removeItem("uuid-token-" + gs);
+                    }
                 }
-            }
-            inp.onblur = function () {
-                if (![32, 40].includes(this.value.length)) {
-                    this.value = '';
-                }
-            }
-            if (this.token) {
-                inp.value = this.token;
-            }
+            });
+
+            dr.querySelector('.nr-token-github').value = localStorage.getItem("uuid-token-github") || "";
+            dr.querySelector('.nr-token-gitee').value = localStorage.getItem("uuid-token-gitee") || "";
 
             this.id.appendChild(dr);
         },
@@ -617,7 +614,7 @@
         },
         //清除当前用户的本地存储
         cacheClear: function () {
-            uuid.cacheClear(this.name);
+            uuid.cacheClear(this.githost, this.name);
         }
     }
 
@@ -671,17 +668,18 @@
 
     /**
      * 获取本地存储记录
+     * @param {any} githost 源
      * @param {any} name 账号
      * @param {any} key 键
      */
-    uuid.cacheGet = function (name, key) {
+    uuid.cacheGet = function (githost, name, key) {
         var result = { ok: false, value: null };
 
-        var udata = localStorage.getItem("uuid_" + name);
+        var udata = localStorage.getItem(`uuid-${githost}-${name}`);
         if (udata && udata != "") {
             var ujson = JSON.parse(udata);
             //缓存3天
-            result.ok = new Date().valueOf() - ujson["__create_time__" + key] < 1000 * 3600 * 24 * 3;
+            result.ok = new Date().valueOf() - ujson["__create__" + key] < 1000 * 3600 * 24 * 3;
             //值
             result.value = ujson[key];
         }
@@ -690,27 +688,29 @@
 
     /**
      * 设置本地存储记录
+     * @param {any} githost 源
      * @param {any} name 账号
      * @param {any} key 键
      * @param {any} value 值
      */
-    uuid.cacheSet = function (name, key, value) {
-        var udata = localStorage.getItem("uuid_" + name);
+    uuid.cacheSet = function (githost, name, key, value) {
+        var udata = localStorage.getItem(`uuid-${githost}-${name}`);
         var ujson = {};
         if (udata && udata != "") {
             ujson = JSON.parse(udata);
         }
-        ujson["__create_time__" + key] = new Date().valueOf();
+        ujson["__create__" + key] = new Date().valueOf();
         ujson[key] = value;
-        localStorage.setItem("uuid_" + name, JSON.stringify(ujson));
+        localStorage.setItem(`uuid-${githost}-${name}`, JSON.stringify(ujson));
     };
 
     /**
      * 清除当前用户的本地存储
+     * @param {any} githost 源
      * @param {any} name 账号
      */
-    uuid.cacheClear = function (name) {
-        localStorage.removeItem("uuid_" + name);
+    uuid.cacheClear = function (githost, name) {
+        localStorage.removeItem(`uuid-${githost}-${name}`);
         location.reload(false);
     }
 
@@ -733,13 +733,13 @@
      */
     uuid.fetch = function (uu, src, callback, dataType, error) {
         //优先取缓存
-        var cg = uuid.cacheGet(uu.name, src);
+        var cg = uuid.cacheGet(uu.githost, uu.name, src);
         if (cg.ok && cg.value) {
             uu.iscache = true;
             callback(cg.value);
         } else {
             var init = {};
-            if (uu.token) {
+            if (uu.token && uu.token.length > 30) {
                 init["headers"] = {
                     "Authorization": "token " + uu.token,
                 }
@@ -768,7 +768,7 @@
             }).then(function (data) {
                 uu.iscache = false;
                 callback(data);
-                uuid.cacheSet(uu.name, src, data);
+                uuid.cacheSet(uu.githost, uu.name, src, data);
             }).catch(function (e) {
                 if (cg.value) {
                     uu.iscache = true;

@@ -1,7 +1,6 @@
 ﻿/*头像*/
 .uuidbox .uphoto {
-    width: 120px;
-    height: 120px;
+    max-height: 50px;
     border-radius: 6px;
 }
 
