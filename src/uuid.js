@@ -38,7 +38,6 @@
             this.token = localStorage.getItem("uuid-token");
 
             var lpn = location.pathname;
-            lpn = "/_token";
             switch (lpn) {
                 //fork
                 case "/_fork":

@@ -16,10 +16,6 @@
     - <https://uuid.fun/netnr>
     - <https://uuid.fun/netnr/uuid>
     - <https://uuid.fun/netnr/uuid/libs>
-- 查看（Gitee）
-    - <https://gitee.uuid.fun>
-    - <https://gitee.uuid.fun/netnr>
-    - <https://gitee.uuid.fun/{name}/{repos}/{libs}>
 
 ### 说明
 - 可查看全局变量更多信息：`uu`
@@ -29,5 +25,4 @@
 - 如有更多的想法和建议，记得提交`Issue`
 
 ### 源码
-- <https://gitee.com/netnr/uuid>
 - <https://github.com/netnr/uuid>

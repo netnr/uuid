@@ -25,5 +25,4 @@ A decentralized favorites and bookmarks based on Git hosting
 - If you have more ideas and suggestions, remember to submit `Issue`
 
 ### Source code
-- <https://gitee.com/netnr/uuid>
 - <https://github.com/netnr/uuid>
