@@ -184,34 +184,14 @@
         //个人信息
         info: function () {
             var that = this;
+
             var ind = document.createElement("div");
             ind.className = "row mt-3";
-            this.id.appendChild(ind);
-            this.getUser(function (data) {
-                data = JSON.parse(data);
-                if (!data.login) {
-                    return;
-                }
-
-                document.title += " (" + data.login + ")";
-
-                var nhref = "https://" + that.githost + ".com/";
-
-                var blog = data.blog, bloghtml;
-                if (blog) {
-                    blog = blog.indexOf('//') > 0 ? blog : ('http://' + blog);
-                    bloghtml = '<a class="small" href="' + blog + '">' + data.blog + '</a>';
-                } else {
-                    bloghtml = '<a class="small text-muted">no blog</a>';
-                }
-
-                ind.innerHTML = `
+            ind.innerHTML = `
                     <div class="col-md-auto mb-2">
-                        <img class="uphoto" src="${data.avatar_url}" onerror="this.src=\'/favicon.ico\';this.onerror=null;" />
+                        <img class="uphoto" src="/favicon.ico" onerror="this.src=\'/favicon.ico\';this.onerror=null;" />
                     </div>
-                    <div class="col-md-auto mb-2">
-                        <div class=""><a class="text-muted h5" href="${nhref + data.login}">${data.login}</a></div>
-                        <div class="">${bloghtml}</div>
+                    <div class="col-md-auto mb-2 nr-meinfo">
                     </div>
                     <div class="col-auto mb-2"><select class="form-select form-select-lg nrGroup"><option value="">全部</option></select></div>
                     <div class="col-auto mb-2"><input class="form-control form-control-lg nr-txtSearch" placeholder="搜索，支持静默搜索"/></div>                    
@@ -234,13 +214,40 @@
                     </div>
                 `;
 
-                document.querySelector('.nrSource').onchange = function () {
-                    localStorage.setItem("uuid-githost", this.value);
-                    location.reload(false);
-                }
-                document.querySelector('.nrSource').value = that.githost;
+            ind.querySelector('.nrSource').onchange = function () {
+                localStorage.setItem("uuid-githost", this.value);
+                location.reload(false);
+            }
+            ind.querySelector('.nrSource').value = that.githost;
 
-                that.search();
+            this.id.appendChild(ind);
+
+            that.search();
+
+            this.getUser(function (data) {
+                data = JSON.parse(data);
+                if (!data.login) {
+                    return;
+                }
+
+                document.title += " (" + data.login + ")";
+
+                var nhref = "https://" + that.githost + ".com/";
+
+                var blog = data.blog, bloghtml;
+                if (blog) {
+                    blog = blog.indexOf('//') > 0 ? blog : ('http://' + blog);
+                    bloghtml = '<a class="small" href="' + blog + '">' + data.blog + '</a>';
+                } else {
+                    bloghtml = '<a class="small text-muted">no blog</a>';
+                }
+
+                //头像、名称、链接
+                ind.querySelector('.uphoto').src = data.avatar_url;
+                ind.querySelector('.nr-meinfo').innerHTML = `
+                <div><a class="text-muted h5" href="${nhref + data.login}">${data.login}</a></div>
+                <div>${bloghtml}</div>
+                `;
 
                 //fork按钮
                 that.getRepos(function (data) {
