@@ -1,28 +1,26 @@
 # uuid
-A decentralized favorites and bookmarks based on Git hosting
+一个基于 Git 托管去中心化的收藏夹，书签
 
-### [CHANGELOG](CHANGELOG.md)
+### Demo
+https://uuid.fun  
+https://uuid.netnr.eu.org
 
-### Use
-- Fork warehouse (or create a warehouse yourself)
-- Modify the `md` file in the `libs` directory
-    - One line corresponds to one link, including link, text, icon
-    - The icon defaults to the link main domain name + favicon.ico, or a custom icon address starting with a space + `http` after the text
-- View (GitHub)
-    - <https://uuid.fun/{name}>, `{name}` is your account, the default is `netnr`
-    - <https://uuid.fun/{name}/{repos}/{libs}>, `{repos}` repository, default `uuid`; `{libs}` root folder, default `libs`
-    -  Such as:
+### 使用
+- Fork 仓库（或者自己创建仓库）
+- 修改 `libs` 目录下的 `md` 文件
+    - 一行对应一个链接，包含链接、文本
+- 查看（GitHub）
+    - <https://uuid.fun/{name}>，`{name}` 是你的账号，默认 `netnr`
+    - <https://uuid.fun/{name}/{repos}/{libs}>，`{repos}` 仓库，默认 `uuid`；`{libs}` 根文件夹，默认 `libs`
+    - 如：
     - <https://uuid.fun>
     - <https://uuid.fun/netnr>
     - <https://uuid.fun/netnr/uuid>
     - <https://uuid.fun/netnr/uuid/libs>
 
-### Description
-- You can view more information about global variables: `uu`
-- Use `localStorage` as local storage
+### 说明
+- 可查看全局变量更多信息：`uu`
+- 以 `localStorage` 作为本地存储
 
-### Collect
-- If you have more ideas and suggestions, remember to submit `Issue`
-
-### Source code
+### 源码
 - <https://github.com/netnr/uuid>
