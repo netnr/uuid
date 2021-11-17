@@ -14,43 +14,29 @@
 
     <meta name="keywords" content="uuid收藏夹,书签,Bookmark" />
     <meta name="description" content="一个基于Git托管去中心化的收藏夹" />
-
-    <link rel="stylesheet" href="https://npm.elemecdn.com/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
-
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 my-2">
-                <input type="file" id="txtFile" class="form-control" />
-            </div>
-            <div class="col-sm-12">
-                <div id="editor">Loading ...</div>
-            </div>
-        </div>
+    <input type="file" id="txtFile" style="margin-bottom:5px" />
+    <div>
+        <div id="editor">Loading ...</div>
     </div>
 
-    <link href="https://npm.elemecdn.com/netnrmd@3.0.0/src/netnrmd.css" rel="stylesheet" />
-    <script src="https://npm.elemecdn.com/netnrmd@3.0.0/src/netnrmd.bundle.js"></script>
+    <link href="https://npm.elemecdn.com/netnrmd@3.0.2/src/netnrmd.css" rel="stylesheet" />
+    <script src="https://npm.elemecdn.com/netnrmd@3.0.2/src/netnrmd.bundle.js"></script>
 
-    <script src="https://npm.elemecdn.com/monaco-editor@0.29.1/min/vs/loader.js"></script>
+    <script src="https://npm.elemecdn.com/monaco-editor@0.30.1/min/vs/loader.js"></script>
 
     <script>
+        require.config({
+            paths: {
+                vs: "https://npm.elemecdn.com/monaco-editor@0.30.1/min/vs"
+            },
+            'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
+        });
+
         var cbk = {
             init: function () {
-
-                require.config({
-                    paths: {
-                        vs: "https://npm.elemecdn.com/monaco-editor@0.29.1/min/vs"
-                    },
-                    'vs/nls': {
-                        availableLanguages: {
-                            '*': 'zh-cn'
-                        }
-                    }
-                });
-
                 require(['vs/editor/editor.main'], function () {
 
                     window.nmd = new netnrmd('#editor');
