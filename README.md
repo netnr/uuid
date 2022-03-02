@@ -2,8 +2,7 @@
 一个基于 Git 托管去中心化的收藏夹，书签
 
 ### Demo
-https://uuid.fun  
-https://uuid.netnr.eu.org
+https://uuid.fun
 
 ### 使用
 - Fork 仓库（或者自己创建仓库）
@@ -21,6 +20,3 @@ https://uuid.netnr.eu.org
 ### 说明
 - 可查看全局变量更多信息：`uu`
 - 以 `localStorage` 作为本地存储
-
-### 源码
-- <https://github.com/netnr/uuid>

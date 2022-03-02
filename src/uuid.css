@@ -4,6 +4,10 @@
     border-radius: 6px;
 }
 
+    .uuidbox .uphoto:hover {
+        animation: myrotate 4s infinite linear;
+    }
+
 /*透明*/
 .uuidbox .card, .uuidbox input {
     background-color: rgba(255, 255, 255, 0.66);
@@ -20,6 +24,9 @@
 
     .uuidbox .card-body a {
         float: left;
+        max-width: 25em;
+        overflow: hidden;
+        text-overflow: ellipsis;
         border-radius: 6px;
         white-space: nowrap;
         padding: .4rem .8rem;
@@ -41,13 +48,13 @@
 /*静默搜索*/
 .uuidjump {
     position: fixed;
-    top: 2%;
+    top: 8%;
     width: 90%;
-    max-width: 500px;
-    border-radius: 6px;
-    border: 1px solid #d6efcc;
-    box-shadow: 0px 2px 6px 0px;
-    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    background-color: rgba(255, 255, 255, 0.99);
 }
 
     .uuidjump > div {
@@ -66,6 +73,9 @@
         .uuidjump ul li {
             width: 100%;
             color: #666;
+            height: 2em;
+            display: flex;
+            align-items: center;
             cursor: pointer;
             list-style: none;
             border-bottom: 1px solid #ddd;
@@ -76,7 +86,6 @@
             }
 
             .uuidjump ul li.active {
-                font-weight: 600;
                 background-color: #fbe1c0;
             }
 
@@ -121,7 +130,7 @@
     }
 
         .uuidbox .card-fork img:hover {
-            animation: myrotate 5s infinite linear;
+            animation: myrotate 4s infinite linear;
         }
 
 

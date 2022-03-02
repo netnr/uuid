@@ -140,7 +140,7 @@
         //显示fork列表
         forkList: function () {
             var that = this;
-            document.title += "-fork";
+            document.title = "fork - uuid";
             this.getFork(function (data) {
 
                 if (data.length) {
@@ -186,7 +186,7 @@
             var that = this;
 
             var ind = document.createElement("div");
-            ind.className = "row mt-3";
+            ind.className = "row mt-3 mb-1";
             ind.innerHTML = `
                     <div class="col-md-auto mb-2">
                         <img class="uphoto" src="/favicon.ico" onerror="this.src=\'/favicon.ico\';this.onerror=null;" />
@@ -230,7 +230,7 @@
                     return;
                 }
 
-                document.title += " (" + data.login + ")";
+                document.title = `${data.login} - uuid`;
 
                 var nhref = "https://" + that.githost + ".com/";
 
@@ -420,7 +420,7 @@
                         htm.push('</li>')
                     }
                 }
-                var jnhtml = '<div class="h4 py-1 px-3">' + that.dataCache.jumpkey + '</div>';
+                var jnhtml = '<div class="h3 pt-2 px-3">' + that.dataCache.jumpkey + '</div>';
                 if (htm.length) {
                     jnhtml = jnhtml + "<ul>" + htm.join('') + "</ul>";
                 }
@@ -512,13 +512,11 @@
                                     //满足Markdown的链接格式，有效行
                                     if (/\[.*?\]\(http.*?\)/.test(line)) {
                                         //A标签显示的文本、图标、链接
-                                        var atext, aicon, ahref, atitle = '';
+                                        var atext, aicon, ahref;
                                         line.replace(/\(http.*?\)/, function (x) {
                                             if (/\(http.*?\ /.test(x)) {
                                                 line.replace(/\(http.*?\ /, function (y) {
                                                     ahref = y.substring(1).trim();
-                                                    atitle = x.replace(y, "");
-                                                    atitle = atitle.substring(1, atitle.length - 2).trim();
                                                 })
                                             } else {
                                                 ahref = x.substring(1, x.length - 1).trim();
@@ -537,7 +535,7 @@
                                         }
 
                                         var svgicon = uuid.iconident(ahref, 18);
-                                        ahtm.push('<a href="' + ahref + '" title="' + that.se(atitle) + '">' + svgicon + ' ' + atext + '</a>');
+                                        ahtm.push('<a href="' + ahref + '" title="' + that.se(atext) + '">' + svgicon + ' ' + atext + '</a>');
                                     }
                                 })
                                 card.lastChild.innerHTML = ahtm.join('');
@@ -569,7 +567,7 @@
         },
         //设置token
         tokens: function () {
-            document.title += "-token";
+            document.title = "token - uuid";
             var dr = document.createElement("div");
             dr.style.cssText = "max-width:600px;margin:5% auto";
             var htm = [
