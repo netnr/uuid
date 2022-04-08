@@ -27,3 +27,5 @@
 - [free-for.dev](https://free-for.dev)
 - [jsonapi](https://www.jsonapi.co)
 - [JSON Keeper](https://jsonkeeper.com)
+- [阿里云轻量服务器](https://common-buy.aliyun.com/?commodityCode=swas&regionId=cn-hongkong)
+- [国外主机测评](https://www.zhujiceping.com)

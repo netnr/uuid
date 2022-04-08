@@ -12,7 +12,7 @@
 - [IPv6 测试](https://test-ipv6.com)
 - [IPv6 test](https://ipv6-test.com)
 - [http3check](https://http3check.net)
-- [Geekflare](https://gf.dev)
+- [Geekflare](https://geekflare.com "gf.dev")
 - [Try.NET](https://try.dot.net)
 - [FreeConvert](https://www.freeconvert.com)
 - [Office Convert](https://cn.office-converter.com)

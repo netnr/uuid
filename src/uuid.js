@@ -193,7 +193,7 @@
                     </div>
                     <div class="col-md-auto mb-2 nr-meinfo">
                     </div>
-                    <div class="col-auto mb-2"><select class="form-select form-select-lg nrGroup"><option value="">全部</option></select></div>
+                    <div class="col-auto mb-2"><select class="form-select form-select-lg nrGroup"><option value="">All</option></select></div>
                     <div class="col-auto mb-2"><input class="form-control form-control-lg nr-txtSearch" placeholder="搜索，支持静默搜索"/></div>                    
                     <div class="col-auto mb-2">
                         <a href="/convertbookmarks" class="btn btn-lg btn-primary" title="转换浏览器导出的书签（HTML）">Convert</a>

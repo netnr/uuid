@@ -1,2 +1,0 @@
-- [阿里云轻量服务器](https://common-buy.aliyun.com/?commodityCode=swas&regionId=cn-hongkong)
-- [国外主机测评](https://www.zhujiceping.com)
