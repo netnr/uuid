@@ -3,6 +3,7 @@
 - [TinyPNG](https://tinypng.com "图片压缩")
 - [Squoosh 图片压缩](https://tiny.netnr.eu.org)
 - [Photoshop](https://www.uupoop.com/#/old "在线 PS")
+- [佐糖](https://picwish.cn "抠图 证件照换底色 照片修复 压缩")
 - [Transparent PNG](https://png-pixel.com "透明的 PNG 像素 Base64 编码")
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
 - [Firefox Monitor](https://monitor.firefox.com)
@@ -49,3 +50,4 @@
 - [QUIC TEST](https://quic.nginx.org/quic.html)
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
 - [Code Beautify](https://codebeautify.org)
+- [小鹿快传](https://deershare.com "P2P 文件传输")

@@ -76,7 +76,6 @@
 - [斗酒相逢](https://djxf.github.io)
 - [Zhu.Yang](https://generalthink.github.io)
 - [何晓东](https://alpha2016.github.io)
-- [樱花雨](http://bidd.net)
 - [白俊遥](https://baijunyao.com)
 - [hyperxu](https://www.hyperxu.com)
 - [鱼喃](https://blog.newnius.com)

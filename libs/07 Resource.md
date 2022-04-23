@@ -3,6 +3,7 @@
 - [npm](https://www.npmjs.com)
 - [nodejs](https://nodejs.org/en)
 - [MSDN 我告诉你](https://msdn.itellyou.cn)
+- [UUP dump](https://uupdump.net)
 - [KMS 激活](https://kms.netnr.eu.org)
 - [Visual Studio Marketplace](https://marketplace.visualstudio.com)
 - [Bmob 后端云](https://www.bmob.cn)
