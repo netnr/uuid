@@ -3,6 +3,7 @@
 - [TinyPNG](https://tinypng.com "图片压缩")
 - [Squoosh 图片压缩](https://tiny.netnr.eu.org)
 - [Photoshop](https://www.uupoop.com/#/old "在线 PS")
+- [toonme](https://toonme.com "头像卡通化")
 - [佐糖](https://picwish.cn "抠图 证件照换底色 照片修复 压缩")
 - [Transparent PNG](https://png-pixel.com "透明的 PNG 像素 Base64 编码")
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
