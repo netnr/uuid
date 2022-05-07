@@ -632,7 +632,7 @@
     //默认配置文件
     uuid.defaultConfig = "config.json";
     //默认搜索
-    uuid.defaultSearch = "https://www.baidu.com/s?&wd=";
+    uuid.defaultSearch = "https://www.google.com/search?q=";
 
     /**
      * 赋值默认值
