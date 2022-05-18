@@ -52,4 +52,7 @@
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
 - [Code Beautify](https://codebeautify.org)
 - [小鹿快传](https://deershare.com "P2P 文件传输")
+- [transfer.sh](https://transfer.sh "命令行共享文件")
+- [keep.sh](https://keep.sh "命令行共享文件")
+- [bashupload](https://bashupload.com "命令行共享文件")
 - [CSS Sprite](http://www.spritecow.com)

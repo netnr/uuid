@@ -3,3 +3,4 @@
 - [75CDN](https://cdn.baomitu.com)
 - [新浪 CDN](https://lib.sinaapp.com)
 - [cdnjs](https://cdnjs.com)
+- [Statically](https://statically.io)
