@@ -13,38 +13,27 @@
     background-color: rgba(255, 255, 255, 0.66);
 }
 
-/*卡片头部*/
-.uuidbox .card-header {
-    padding: .2rem .5rem;
+/*卡片*/
+.nr-card a {
+    float: left;
+    font-size: 1em;
+    max-width: 25em;
+    font-weight: 500;
+    color: #1f2938;
+    overflow: hidden;
+    border-radius: 4px;
+    white-space: nowrap;
+    padding: .4rem .8rem;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    border: 1px solid #1f2938;
 }
-/*卡片主体*/
-.uuidbox .card-body {
-    padding: .3rem;
+
+.nr-card a:hover {
+    color: orange;
+    border-color: orange;
 }
 
-    .uuidbox .card-body a {
-        float: left;
-        max-width: 25em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        border-radius: 6px;
-        white-space: nowrap;
-        padding: .4rem .8rem;
-        text-decoration: none;
-        border: 3px solid transparent;
-    }
-
-        .uuidbox .card-body a:hover {
-            border-color: orange;
-        }
-
-        .uuidbox .card-body a svg {
-            height: 18px;
-            min-width: 18px;
-            max-width: 30px;
-            border-radius: 3px;
-            display: inline-block;
-        }
 /*静默搜索*/
 .uuidjump {
     position: fixed;
@@ -112,26 +101,16 @@
 
 
 /*fork*/
-.uuidbox .card-fork {
-    float: left;
-    overflow: hidden;
-    text-align: center;
-    white-space: nowrap;
-    display: inline-block;
-    text-overflow: ellipsis;
-    margin: 0 0 3em 4em;
+.nr-fork img {
+    width: 5.2em;
+    height: 5.2em;
+    margin: 2em 2em 0;
+    border-radius: 50%;
 }
 
-    .uuidbox .card-fork img {
-        margin: 5px;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
+    .nr-fork img:hover {
+        animation: myrotate 4s infinite linear;
     }
-
-        .uuidbox .card-fork img:hover {
-            animation: myrotate 4s infinite linear;
-        }
 
 
 /*旋转*/

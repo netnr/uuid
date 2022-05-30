@@ -16,10 +16,9 @@
             ops = ops || {};
             //容器
             this.id = ops.id || document.querySelector(".uuidbox");
-            //git托管
-            this.githost = localStorage.getItem("uuid-githost") || "github";
+            this.gitBranch = "master";
             //token
-            this.token = localStorage.getItem("uuid-token-" + this.githost);
+            this.token = localStorage.getItem("uuid-token-github");
 
             //缓存
             this.dataCache = {};
@@ -57,24 +56,13 @@
         //获取用户
         getUser: function (callback, error) {
             var src = "https://api.github.com/users/" + this.name;
-            switch (this.githost) {
-                case "gitee":
-                    src = "https://gitee.com/api/v5/users/" + this.name;
-                    break;
-            }
             uuid.fetch(this, src, callback, "text", error);
         },
         //获取仓库
         getRepos: function (callback) {
             var that = this;
             var src = "https://api.github.com/repos" + uuid.defaultRepos;
-            switch (this.githost) {
-                case "gitee":
-                    src = "https://gitee.com/api/v5/repos" + uuid.defaultRepos;
-                    break;
-            }
-
-            var cacheRepos = uuid.cacheGet(that.githost, that.name, src);
+            var cacheRepos = uuid.cacheGet(that.name, src);
             uuid.fetch(this, src, function (data) {
                 //仓库未更新
                 var nochange = cacheRepos.ok && cacheRepos.value.updated_at == data.updated_at;
@@ -83,7 +71,7 @@
                     var ujson = JSON.parse(udata);
                     for (var i in ujson) {
                         if (i.indexOf("__create__") == 0) {
-                            if (i.indexOf("/contents/") >= 0 || i.indexOf("/git/trees/master?recursive=1") >= 0) {
+                            if (i.indexOf("/contents/") >= 0 || i.indexOf(`/git/trees/${uuid.gitBranch}?recursive=1`) >= 0) {
                                 //未更新，延长缓存过期；已更新，设置超出缓存时间
                                 ujson[i] = nochange ? new Date().valueOf() : 946656000000;
                             }
@@ -98,7 +86,7 @@
                         var ujson = JSON.parse(udata);
                         for (var i in ujson) {
                             if (i.indexOf("__create__") == 0) {
-                                if (i.indexOf("/contents/") >= 0 || i.indexOf("/git/trees/master?recursive=1") >= 0) {
+                                if (i.indexOf("/contents/") >= 0 || i.indexOf(`/git/trees/${uuid.gitBranch}?recursive=1`) >= 0) {
                                     ujson[i] = new Date().valueOf();
                                 }
                             }
@@ -115,11 +103,6 @@
         getDir: function (callback) {
             var that = this;
             var src = "https://api.github.com/repos/" + this.nr + "/contents/" + this.libs;
-            switch (this.githost) {
-                case "gitee":
-                    src = "https://gitee.com/api/v5/repos/" + this.nr + "/git/trees/master?recursive=1";
-                    break;
-            }
             uuid.fetch(this, src, callback, 'json', function () {
                 that.showMessage("Not found");
             })
@@ -128,11 +111,6 @@
         getFork: function (callback) {
             var that = this;
             var src = "https://api.github.com/repos" + uuid.defaultRepos + "/forks";
-            switch (this.githost) {
-                case "gitee":
-                    src = "https://gitee.com/api/v5/repos" + uuid.defaultRepos + "/forks?sort=newest&page=1&per_page=30";
-                    break;
-            }
             uuid.fetch(this, src, callback, 'json', function () {
                 that.showMessage("Not found");
             })
@@ -144,7 +122,7 @@
             this.getFork(function (data) {
 
                 if (data.length) {
-                    that.id.innerHTML = '<h2 class="text-center mt-3">Fork</h2><hr/>';
+                    that.id.innerHTML = '<h2 class="text-center mt-3">Fork</h2><hr/><div class="row nr-fork"></div>';
                 }
 
                 data.forEach(function (item) {
@@ -152,9 +130,9 @@
                     var name = item.owner.login;
 
                     var cf = document.createElement("div");
-                    cf.className = "card-fork";
-                    cf.innerHTML = '<a class="h5" href="' + location.origin + '/' + name + '"><img data-src="' + icon + '" src="' + uuid.defaultFavicon + '" /><br/>' + name + '</a>';
-                    that.id.appendChild(cf);
+                    cf.className = "col-auto text-center mb-3";
+                    cf.innerHTML = '<a href="' + location.origin + '/' + name + '"><img data-src="' + icon + '" src="' + uuid.defaultFavicon + '" /><br/>' + name + '</a>';
+                    that.id.querySelector('.nr-fork').appendChild(cf);
 
                     var cfimg = cf.getElementsByTagName('img')[0];
                     var img = new Image();
@@ -164,16 +142,10 @@
 
                 if (data.length) {
                     var morefork = "https://github.com" + that.nr + "/network/members";
-                    switch (that.githost) {
-                        case "gitee":
-                            morefork = "https://gitee.com" + that.nr + "/members";
-                            break;
-                    }
-
                     var cf = document.createElement("div");
-                    cf.className = "card-fork";
+                    cf.className = "col-auto text-center mb-3";
                     cf.innerHTML = '<a href="' + morefork + '"><img src="/favicon.ico" /><br/>More fork</a>';
-                    that.id.appendChild(cf);
+                    that.id.querySelector('.nr-fork').appendChild(cf);
 
                     that.showCacheInfo();
                 } else {
@@ -186,41 +158,27 @@
             var that = this;
 
             var ind = document.createElement("div");
-            ind.className = "row mt-3 mb-1";
+            ind.className = "row mt-3 mb-3";
             ind.innerHTML = `
-                    <div class="col-md-auto mb-2">
+                    <div class="col-auto mb-2">
                         <img class="uphoto" src="/favicon.ico" onerror="this.src=\'/favicon.ico\';this.onerror=null;" />
                     </div>
-                    <div class="col-md-auto mb-2 nr-meinfo">
+                    <div class="col-auto mb-2 nr-meinfo">
                     </div>
-                    <div class="col-auto mb-2"><select class="form-select form-select-lg nrGroup"><option value="">All</option></select></div>
-                    <div class="col-auto mb-2"><input class="form-control form-control-lg nr-txtSearch" placeholder="搜索，支持静默搜索"/></div>                    
-                    <div class="col-auto mb-2">
-                        <a href="/convertbookmarks" class="btn btn-lg btn-primary" title="转换浏览器导出的书签（HTML）">Convert</a>
-                    </div>
-                    <div class="col-auto mb-2">
-                        <a href="/_token" class="btn btn-lg btn-${(that.token ? "success" : "secondary")}" title="${that.token ? '已设置token' : '未设置token，访问速率受限制'}">Token</a>
-                    </div>
-                    <div class="col-auto mb-2">
-                        <a href="/_fork" class="btn btn-lg btn-dark nr-btn-fork">Fork</a>
-                    </div>
-                    <div class="col-auto mb-2">
-                        <select class="form-select form-select-lg nrSource">
-                            <optgroup label="选择源">
-                                <option value="github">GitHub</option>
-                                <option value="gitee">Gitee</option>
-                            </optgroup>
-                        </select>
+                    <div class="col-md-auto mb-2"><select class="form-select form-select-lg nrGroup"><option value="">All</option></select></div>
+                    <div class="col-md-auto mb-2"><input class="form-control form-control-lg nr-txtSearch" placeholder="搜索，支持静默搜索"/></div>                    
+                    <div class="col-auto">
+                        <a href="/convertbookmarks" class="mb-2 btn btn-lg btn-primary" title="转换浏览器导出的书签（HTML）">Convert</a>
+                        <a href="/_token" class="mb-2 btn btn-lg btn-${(that.token ? "success" : "secondary")}" title="${that.token ? '已设置token' : '未设置token，访问速率受限制'}">Token</a>
+                        <a href="/_fork" class="mb-2 btn btn-lg btn-dark nr-btn-fork">Fork</a>
                     </div>
                 `;
 
-            ind.querySelector('.nrSource').onchange = function () {
-                localStorage.setItem("uuid-githost", this.value);
-                location.reload(false);
-            }
-            ind.querySelector('.nrSource').value = that.githost;
+            var cardbox = document.createElement("div");
+            cardbox.className = "row nr-card";
 
             this.id.appendChild(ind);
+            this.id.appendChild(cardbox);
 
             that.search();
 
@@ -232,7 +190,7 @@
 
                 document.title = `${data.login} - uuid`;
 
-                var nhref = "https://" + that.githost + ".com/";
+                var nhref = "https://github.com/";
 
                 var blog = data.blog, bloghtml;
                 if (blog) {
@@ -267,10 +225,10 @@
 
             sh.oninput = function () {
                 var key = this.value.toLowerCase();
-                var cb = that.id.getElementsByClassName('card-body');
+                var cb = that.id.querySelector('.nr-card').children;
                 for (var i = 0; i < cb.length; i++) {
-                    var anode = cb[i].getElementsByTagName('a'), hasa = 0;
-                    for (var j = 0; j < anode.length; j++) {
+                    var anode = cb[i].children, hasa = 0;
+                    for (var j = 1; j < anode.length; j++) {
                         var anj = anode[j];
                         if (anj.href.toLowerCase().indexOf(key) >= 0 || anj.innerHTML.toLowerCase().indexOf(key) >= 0) {
                             anj.style.display = "";
@@ -279,20 +237,20 @@
                             anj.style.display = "none";
                         }
                     }
-                    cb[i].parentNode.style.display = hasa ? "" : "none";
+                    cb[i].style.display = hasa ? "" : "none";
                 }
             }
             sh.title = "静默搜索，支持快捷方式：Esc、↑、↓、Enter，可直达网址";
 
             //分类选择
             document.querySelector('.nrGroup').onchange = function () {
-                var cards = document.querySelectorAll('.card');
+                var cards = document.querySelector('.nr-card').children;
                 for (var i = 0; i < cards.length; i++) {
                     var ci = cards[i];
-                    var type = ci.children[0].children[0].innerHTML;
-                    ci.className = ci.className.replace(" d-none", "");
-                    if (this.value != "" && this.value != type) {
-                        ci.className += " d-none";
+                    if (this.value == "" || ci.firstChild.innerHTML.indexOf(this.value) >= 0) {
+                        ci.classList.remove('d-none');
+                    } else {
+                        ci.classList.add('d-none');
                     }
                 }
             }
@@ -376,8 +334,7 @@
                 jv.className = "uuidjump";
                 document.body.appendChild(jv);
                 jv.onclick = function (e) {
-                    e = e || window.event;
-                    var target = e.target || e.srcElement;
+                    var target = e.target;
                     var lis = this.getElementsByTagName('li');
                     for (var j = 0; j < lis.length; j++) {
                         if (lis[j].contains(target)) {
@@ -410,12 +367,7 @@
                         } else {
                             htm.push('<li class="active">')
                         }
-                        var svgicon = '', iconode = link.children[0];
-
-                        if (iconode) {
-                            svgicon = iconode.outerHTML + ' ';
-                        }
-                        htm.push('<div class="text-info">' + svgicon + link.href + '</div>')
+                        htm.push('<div class="text-info">' + link.href + '</div>')
                         htm.push('<div>' + link.innerText + '</div>')
                         htm.push('</li>')
                     }
@@ -440,11 +392,6 @@
             that.getDir(function (data) {
                 //缓存
                 that.dataCache.dir = data;
-                switch (that.githost) {
-                    case "gitee":
-                        data = data.tree;
-                        break;
-                }
 
                 var hasfile = false;
                 //遍历目录
@@ -454,52 +401,28 @@
                         that.configUrl = item.url;
                     } else {
                         //是文件
-                        var isfile = false;
-                        switch (that.githost) {
-                            case "github":
-                                isfile = item.type == "file";
-                                break;
-                            case "gitee":
-                                isfile = (item.type == "blob" && item.path.indexOf(that.libs + "/") == 0);
-                                break;
-                        }
+                        var isfile = item.type == "file";
+
                         if (isfile) {
                             hasfile = true;
 
                             //card 标题，标题链接,文件链接
-                            var type, typelink, filesrc;
-                            switch (that.githost) {
-                                case "github":
-                                    type = item.name.substr(0, item.name.lastIndexOf('.'));
-                                    typelink = item.html_url;
-                                    filesrc = item.url;
-                                    break;
-                                case "gitee":
-                                    type = item.path.substr(0, item.path.lastIndexOf('.')).substring(that.libs.length + 1);
-                                    typelink = "https://gitee.com/" + that.name + "/" + that.repos + "/blob/master/" + that.libs + "/" + type + ".md";
-                                    filesrc = item.url;
-                                    break;
-                            }
+                            var type = item.name.substr(0, item.name.lastIndexOf('.'));
+                            var typelink = item.html_url;
+                            var filesrc = item.url;
 
                             //创建卡片
                             var card = document.createElement("div");
-                            card.className = "card border-success mb-3";
+                            card.className = "col-12 mb-3";
+                            card.innerHTML = `<a class="text-success bg-light mb-2 me-2" href="${typelink}" >${type}</a>
+                            <div class="spinner-border ms-1" role="status"><span class="visually-hidden">Loading...</span></div>`;
 
-                            var cardhtml = [
-                                '<div class="card-header border-success"><a class="text-decoration-none" href="' + typelink + '" >' + type + '</a></div>',
-                                '<div class="card-body">',
-                                '<div class="spinner-border m-1" role="status"><span class="visually-hidden">Loading...</span></div>',
-                                '</div>'
-                            ];
-
-                            card.innerHTML = cardhtml.join('');
                             //显示卡片
-                            that.id.appendChild(card);
+                            that.id.querySelector('.nr-card').appendChild(card);
                             //卡片追加到选择框
                             var seg = document.querySelector('.nrGroup');
 
                             seg.add(new Option(type));
-
 
                             //加载卡片下的链接，一个卡片对应一个文件
                             uuid.fetch(that, filesrc, function (data) {
@@ -512,7 +435,7 @@
                                     //满足Markdown的链接格式，有效行
                                     if (/\[.*?\]\(http.*?\)/.test(line)) {
                                         //A标签显示的文本、图标、链接
-                                        var atext, aicon, ahref;
+                                        var atext, ahref;
                                         line.replace(/\(http.*?\)/, function (x) {
                                             if (/\(http.*?\ /.test(x)) {
                                                 line.replace(/\(http.*?\ /, function (y) {
@@ -527,24 +450,19 @@
                                         })
                                         atext.replace(/ http.*/, function (x) {
                                             atext = atext.replace(x, "");
-                                            aicon = x.trim();
                                         })
-                                        if (!aicon) {
-                                            var hrefs = ahref.split('/');
-                                            aicon = hrefs[0] + "//" + hrefs[2] + "/favicon.ico";
-                                        }
 
-                                        var svgicon = uuid.iconident(ahref, 18);
-                                        ahtm.push('<a href="' + ahref + '" title="' + that.se(atext) + '">' + svgicon + ' ' + atext + '</a>');
+                                        ahtm.push('<a class="mb-2 me-2" href="' + ahref + '" title="' + that.se(atext) + '">' + atext + '</a>');
                                     }
                                 })
-                                card.lastChild.innerHTML = ahtm.join('');
+                                card.querySelector('.spinner-border').remove();
+                                card.innerHTML += ahtm.join('');
 
                                 //链接数
                                 var itemtotal = document.createElement("span");
-                                itemtotal.className = "badge text-muted ml-2";
-                                itemtotal.innerHTML = "( " + ahtm.length + " )";
-                                card.firstChild.appendChild(itemtotal);
+                                itemtotal.className = "ms-2";
+                                itemtotal.innerHTML = "(" + ahtm.length + ")";
+                                card.querySelector('a').appendChild(itemtotal);
 
                             }, 'json');
                         }
@@ -576,26 +494,22 @@
                 '匿名访问有速率限制（GitHub 每小时 60 次）</br>',
                 '如果超出限制会返回 <code>403</code> 错误 </br>',
                 '<input class="form-control form-control-lg my-3 nr-token-github" placeholder="GitHub Token">',
-                '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>',
-                '<input class="form-control form-control-lg my-3 nr-token-gitee" placeholder="Gitee Token">',
-                '链接：<a href="https://gitee.com/profile/personal_access_tokens">https://gitee.com/profile/personal_access_tokens</a>'
+                '链接：<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>'
             ];
 
             dr.innerHTML = htm.join('');
 
             dr.querySelectorAll('input').forEach(inp => {
                 inp.oninput = function () {
-                    var gs = this.className.includes("github") ? "github" : "gitee";
                     if (this.value.length > 30) {
-                        localStorage.setItem("uuid-token-" + gs, this.value);
+                        localStorage.setItem("uuid-token-github", this.value);
                     } else {
-                        localStorage.removeItem("uuid-token-" + gs);
+                        localStorage.removeItem("uuid-token-github");
                     }
                 }
             });
 
             dr.querySelector('.nr-token-github').value = localStorage.getItem("uuid-token-github") || "";
-            dr.querySelector('.nr-token-gitee').value = localStorage.getItem("uuid-token-gitee") || "";
 
             this.id.appendChild(dr);
         },
@@ -609,7 +523,7 @@
         //显示缓存信息
         showCacheInfo: function () {
             var cp = document.createElement("p");
-            cp.className = "small text-muted";
+            cp.className = "small";
             cp.style.clear = "both";
             cp.style.opacity = .7;
             if (this.iscache) {
@@ -619,7 +533,7 @@
         },
         //清除当前用户的本地存储
         cacheClear: function () {
-            uuid.cacheClear(this.githost, this.name);
+            uuid.cacheClear(this.name);
         }
     }
 
@@ -673,14 +587,13 @@
 
     /**
      * 获取本地存储记录
-     * @param {any} githost 源
      * @param {any} name 账号
      * @param {any} key 键
      */
-    uuid.cacheGet = function (githost, name, key) {
+    uuid.cacheGet = function (name, key) {
         var result = { ok: false, value: null };
 
-        var udata = localStorage.getItem(`uuid-${githost}-${name}`);
+        var udata = localStorage.getItem(`uuid-github-${name}`);
         if (udata && udata != "") {
             var ujson = JSON.parse(udata);
             //缓存3天
@@ -693,29 +606,27 @@
 
     /**
      * 设置本地存储记录
-     * @param {any} githost 源
      * @param {any} name 账号
      * @param {any} key 键
      * @param {any} value 值
      */
-    uuid.cacheSet = function (githost, name, key, value) {
-        var udata = localStorage.getItem(`uuid-${githost}-${name}`);
+    uuid.cacheSet = function (name, key, value) {
+        var udata = localStorage.getItem(`uuid-github-${name}`);
         var ujson = {};
         if (udata && udata != "") {
             ujson = JSON.parse(udata);
         }
         ujson["__create__" + key] = new Date().valueOf();
         ujson[key] = value;
-        localStorage.setItem(`uuid-${githost}-${name}`, JSON.stringify(ujson));
+        localStorage.setItem(`uuid-github-${name}`, JSON.stringify(ujson));
     };
 
     /**
      * 清除当前用户的本地存储
-     * @param {any} githost 源
      * @param {any} name 账号
      */
-    uuid.cacheClear = function (githost, name) {
-        localStorage.removeItem(`uuid-${githost}-${name}`);
+    uuid.cacheClear = function (name) {
+        localStorage.removeItem(`uuid-github-${name}`);
         location.reload(false);
     }
 
@@ -738,7 +649,7 @@
      */
     uuid.fetch = function (uu, src, callback, dataType, error) {
         //优先取缓存
-        var cg = uuid.cacheGet(uu.githost, uu.name, src);
+        var cg = uuid.cacheGet(uu.name, src);
         if (cg.ok && cg.value) {
             uu.iscache = true;
             callback(cg.value);
@@ -773,7 +684,7 @@
             }).then(function (data) {
                 uu.iscache = false;
                 callback(data);
-                uuid.cacheSet(uu.githost, uu.name, src, data);
+                uuid.cacheSet(uu.name, src, data);
             }).catch(function (e) {
                 if (cg.value) {
                     uu.iscache = true;
