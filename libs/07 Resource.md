@@ -6,6 +6,7 @@
 - [UUP dump](https://uupdump.net)
 - [KMS 激活](https://kms.netnr.eu.org)
 - [Visual Studio Marketplace](https://marketplace.visualstudio.com)
+- [LeanCloud](https://www.leancloud.cn)
 - [Bmob 后端云](https://www.bmob.cn)
 - [MIMC](https://admin.mimc.chat.xiaomi.net/docs)
 - [点点字幕](http://www.ddzimu.com)
