@@ -141,7 +141,6 @@
 - [Chinsyo](http://chinsyo.com)
 - [珲少](http://huishao.cc)
 - [清风](http://huisao.cc)
-- [LJY](http://blog.ljyngup.com)
 - [David Yin](https://seo.g2soft.net)
 - [且听书吟](https://yufan.me)
 - [ZEDEX](https://zedex.cn)
