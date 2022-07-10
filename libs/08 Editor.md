@@ -1,4 +1,7 @@
 - [Monaco-Editor](https://microsoft.github.io/monaco-editor)
+- [Ace](https://ace.c9.io)
+- [Ace Demo](https://ace.c9.io/build/kitchen-sink.html)
+- [lexical](https://playground.lexical.dev)
 - [Quill](https://quilljs.com)
 - [Trix](https://trix-editor.org)
 - [Editor.js](https://editorjs.io)
