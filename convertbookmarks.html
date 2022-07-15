@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
@@ -13,86 +14,63 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
+
 <body>
     <input type="file" id="txtFile" style="margin-bottom:5px" />
     <div>
         <div id="editor">Loading ...</div>
     </div>
 
-    <link href="https://npm.elemecdn.com/netnrmd@3.0.3/src/netnrmd.css" rel="stylesheet" />
-    <script src="https://npm.elemecdn.com/netnrmd@3.0.3/src/netnrmd.bundle.js"></script>
-
-    <script src="https://npm.elemecdn.com/monaco-editor@0.33.0/min/vs/loader.js"></script>
-
+    <link href="https://unpkg.com/netnrmd@4.0.0/dist/netnrmd.css" rel="stylesheet" />
+    <script src="https://unpkg.com/netnrmd@4.0.0/dist/netnrmd.bundle.js"></script>
     <script>
-        require.config({
-            paths: {
-                vs: "https://npm.elemecdn.com/monaco-editor@0.33.0/min/vs"
-            },
-            'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
+        var nmd = netnrmd.init('#editor', {
+            resize: function (ch) {
+                this.height(ch - 50);
+            }
         });
 
-        var cbk = {
-            init: function () {
-                require(['vs/editor/editor.main'], function () {
+        document.querySelector('#txtFile').addEventListener('change', function () {
+            var file = this.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var mds = [];
+                    var bm = netnrmd.createDom('div', null, e.target.result);
+                    mds.push("# " + bm.querySelector('h1').innerHTML);
 
-                    window.nmd = new netnrmd('#editor');
+                    treeEach(bm, mds);
 
-                    document.querySelector('#txtFile').addEventListener('change', function () {
-                        var file = this.files[0];
-                        if (file) {
-                            var reader = new FileReader();
-                            reader.onload = function (e) {
-                                var mds = [];
-                                var bm = netnrmd.createDom('div', null, e.target.result);
-                                mds.push("# " + bm.querySelector('h1').innerHTML);
+                    nmd.setmd(mds.join('\r\n'));
+                };
+                reader.readAsText(file);
+            }
+        });
 
-                                cbk.treeEach(bm, mds);
-
-                                window.nmd.setmd(mds.join('\r\n'));
-                            };
-                            reader.readAsText(file);
+        function treeEach(bm, mds) {
+            for (var i = 0; i < bm.children.length; i++) {
+                var n = bm.children[i];
+                switch (n.nodeName) {
+                    case "H3":
+                        mds.push('');
+                        mds.push("### " + n.innerHTML);
+                        break;
+                    case "DL":
+                    case "P":
+                        treeEach(n, mds);
+                        break;
+                    case "DT": {
+                        if (n.children.length == 1) {
+                            var na = n.querySelector('a');
+                            mds.push('- [' + na.innerHTML.replace(/`/g, '\\`') + '](' + na.href + ')');
+                        } else {
+                            treeEach(n, mds);
                         }
-                    });
-
-                    cbk.resize();
-                    window.addEventListener('resize', function () {
-                        cbk.resize();
-                    }, false)
-                });
-            },
-            treeEach: function (bm, mds) {
-                for (var i = 0; i < bm.children.length; i++) {
-                    var n = bm.children[i];
-                    switch (n.nodeName) {
-                        case "H3":
-                            mds.push('');
-                            mds.push("### " + n.innerHTML);
-                            break;
-                        case "DL":
-                        case "P":
-                            cbk.treeEach(n, mds);
-                            break;
-                        case "DT":
-                            {
-                                if (n.children.length == 1) {
-                                    var na = n.querySelector('a');
-                                    mds.push('- [' + na.innerHTML.replace(/`/g, '\\`') + '](' + na.href + ')');
-                                } else {
-                                    cbk.treeEach(n, mds);
-                                }
-                            }
-                            break;
                     }
+                    break;
                 }
-            },
-            resize: function () {
-                var vh = document.documentElement.clientHeight - nmd.obj.container.getBoundingClientRect().top - 10;
-                nmd.height(Math.max(100, vh));
             }
         }
-
-        cbk.init();
     </script>
 
 </body>
