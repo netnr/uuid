@@ -4,7 +4,7 @@
 - [nodejs](https://nodejs.org/en)
 - [MSDN 我告诉你](https://msdn.itellyou.cn)
 - [UUP dump](https://uupdump.net)
-- [KMS 激活](https://kms.netnr.eu.org)
+- [KMS 激活](https://kms.zme.ink)
 - [Visual Studio Marketplace](https://marketplace.visualstudio.com)
 - [LeanCloud](https://www.leancloud.cn)
 - [Bmob 后端云](https://www.bmob.cn)

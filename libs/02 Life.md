@@ -1,4 +1,4 @@
 - [壁纸](https://ss.netnr.com/wallpaper)
-- [VIP 视频解析](https://v.netnr.eu.org)
+- [VIP 视频解析](https://v.zme.ink)
 - [Google 翻译](https://translate.google.cn)
 - [百度翻译](https://fanyi.baidu.com)

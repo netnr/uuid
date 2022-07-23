@@ -1,7 +1,7 @@
 - [SS](https://ss.netnr.com "脚本服务")
 - [JSON 编辑器](https://je.js.org)
 - [TinyPNG](https://tinypng.com "图片压缩")
-- [Squoosh 图片压缩](https://tiny.netnr.eu.org)
+- [Squoosh 图片压缩](https://tiny.zme.ink)
 - [Photoshop](https://www.uupoop.com/#/old "在线 PS")
 - [toonme](https://toonme.com "头像卡通化")
 - [佐糖](https://picwish.cn "抠图 证件照换底色 照片修复 压缩")

@@ -1,4 +1,4 @@
-- [第三方登录接入文档](https://netnr.eu.org/Netnr.Login)
+- [第三方登录接入文档](https://zme.ink/Netnr.Login)
 - [微信支付 普通商户接入文档](https://pay.weixin.qq.com/wiki/doc/api/index.html)
 - [微信支付 APP 支付开发者文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)
 - [支付宝开放平台](https://openhome.alipay.com/developmentDocument.htm)
