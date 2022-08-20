@@ -10,3 +10,4 @@
 - [快递鸟](http://www.kdniao.com/api-all)
 - [百度搜索提示](https://suggestion.baidu.com/su?wd=kld)
 - [百度搜索提示](https://www.baidu.com/sugrec?prod=pc&wd=kld&cb=fn)
+- [World Time API](http://worldtimeapi.org)

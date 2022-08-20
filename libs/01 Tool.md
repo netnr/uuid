@@ -42,7 +42,6 @@
 - [GitMind](https://gitmind.cn "在线思维导图")
 - [SVG Sprite Generator](https://svgsprit.es "SVG 雪碧图")
 - [腾讯哈勃分析系统](https://habo.qq.com)
-- [VirSCAN](https://www.virscan.org/language/zh-cn "多引擎在线病毒扫描网")
 - [Jotti](https://virusscan.jotti.org/zh-CN/scan-file "恶意软件扫描程序")
 - [VirusTotal](https://www.virustotal.com "分析检测恶意软件")
 - [asciinema](https://asciinema.org "基于文本的终端录制")
@@ -57,3 +56,4 @@
 - [bashupload](https://bashupload.com "命令行共享文件")
 - [CSS Sprite](http://www.spritecow.com)
 - [SaveTube](https://save.tube)
+- [Sysinternals](https://docs.microsoft.com/zh-cn/sysinternals "Windows 工具")
