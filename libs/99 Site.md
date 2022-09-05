@@ -55,7 +55,6 @@
 - [ITJoker](http://www.itjoker.cn)
 - [宅日记](http://crosschannel.cc)
 - [TBOOX](http://tboox.org)
-- [Telami](https://www.telami.cn)
 - [十年之约](https://www.foreverblog.cn)
 - [秋天爱美丽](http://www.qiutianaimeili.com)
 - [奶爸 de 笔记](https://blog.naibabiji.com)
