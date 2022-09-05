@@ -86,7 +86,6 @@
 - [Fengz](http://sync.sh)
 - [Paybase](https://paybase.cn)
 - [RunDouble](http://iamwr.com)
-- [Yuanman](http://www.a-boy.com)
 - [故事熊](https://felixxiong.github.io)
 - [SmartKeyerror](https://smartkeyerror.com)
 - [SPhard](http://sphard.com)
