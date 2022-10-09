@@ -1,4 +1,0 @@
-- [网易开源镜像站](https://mirrors.163.com)
-- [阿里巴巴开源镜像站](https://developer.aliyun.com/mirror)
-- [腾讯云软件源](https://mirrors.cloud.tencent.com)
-- [USTC](https://mirrors.ustc.edu.cn)

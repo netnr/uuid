@@ -6,7 +6,6 @@
 - [Trix](https://trix-editor.org)
 - [Editor.js](https://editorjs.io)
 - [TUI-Editor](https://ui.toast.com/tui-editor)
-- [tiptap](https://www.tiptap.dev)
 - [ReactPage](https://react-page.github.io)
 - [CKEditor](https://ckeditor.com)
 - [React Draft Wysiwyg](https://jpuri.github.io/react-draft-wysiwyg)

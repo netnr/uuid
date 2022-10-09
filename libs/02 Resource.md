@@ -1,3 +1,8 @@
+- [壁纸](https://ss.netnr.com/wallpaper)
+- [网易开源镜像站](https://mirrors.163.com)
+- [阿里巴巴开源镜像站](https://developer.aliyun.com/mirror)
+- [腾讯云软件源](https://mirrors.cloud.tencent.com)
+- [USTC](https://mirrors.ustc.edu.cn)
 - [NuGet](https://www.nuget.org)
 - [MyGet](https://www.myget.org)
 - [npm](https://www.npmjs.com)
@@ -31,3 +36,4 @@
 - [阿里云轻量服务器](https://common-buy.aliyun.com/?commodityCode=swas&regionId=cn-hongkong)
 - [国外主机测评](https://www.zhujiceping.com)
 - [Lorem Picsum](https://picsum.photos)
+- [OpenJDK](https://adoptium.net/zh-CN/temurin/releases)
