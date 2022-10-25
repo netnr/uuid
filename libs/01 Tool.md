@@ -1,7 +1,7 @@
 - [SS](https://ss.netnr.com "脚本服务")
 - [JSON 编辑器](https://je.js.org)
 - [TinyPNG](https://tinypng.com "图片压缩")
-- [Squoosh 图片压缩](https://tiny.zme.ink)
+- [Squoosh 图片压缩](https://squoosh.app)
 - [VIP 视频解析](https://vv.zme.ink)
 - [Regex101](https://regex101.com)
 - [站长工具正则表达式](http://tool.chinaz.com/regex/)
