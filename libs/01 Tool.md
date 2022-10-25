@@ -2,7 +2,7 @@
 - [JSON 编辑器](https://je.js.org)
 - [TinyPNG](https://tinypng.com "图片压缩")
 - [Squoosh 图片压缩](https://tiny.zme.ink)
-- [VIP 视频解析](https://v.zme.ink)
+- [VIP 视频解析](https://vv.zme.ink)
 - [Regex101](https://regex101.com)
 - [站长工具正则表达式](http://tool.chinaz.com/regex/)
 - [脚本之家正则表达式](http://tools.jb51.net/regex/javascript)
