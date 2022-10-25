@@ -36,4 +36,5 @@
 - [阿里云轻量服务器](https://common-buy.aliyun.com/?commodityCode=swas&regionId=cn-hongkong)
 - [国外主机测评](https://www.zhujiceping.com)
 - [Lorem Picsum](https://picsum.photos)
-- [OpenJDK](https://adoptium.net/zh-CN/temurin/releases)
+- [OpenJDK Microsoft](https://adoptium.net/zh-CN/temurin/releases)
+- [OpenJDK Eclipse Temurin](https://learn.microsoft.com/zh-cn/java/openjdk/download)
