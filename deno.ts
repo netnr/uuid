@@ -5,9 +5,6 @@
  * deno run --allow-net --allow-read --watch deno.ts
  */
 
-console.debug(Deno.version);
-console.debug(Deno.build);
-
 import { serve } from "https://deno.land/std@0.160.0/http/server.ts";
 import { lookup } from "https://deno.land/x/media_types@v2.13.0/mod.ts";
 

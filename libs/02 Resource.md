@@ -38,3 +38,4 @@
 - [Lorem Picsum](https://picsum.photos)
 - [OpenJDK Microsoft](https://adoptium.net/zh-CN/temurin/releases)
 - [OpenJDK Eclipse Temurin](https://learn.microsoft.com/zh-cn/java/openjdk/download)
+- [badssl](https://badssl.com)
