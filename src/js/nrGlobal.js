@@ -41,13 +41,13 @@ var nrGlobal = {
             nrVary.domDdMore.querySelector('[data-action="token"]').checked = true;
         }
 
-        await nrGlobal.load();
-
         //呈现
         nrVary.domLoading.classList.add('d-none');
         nrVary.domLayout.classList.remove('invisible');
         document.body.style.removeProperty("background-color");
         document.body.style.removeProperty("color");
+
+        await nrGlobal.load();
     },
 
     load: async () => {
@@ -133,7 +133,7 @@ var nrGlobal = {
             </sl-dropdown>
         </div>
         <div class="col mb-2">
-            <sl-input class="nr-txt-filter mw-100" placeholder="Search.. Enter / Ctrl+Q " title="Ctrl + Q Search" size="small"></sl-input>
+            <sl-input class="nr-txt-filter w-100" placeholder="Search.. Enter / Ctrl+Q " title="Ctrl + Q Search" size="small"></sl-input>
         </div>
         <div class="col-sm-auto">
             <sl-button class="nr-btn-expand mb-2" size="small" data-action="expand" title="展开折叠">Fold</sl-button>
@@ -148,8 +148,8 @@ var nrGlobal = {
                     <sl-menu-item data-action="convert" title="转换浏览器导出的 HTML 书签">转换 Convert</sl-menu-item>
                     <sl-menu-item data-action="check" title="检测链接状态（用于删除死链）">检测 Check</sl-menu-item>
                     <sl-divider></sl-divider>
-                    <sl-menu-item data-action="clear-cache">清理缓存</sl-menu-item>
-                    <sl-menu-item data-action="about">About</sl-menu-item>
+                    <sl-menu-item data-action="clear-cache">清理 Cache</sl-menu-item>
+                    <sl-menu-item data-action="about">关于 About</sl-menu-item>
                 </sl-menu>
             </sl-dropdown>
         </div>
@@ -457,7 +457,7 @@ var nrGlobal = {
             if (resp.ok == false) {
                 console.debug(resp);
                 nrGlobal.reqStatus(true);
-                if (resp.status == 401) {
+                if (resp.status == 401 || resp.status == 403) {
                     nrFunction.toast("设置 Token");
                 }
                 throw new Error(`${resp.status} ${resp.statusText}`);
@@ -630,7 +630,7 @@ var nrGlobal = {
     buildDialogConvert: async () => {
         if (nrVary.domDialogConvert == null) {
             let domDialog = nrVary.domDialogConvert = document.createElement("sl-dialog");
-            domDialog.style = "--width:98vw"
+            domDialog.style = "--width:90vw"
             domDialog.label = "Convert HTML bookmarks（转换书签）";
             domDialog.innerHTML = `
 <div class="row mt-3">
@@ -645,7 +645,7 @@ var nrGlobal = {
 `;
             document.body.appendChild(domDialog);
 
-            domDialog.querySelector('.nr-card-preview').style.height = `calc(100vh - 200px)`;
+            domDialog.querySelector('.nr-card-preview').style.height = `calc(100vh - 260px)`;
 
             //选择文件
             domDialog.querySelector('input').addEventListener('change', async function (e) {

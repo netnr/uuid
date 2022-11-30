@@ -293,10 +293,7 @@ var nrFunction = {
             type: type,
             closable: true,
             duration: duration,
-            innerHTML: `
-          <sl-icon name="${icon}" slot="icon"></sl-icon>
-          ${message}
-        `
+            innerHTML: `<sl-icon name="${icon}" slot="icon"></sl-icon><div class="text-break">${message}</div>`
         });
 
         document.body.append(alert);
