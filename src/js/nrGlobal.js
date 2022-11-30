@@ -759,24 +759,26 @@ ${itemCompany}${itemLocation}${itemBlog}
                     var headName = null;
 
                     //md
-                    var rawContent = await nrGlobal.reqRaw(item.download_url);
                     if (item.name.endsWith(nrVary.markSuffix)) {
-                        var domHtml = document.createElement('div');
-                        domHtml.innerHTML = marked.parse(rawContent);
-                        domHtml.querySelectorAll('*').forEach(ele => {
-                            //head
-                            if (headers.includes(ele.nodeName)) {
-                                headName = ele.innerText;
-                            } else if (ele.nodeName == "A") {
-                                rowData.push({
-                                    libs: fileName,
-                                    head: headName,
-                                    atext: ele.innerText,
-                                    ahref: ele.href,
-                                    atitle: ele.title
-                                });
-                            }
-                        })
+                        var rawContent = await nrGlobal.reqRaw(item.download_url);
+                        if (rawContent) {
+                            var domHtml = document.createElement('div');
+                            domHtml.innerHTML = marked.parse(rawContent);
+                            domHtml.querySelectorAll('*').forEach(ele => {
+                                //head
+                                if (headers.includes(ele.nodeName)) {
+                                    headName = ele.innerText;
+                                } else if (ele.nodeName == "A") {
+                                    rowData.push({
+                                        libs: fileName,
+                                        head: headName,
+                                        atext: ele.innerText,
+                                        ahref: ele.href,
+                                        atitle: ele.title
+                                    });
+                                }
+                            })
+                        }
                     }
                 }
             }
