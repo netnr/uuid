@@ -1,11 +1,11 @@
 /**
  * Author: netnr
- * Date: 2022-10
+ * Date: 2022-11
  *
  * deno run --allow-net --allow-read --watch deno.ts
  */
 
-import { serve } from "https://deno.land/std@0.160.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.166.0/http/server.ts";
 import { lookup } from "https://deno.land/x/media_types@v2.13.0/mod.ts";
 
 serve(handler, { port: 713 });
@@ -23,7 +23,7 @@ async function handler(req: Request): Promise<Response> {
   } catch (e) {
     if (e instanceof Deno.errors.NotFound) {
       try {
-        filePath = "./404.html";
+        filePath = "./index.html";
         fileSize = (await Deno.stat(filePath)).size;
       } catch (err) {
         return new Response("404", { status: 404 });

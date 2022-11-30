@@ -1,0 +1,58 @@
+.nr-fullscreen {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+/*link*/
+a,
+.nav-link {
+    text-decoration: none;
+    color: var(--sl-color-primary-600);
+}
+
+a:hover,
+.nav-link:hover {
+    text-decoration: underline;
+    color: var(--sl-color-primary-700);
+}
+
+/*sl*/
+.ag-cell {
+    line-height: normal !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.ag-cell-wrapper>*:not(.ag-cell-value):not(.ag-group-value) {
+    height: auto !important;
+}
+
+/*ag-grid*/
+.ag-paging-panel {
+    height: auto !important;
+    min-height: 48px !important;
+}
+
+@media (max-width: 576px) {
+    .ag-paging-panel {
+        line-height: 2.5;
+        flex-direction: column !important;
+    }
+}
+
+div.ag-rich-select .ag-rich-select-list {
+    width: 100%;
+    min-width: 200px;
+    height: 100% !important;
+}
+
+/*ag-grid 单元格编辑*/
+.ag-cell-inline-editing {
+    height: 32px !important;
+}

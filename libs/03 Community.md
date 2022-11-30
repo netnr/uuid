@@ -1,7 +1,0 @@
-- [Stack Overflow](https://stackoverflow.com)
-- [V2EX](https://www.v2ex.com)
-- [OSCHINA](https://www.oschina.net)
-- [SegmentFault](https://segmentfault.com)
-- [知乎](https://www.zhihu.com)
-- [掘金](https://juejin.im)
-- [36 氪](https://36kr.com)

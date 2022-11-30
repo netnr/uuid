@@ -305,9 +305,4 @@ __pycache__/
 OpenCover/
 
 # customer
-.ignore
-.config
-.vercel
-log.db
-yarn.lock
-ip2region.db
+dist
