@@ -1,0 +1,25 @@
+{
+    "--- user info": "个人信息",
+    "user": {
+        "login": "netnr",
+        "avatar_url": "https://zme.ink/favicon.ico",
+        "name": null,
+        "company": null,
+        "blog": "https://zme.ink",
+        "location": "China",
+        "bio": "Hello World!"
+    },
+    "--- libs file index": "libs 文件索引",
+    "libs": [
+        {
+            "name": "00 About.md",
+            "download_url": "/libs/00%20About.md",
+            "type": "file"
+        },
+        {
+            "name": "01 Common.md",
+            "download_url": "/libs/01%20Common.md",
+            "type": "file"
+        }
+    ]
+}

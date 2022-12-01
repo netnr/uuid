@@ -5,10 +5,19 @@ var nrVary = {
     markSuffix: ".md",
     markToken: null,
     markReqCount: 0, //请求中
-    markProxyServer: ['https://cors.eu.org/'], //代理服务
-    markProxyIndex: 0,
+
+    markLocalUsed: false,//本地模式
+    markLocalPath: "/libs/index.json",
+    markLocalJson: null,
+
+    markCheckServer: ['https://thingproxy.freeboard.io/fetch/'], //检测服务
+    markCheckIndex: 0,
     markChecking: false, //死链检测中
-    markCheckResult: { ok: [], bad: [] }, //死链检测结果    
+    markCheckResult: { ok: [], bad: [] }, //死链检测结果
+
+    markProxyServer: ['https://thingproxy.freeboard.io/fetch/'], //代理服务
+    markProxyIndex: 0,
+    markProxyUsed: false, //使用代理
 
     flagTitle: "uuid", //站点名称
 

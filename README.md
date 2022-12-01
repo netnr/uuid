@@ -10,6 +10,9 @@ A decentralized favorites and bookmarks based on Git hosting
 Fork 项目，从浏览器导出书签 HTML，再转换书签为 Markdown，保存到 `libs/*.md`  
 Fork project, export bookmark HTML from browser, convert bookmark to Markdown, save to `libs/*.md`
 
+私有化部署 `dist`，再把 `libs` 文件夹拷贝到 `dist`，更新索引文件 `libs/index.json`  
+Privately deploy `dist`, then copy the `libs` folder to `dist`, update the index file `libs/index.json`
+
 ### Visit 访问
 https://uuid.fun/{name} `{name}` is your account, default `netnr`  
 https://uuid.fun/{name}/{repos} `{repos}` repository, default `uuid`  

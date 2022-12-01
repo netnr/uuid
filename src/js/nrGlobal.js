@@ -1,7 +1,7 @@
 import { nrVary } from "./nrVary";
-import { nrFunction } from "./nrFunction";
 import { nrGrid } from "./nrGrid";
 import { nrStorage } from "./nrStorage";
+import { nrFunction } from "./nrFunction";
 
 var nrGlobal = {
     init: async () => {
@@ -34,11 +34,25 @@ var nrGlobal = {
         var localforage = await nrGlobal.getPackage("localforage");
         nrStorage.init(localforage);
 
+        //local
+        var localUsed = await nrStorage.instanceCache.getItem('local');
+        if (localUsed === true) {
+            nrVary.markLocalUsed = localUsed;
+            nrVary.domDdMore.querySelector('[data-action="local"]').checked = true;
+        }
+
         //token
         var token = await nrStorage.instanceCache.getItem('uuid-token-github');
         if (token != null && token.length > 10) {
             nrVary.markToken = token;
             nrVary.domDdMore.querySelector('[data-action="token"]').checked = true;
+        }
+
+        //proxy
+        var proxyUsed = await nrStorage.instanceCache.getItem('proxy');
+        if (proxyUsed === true) {
+            nrVary.markProxyUsed = proxyUsed;
+            nrVary.domDdMore.querySelector('[data-action="proxy"]').checked = true;
         }
 
         //呈现
@@ -143,12 +157,14 @@ var nrGlobal = {
                 <sl-button class="mb-2" size="small" slot="trigger" caret>More</sl-button>
                 <sl-menu>
                     <sl-menu-item data-action="theme">切换 Theme</sl-menu-item>
+                    <sl-divider></sl-divider>
+                    <sl-menu-item data-action="local" title="私有化部署 Privatization deployment">本地 Local</sl-menu-item>
                     <sl-menu-item data-action="token">设置 Token</sl-menu-item>
+                    <sl-menu-item data-action="proxy" title="使用代理 use proxy">代理 Proxy</sl-menu-item>
+                    <sl-menu-item data-action="check" title="检测链接状态 Check link status">检测 Check</sl-menu-item>
+                    <sl-menu-item data-action="clear-cache" title="清理缓存 Clear cache">清理 Cache</sl-menu-item>
                     <sl-divider></sl-divider>
                     <sl-menu-item data-action="convert" title="转换浏览器导出的 HTML 书签">转换 Convert</sl-menu-item>
-                    <sl-menu-item data-action="check" title="检测链接状态（用于删除死链）">检测 Check</sl-menu-item>
-                    <sl-divider></sl-divider>
-                    <sl-menu-item data-action="clear-cache">清理 Cache</sl-menu-item>
                     <sl-menu-item data-action="about">关于 About</sl-menu-item>
                 </sl-menu>
             </sl-dropdown>
@@ -265,6 +281,20 @@ var nrGlobal = {
                     await nrVary.domDialogToken.show();
                 }
                 break;
+            case "local":
+                {
+                    nrVary.markLocalUsed = !nrVary.markLocalUsed;
+                    await nrStorage.instanceCache.setItem('local', nrVary.markLocalUsed);
+                    nrVary.domDdMore.querySelector('[data-action="local"]').checked = nrVary.markLocalUsed;
+                }
+                break;
+            case "proxy":
+                {
+                    nrVary.markProxyUsed = !nrVary.markProxyUsed;
+                    await nrStorage.instanceCache.setItem('proxy', nrVary.markProxyUsed);
+                    nrVary.domDdMore.querySelector('[data-action="proxy"]').checked = nrVary.markProxyUsed;
+                }
+                break;
             case "refresh":
                 {
                     //清空 user
@@ -293,9 +323,12 @@ var nrGlobal = {
                 {
                     var html = `
 <div>Source: <a href="https://github.com/netnr/uuid">https://github.com/netnr/uuid</a></div>
+<div>联系打赏: <a href="https://zme.ink">https://zme.ink</a></div>
 <sl-divider></sl-divider>
 <div>Fork 项目，从浏览器导出书签 HTML，再转换书签为 Markdown，保存到 libs/*.md</div>
 <div class="mt-2">缓存后可离线使用，表格虚拟滚动，流畅支持海量书签</div>
+<sl-divider></sl-divider>
+<div>私有化部署 dist，再把 libs 文件夹拷贝到 dist，更新索引文件 libs/index.json</div>
 `;
                     nrFunction.alert(html, 'About 关于');
                 }
@@ -452,12 +485,18 @@ var nrGlobal = {
                 options.headers["authorization"] = `token ${nrVary.markToken}`;
             }
 
+            //代理
+            if (nrVary.markProxyUsed) {
+                var proxyServer = nrGlobal.getProxy("proxy");
+                url = `${proxyServer}${encodeURIComponent(url)}`;
+            }
+
             nrGlobal.reqStatus();
             var resp = await fetch(url, options);
             if (resp.ok == false) {
                 console.debug(resp);
                 nrGlobal.reqStatus(true);
-                if (resp.status == 401 || resp.status == 403) {
+                if ([401, 403, 502].includes(resp.status)) {
                     nrFunction.toast("设置 Token");
                 }
                 throw new Error(`${resp.status} ${resp.statusText}`);
@@ -484,12 +523,8 @@ var nrGlobal = {
      */
     reqCheck: async (url) => {
         try {
-            var proxyServer = nrVary.markProxyServer[nrVary.markProxyIndex++];
-            if (nrVary.markProxyIndex == nrVary.markProxyServer.length) {
-                nrVary.markProxyIndex = 0;
-            }
-
-            var resp = await fetch(`${proxyServer}${encodeURIComponent(url)}`, { cache: 'no-cache' });
+            var checkServer = nrGlobal.getProxy("check");
+            var resp = await fetch(`${checkServer}${encodeURIComponent(url)}`, { cache: 'no-cache' });
             return resp;
         } catch (error) {
             nrGlobal.reqStatus(true);
@@ -559,29 +594,27 @@ var nrGlobal = {
     },
 
     /**
-     * 缓存
-     * @param {any} name 
-     * @param {any} url 
-     * @param {any} data 
+     * 获取代理
+     * @param {*} type
      */
-    cache: async function (name, url, data) {
-        var ckey = `uuid-github-${name}`;
-        var cval = localStorage.getItem(ckey);
-        try {
-            if (cval != null && cval != "") {
-                cval = JSON.parse(cval);
-            } else {
-                cval = {};
-            }
-        } catch (error) {
-            cval = {};
-        }
-
-        if (arguments.length == 3) {
-            cval[url] = data;
-            localStorage.setItem(ckey, JSON.stringify(cval));
-        } else {
-            return cval[url]
+    getProxy: function (type) {
+        switch (type) {
+            case "proxy":
+                {
+                    var server = nrVary.markProxyServer[nrVary.markProxyIndex++];
+                    if (nrVary.markProxyIndex == nrVary.markProxyServer.length) {
+                        nrVary.markProxyIndex = 0;
+                    }
+                    return server;
+                }
+            case "check":
+                {
+                    var server = nrVary.markCheckServer[nrVary.markCheckIndex++];
+                    if (nrVary.markCheckIndex == nrVary.markCheckServer.length) {
+                        nrVary.markCheckIndex = 0;
+                    }
+                    return server;
+                }
         }
     },
 
@@ -712,12 +745,23 @@ var nrGlobal = {
      * 显示用户
      */
     viewUser: async () => {
-        var result = await nrGlobal.reqUser(nrVary.markName);
+        var result;
+        if (nrVary.markLocalUsed) {
+            var text = await nrGlobal.reqServer(nrVary.markLocalPath);
+            try {
+                nrVary.markLocalJson = JSON.parse(text);
+                result = nrVary.markLocalJson["user"];
+            } catch (error) { }
+        } else {
+            result = await nrGlobal.reqUser(nrVary.markName);
+        }
+
         if (result) {
             nrVary.domImgAvatar.onerror = function () {
                 nrVary.domImgAvatar.src = '/favicon.ico';
                 nrVary.domImgAvatar.onerror = false;
             }
+            //头像
             nrVary.domImgAvatar.src = result.avatar_url;
 
             //个人菜单
@@ -745,9 +789,15 @@ ${itemCompany}${itemLocation}${itemBlog}
      * 显示表格
      */
     viewTable: async () => {
-
+        var listLibs;
+        if (nrVary.markLocalUsed) {
+            try {
+                listLibs = nrVary.markLocalJson["libs"] || [];
+            } catch (error) { }
+        } else {
+            listLibs = await nrGlobal.reqLibs(nrVary.markName, nrVary.markResp, nrVary.markLibs);
+        }
         //libs
-        var listLibs = await nrGlobal.reqLibs(nrVary.markName, nrVary.markResp, nrVary.markLibs);
         if (listLibs) {
             var marked = await nrGlobal.getPackage("marked");
             var headers = ["H1", "H2", "H3", "H4", "H5", "H6"];
