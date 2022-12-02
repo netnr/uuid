@@ -156,7 +156,7 @@ var nrGlobal = {
             <sl-dropdown class="nr-dd-more">
                 <sl-button class="mb-2" size="small" slot="trigger" caret>More</sl-button>
                 <sl-menu>
-                    <sl-menu-item data-action="theme">切换 Theme</sl-menu-item>
+                    <sl-menu-item data-action="theme">主题 Theme</sl-menu-item>
                     <sl-divider></sl-divider>
                     <sl-menu-item data-action="local" title="私有化部署 Privatization deployment">本地 Local</sl-menu-item>
                     <sl-menu-item data-action="token">设置 Token</sl-menu-item>
@@ -283,9 +283,21 @@ var nrGlobal = {
                 break;
             case "local":
                 {
-                    nrVary.markLocalUsed = !nrVary.markLocalUsed;
-                    await nrStorage.instanceCache.setItem('local', nrVary.markLocalUsed);
-                    nrVary.domDdMore.querySelector('[data-action="local"]').checked = nrVary.markLocalUsed;
+                    var onlineHref = `https://github.com/${nrVary.markName}/${nrVary.markResp}`;
+                    var onlineText = `线上 GitHub (<a href="${onlineHref}">${onlineHref}</a>)`;
+                    var localHref = new URL(nrVary.markLocalPath, location).href;
+                    var localText = `本地 Local (<a href="${localHref}">${localHref}</a>)`;
+                    var toIcon = '<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M448 789.312V0h128v789.312l234.688-234.624L896 640l-384 384-384-384 85.312-85.312L448 789.312z" fill="#373D41"></path></svg>';
+
+                    var msg = nrVary.markLocalUsed ? `${localText}<div class="my-2">${toIcon}</div>${onlineText}` : `${onlineText}<div class="my-2">${toIcon}</div>${localText}`;
+
+                    if (await nrFunction.confirm(msg, '切换 switch')) {
+                        nrVary.markLocalUsed = !nrVary.markLocalUsed;
+                        await nrStorage.instanceCache.setItem('local', nrVary.markLocalUsed);
+                        nrVary.domDdMore.querySelector('[data-action="local"]').checked = nrVary.markLocalUsed;
+
+                        location.reload();
+                    }
                 }
                 break;
             case "proxy":
@@ -328,7 +340,7 @@ var nrGlobal = {
 <div>Fork 项目，从浏览器导出书签 HTML，再转换书签为 Markdown，保存到 libs/*.md</div>
 <div class="mt-2">缓存后可离线使用，表格虚拟滚动，流畅支持海量书签</div>
 <sl-divider></sl-divider>
-<div>私有化部署 dist，再把 libs 文件夹拷贝到 dist，更新索引文件 libs/index.json</div>
+<div>私有化部署 dist，再把 libs 文件夹拷贝到 dist，更新索引文件 libs/index.json，再启用本地 Local</div>
 `;
                     nrFunction.alert(html, 'About 关于');
                 }
@@ -485,8 +497,8 @@ var nrGlobal = {
                 options.headers["authorization"] = `token ${nrVary.markToken}`;
             }
 
-            //代理
-            if (nrVary.markProxyUsed) {
+            //代理线上
+            if (nrVary.markProxyUsed && !nrVary.markLocalUsed) {
                 var proxyServer = nrGlobal.getProxy("proxy");
                 url = `${proxyServer}${encodeURIComponent(url)}`;
             }

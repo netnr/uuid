@@ -352,9 +352,9 @@ var nrFunction = {
     confirm: (message, title, width = "50em") => new Promise((resolve) => {
         if (nrVary.domConfirm == null) {
             nrVary.domConfirm = document.createElement('sl-dialog');
-            nrVary.domConfirm.innerHTML = `<div class="na-confirm-message"></div>
-            <sl-button class="na-confirm-cancel" slot="footer">取消</sl-button>
-            <sl-button class="na-confirm-ok" slot="footer" variant="primary">确定</sl-button>`;
+            nrVary.domConfirm.innerHTML = `<div class="nr-confirm-message"></div>
+            <sl-button class="nr-confirm-cancel" slot="footer">取消</sl-button>
+            <sl-button class="nr-confirm-ok" slot="footer" variant="primary">确定</sl-button>`;
             document.body.appendChild(nrVary.domConfirm);
         }
         nrVary.domConfirm.label = title || "确认";
