@@ -287,7 +287,7 @@ var nrGlobal = {
                     var onlineText = `线上 GitHub (<a href="${onlineHref}">${onlineHref}</a>)`;
                     var localHref = new URL(nrVary.markLocalPath, location).href;
                     var localText = `本地 Local (<a href="${localHref}">${localHref}</a>)`;
-                    var toIcon = '<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M448 789.312V0h128v789.312l234.688-234.624L896 640l-384 384-384-384 85.312-85.312L448 789.312z" fill="#373D41"></path></svg>';
+                    var toIcon = '<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M448 789.312V0h128v789.312l234.688-234.624L896 640l-384 384-384-384 85.312-85.312L448 789.312z" fill="currentColor"></path></svg>';
 
                     var msg = nrVary.markLocalUsed ? `${localText}<div class="my-2">${toIcon}</div>${onlineText}` : `${onlineText}<div class="my-2">${toIcon}</div>${localText}`;
 
