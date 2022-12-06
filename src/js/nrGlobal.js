@@ -340,7 +340,7 @@ var nrGlobal = {
 <div>Fork 项目，从浏览器导出书签 HTML，再转换书签为 Markdown，保存到 libs/*.md</div>
 <div class="mt-2">缓存后可离线使用，表格虚拟滚动，流畅支持海量书签</div>
 <sl-divider></sl-divider>
-<div>私有化部署 dist，再把 libs 文件夹拷贝到 dist，更新索引文件 libs/index.json，再启用本地 Local</div>
+<div>私有化部署 dist，再把 libs 文件夹拷贝到 dist，更新索引文件 libs/index.json，再启用 本地 Local</div>
 `;
                     nrFunction.alert(html, 'About 关于');
                 }

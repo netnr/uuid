@@ -33,7 +33,6 @@
 - [wniu](http://wniuob.com)
 - [hongfs](http://www.hongfs.cn)
 - [静静是小花](https://susan007.github.io)
-- [RebornL](http://blog.raymondtech.top)
 - [Toeii](https://toeii.github.io)
 - [Artin](http://lengthmin.me)
 - [IAN](https://www.ianisme.com)
