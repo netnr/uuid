@@ -77,6 +77,7 @@
 - [FFmpeg Static](https://www.johnvansickle.com/ffmpeg "FFmpeg 静态构建包")
 - [EU](https://nic.eu.org "免费 eu.org 域名申请")
 - [downloadly](https://downloadly.net "Free Software Download")
+- [Portapps](https://portapps.io "VSCode 便携版")
 - [国家法律法规数据库](https://flk.npc.gov.cn)
 - [国外主机测评](https://www.zhujiceping.com)
 - [free-for.dev](https://free-for.dev)
