@@ -29,7 +29,6 @@
 - [tcping](https://elifulkerson.com/projects/tcping.php "ping 端口")
 - [PsTools](https://docs.microsoft.com/zh-cn/sysinternals/downloads/pstools)
 - [asciinema](https://asciinema.org "基于文本的终端录制")
-- [StackBlitz](https://stackblitz.com "浏览器上跑 NodeJS")
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
 - [Code Beautify](https://codebeautify.org "在线工具")
 - [小鹿快传](https://deershare.com "P2P 文件传输")
@@ -37,7 +36,14 @@
 - [keep.sh](https://keep.sh "命令行共享文件")
 - [bashupload](https://bashupload.com "命令行共享文件")
 - [SaveTube](https://save.tube "下载 youtube 视频")
+- [OSS Insight](https://ossinsight.io "GitHub 开源软件洞察")
 - [Sysinternals](https://docs.microsoft.com/zh-cn/sysinternals "Windows 工具")
+
+### 画 Draw
+- [MindEditor](https://ss.netnr.com/mind "by kityminder 百度脑图")
+- [GraphEditor](https://ss.netnr.com/graph "by mxGraph")
+- [BPMNEditor](https://ss.netnr.com/bpmn "by bpmn-js")
+- [Excalidraw](https://excalidraw.com)
 - [GitMind](https://gitmind.cn "在线思维导图")
 
 ### 正则 Regex
@@ -105,9 +111,13 @@
 - [npm](https://www.npmjs.com)
 - [nodejs](https://nodejs.org/en)
 - [LeanCloud](https://www.leancloud.cn)
+- [CSS Layout](https://csslayout.io)
+- [CSS Grid](https://cssgr.id)
+- [LOADING.IO](https://loading.io)
 - [MIMC](https://admin.mimc.chat.xiaomi.net/docs "小米推送服务")
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
 - [开发者实验室](https://cloud.tencent.com/developer/labs/gallery "在线 Linux 环境使用")
+- [carbon](https://carbon.now.sh "代码贴图")
 
 ### 网络 Network
 - [测速网](https://www.speedtest.cn)
@@ -154,6 +164,22 @@
 - [goorm](https://www.goorm.io)
 - [Glitch](https://glitch.com)
 - [Gitpod](https://www.gitpod.io)
+
+### 集成开发环境 IDE
+- [StackBlitz](https://stackblitz.com "浏览器上跑 NodeJS")
+- [CodePen](https://codepen.io/pen)
+- [CodeSandbox](https://codesandbox.io/s)
+- [StackBlitz](https://stackblitz.com)
+- [JSFiddle](https://jsfiddle.net)
+- [JS Bin](https://jsbin.com)
+- [PlayCode](https://playcode.io/new)
+- [Plunker](https://plnkr.co/edit)
+- [JSRUN](https://jsrun.net)
+- [dabblet](https://dabblet.com)
+- [GCC Compiler](https://gcc.godbolt.org)
+- [OnlineGDB](https://www.onlinegdb.com)
+- [CodeChef](https://www.codechef.com/ide)
+- [Ideone](https://www.ideone.com)
 
 ### 编辑器 Editor
 - [Monaco-Editor](https://microsoft.github.io/monaco-editor)
