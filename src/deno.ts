@@ -1,12 +1,12 @@
 /**
  * Author: netnr
- * Date: 2022-11
+ * Date: 2022-12
  *
  * deno run --allow-net --allow-read --watch deno.ts
  */
 
-import { serve } from "https://deno.land/std@0.166.0/http/server.ts";
-import { lookup } from "https://deno.land/x/media_types@v2.13.0/mod.ts";
+import { serve } from "https://deno.land/std@0.170.0/http/server.ts";
+import { contentType } from "https://deno.land/std@0.170.0/media_types/mod.ts";
 
 serve(handler, { port: 713 });
 
@@ -35,21 +35,12 @@ async function handler(req: Request): Promise<Response> {
 
   const body = await Deno.readFile(filePath);
 
-  let contentType = lookup(filePath) || "application/octet-stream";
-  // charset
-  if (
-    contentType.startsWith("text/") ||
-    contentType.endsWith("/json") ||
-    contentType.endsWith("/javascript") ||
-    contentType.endsWith("/xml")
-  ) {
-    contentType = `${contentType}; charset=utf-8`;
-  }
+  let cType = contentType(filePath.split('.').pop()) || "application/octet-stream";
 
   return new Response(body, {
     headers: {
       "content-length": fileSize.toString(),
-      "content-type": contentType,
+      "content-type": cType,
       "access-control-allow-origin": "*",
     },
   });
