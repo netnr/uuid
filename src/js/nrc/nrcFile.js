@@ -49,14 +49,14 @@ let nrcFile = {
     },
 
     readDataTransferItems: async (items) => {
-        var parr = [], list = [];
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i];
-            var itemEntry = item.webkitGetAsEntry();
+        let parr = [], list = [];
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+            let itemEntry = item.webkitGetAsEntry();
             if (itemEntry != null) {
                 parr.push(nrcFile.readDataTransferItemEntry(itemEntry));
             } else {
-                var file = item.getAsFile();
+                let file = item.getAsFile();
                 if (file) {
                     list.push(file);
                 }
@@ -86,14 +86,14 @@ let nrcFile = {
                 resolve(file)
             })
         } else if (itemEntry.isDirectory) {
-            var dirReader = itemEntry.createReader();
+            let dirReader = itemEntry.createReader();
             dirReader.readEntries((entries) => {
-                var parr = [];
-                for (var i = 0; i < entries.length; i++) {
+                let parr = [];
+                for (let i = 0; i < entries.length; i++) {
                     parr.push(nrcFile.readDataTransferItemEntry(entries[i], path + itemEntry.name + "/"))
                 }
                 Promise.all(parr).then((arr) => {
-                    var list = [];
+                    let list = [];
                     arr.forEach(x => {
                         if (x.length) {
                             list = list.concat(x)

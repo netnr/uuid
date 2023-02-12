@@ -608,7 +608,10 @@ let nrFunction = {
     reqServer: async (url, options) => {
         try {
             options = options || {};
-            options.cache = "no-cache";
+            Object.assign(options, {
+                Pragma: 'no-cache',
+                'Cache-Control': 'no-cache'
+            })
 
             //token
             if (nrVary.markToken != null && nrVary.markToken.length > 10 && !url.includes("githubusercontent")) {
