@@ -1,12 +1,12 @@
 /**
  * Author: netnr
- * Date: 2022-12
+ * Date: 2023-02
  *
  * deno run --allow-net --allow-read --watch deno.ts
  */
 
-import { serve } from "https://deno.land/std@0.170.0/http/server.ts";
-import { contentType } from "https://deno.land/std@0.170.0/media_types/mod.ts";
+import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
+import { contentType } from "https://deno.land/std@0.177.0/media_types/mod.ts";
 
 serve(handler, { port: 713 });
 

@@ -1,76 +1,42 @@
-/* light */
-:root {
-    --global-border: #d8dee4;
-    --global-color: #000000;
-    --global-bg: #ffffff;
-}
-
-/* dark */
-.sl-theme-dark {
-    --global-border: #585b60;
-    --global-color: #d4d4d4;
-    --global-bg: #0d1117;
-}
-
-.sl-theme-dark body {
-    color: var(--global-color);
-    background-color: var(--global-bg);
-}
-
 /*scrollbar*/
-.sl-theme-dark *::-webkit-scrollbar-track-piece {
+html[data-bs-theme="dark"] *::-webkit-scrollbar-track-piece {
     background: transparent
 }
 
-.sl-theme-dark *::-webkit-scrollbar {
+html[data-bs-theme="dark"] *::-webkit-scrollbar {
     background-color: #202022
 }
 
-.sl-theme-dark *::-webkit-scrollbar-thumb {
+html[data-bs-theme="dark"] *::-webkit-scrollbar-thumb {
     background-color: #585859;
     min-height: 24px;
     border: 3px solid #202022
 }
 
-.sl-theme-dark *::-webkit-scrollbar-thumb:focus {
+html[data-bs-theme="dark"] *::-webkit-scrollbar-thumb:focus {
     background-color: #838384
 }
 
-.sl-theme-dark *::-webkit-scrollbar-thumb:active {
+html[data-bs-theme="dark"] *::-webkit-scrollbar-thumb:active {
     background-color: #838384
 }
 
-.sl-theme-dark *::-webkit-scrollbar-corner {
+html[data-bs-theme="dark"] *::-webkit-scrollbar-corner {
     background-color: #202022
 }
 
-/*link*/
-.sl-theme-dark a,
-.sl-theme-dark .markdown-body a {
-    text-decoration: none;
-    color: var(--sl-color-primary-600);
-}
-
-.sl-theme-dark a:hover,
-.sl-theme-dark .markdown-body a:hover {
-    text-decoration: underline;
-    color: var(--sl-color-primary-700);
-}
-
-/*Pagination*/
-.sl-theme-dark .page-link,
-.sl-theme-dark .page-item.disabled .page-link {
-    background-color: var(--sl-color-primary-100);
-    border-color: var(--sl-color-primary-600);
-    color: var(--sl-color-neutral-0);
-}
-
-.sl-theme-dark .page-link:hover {
-    background-color: var(--sl-color-primary-500);
-    color: var(--sl-color-neutral-0);
+/*bootstrap*/
+html[data-bs-theme="dark"] {
+    --bs-heading-color: #cdd9e5
 }
 
 /*ag-grid*/
-.sl-theme-dark .ag-theme-alpine-dark {
-    --ag-foreground-color: var(--global-color);
+html[data-bs-theme="dark"] .ag-theme-alpine-dark {
+    --ag-foreground-color: var(--bs-body-color);
+}
+
+/*markdown*/
+html[data-bs-theme="dark"] .markdown-body,
+html[data-bs-theme="dark"] .markdown-body pre code {
+    color: currentColor;
 }

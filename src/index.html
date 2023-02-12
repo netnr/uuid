@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-cn">
+<html lang="zh-cn" data-bs-theme='light' class="netnrmd-light">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,12 +15,13 @@
 </head>
 <body>
     <script>
-        //暗黑主题，减少闪烁时间
-        if (document.cookie.includes("nr-theme=dark")) {
-            Object.assign(document.body.style, { backgroundColor: "#0d1117", color: "#d4d4d4", })
+        if (document.cookie.includes(".theme=dark")) {
+            let domHtml = document.documentElement;
+            domHtml.dataset.bsTheme = "dark";
+            domHtml.className = domHtml.className.replace('light', 'dark');
         }
     </script>
-    <div class="nr-loading" style="position:fixed;top:30vh;width:100%;text-align:center;">
+    <div class="nrg-loading0" style="position:fixed;top:30vh;width:100%;text-align:center;">
         <h1>Loading</h1>
     </div>
 </body>

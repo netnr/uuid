@@ -24,19 +24,19 @@
     <link href="https://ss.netnr.com/netnrmd@4.0.0/dist/netnrmd.css" rel="stylesheet" />
     <script src="https://ss.netnr.com/netnrmd@4.0.0/dist/netnrmd.bundle.js"></script>
     <script>
-        var nmd = netnrmd.init('#editor', {
+        let nmd = netnrmd.init('#editor', {
             resize: function (ch) {
                 this.height(ch - 50);
             }
         });
 
         document.querySelector('#txtFile').addEventListener('change', function () {
-            var file = this.files[0];
+            let file = this.files[0];
             if (file) {
-                var reader = new FileReader();
+                let reader = new FileReader();
                 reader.onload = function (e) {
-                    var mds = [];
-                    var bm = netnrmd.createDom('div', null, e.target.result);
+                    let mds = [];
+                    let bm = netnrmd.createDom('div', null, e.target.result);
                     mds.push("# " + bm.querySelector('h1').innerHTML);
 
                     treeEach(bm, mds);
@@ -48,8 +48,8 @@
         });
 
         function treeEach(bm, mds) {
-            for (var i = 0; i < bm.children.length; i++) {
-                var n = bm.children[i];
+            for (let i = 0; i < bm.children.length; i++) {
+                let n = bm.children[i];
                 switch (n.nodeName) {
                     case "H3":
                         mds.push('');
@@ -61,7 +61,7 @@
                         break;
                     case "DT": {
                         if (n.children.length == 1) {
-                            var na = n.querySelector('a');
+                            let na = n.querySelector('a');
                             mds.push('- [' + na.innerHTML.replace(/`/g, '\\`') + '](' + na.href + ')');
                         } else {
                             treeEach(n, mds);

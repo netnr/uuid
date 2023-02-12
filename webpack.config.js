@@ -8,7 +8,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const releaseRoot = path.join(__dirname, "dist");
 
-var config = {
+let config = {
     entry: './src/js/index.js',
     output: {
         filename: "[name]-[contenthash].js",
@@ -69,19 +69,7 @@ var config = {
                 {
                     from: path.join(__dirname, './src/deno.ts'),
                     to: path.resolve(releaseRoot)
-                },
-                {
-                    from: path.resolve(__dirname, './src/assets'),
-                    to: path.resolve(releaseRoot, 'assets')
-                },
-                {
-                    from: path.resolve(__dirname, 'node_modules/@shoelace-style/shoelace/dist/assets/icons/info-circle.svg'),
-                    to: path.resolve(releaseRoot, 'assets/icons')
                 }
-                // {
-                //     from: path.resolve(__dirname, 'node_modules/@shoelace-style/shoelace/dist/assets'),
-                //     to: path.resolve(releaseRoot, 'assets')
-                // }
             ]
         }),
     ]
