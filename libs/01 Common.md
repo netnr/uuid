@@ -1,7 +1,8 @@
 ### 图像 Image
 - [壁纸](https://ss.netnr.com/wallpaper)
 - [TinyPNG](https://tinypng.com "图片压缩")
-- [Squoosh 图片压缩](https://squoosh.app)
+- [Squoosh](https://squoosh.app "图片压缩")
+- [minuteImage](https://www.minuteimage.com "图片压缩")
 - [Photoshop](https://www.uupoop.com/#/old "在线 PS")
 - [toonme](https://toonme.com "头像卡通化")
 - [佐糖](https://picwish.cn "抠图 证件照换底色 照片修复 压缩")
@@ -82,6 +83,7 @@
 - [FFmpeg Download](https://ffmpeg.org/download.html)
 - [FFmpeg Static](https://www.johnvansickle.com/ffmpeg "FFmpeg 静态构建包")
 - [EU](https://nic.eu.org "免费 eu.org 域名申请")
+- [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
 - [downloadly](https://downloadly.net "Free Software Download")
 - [Portapps](https://portapps.io "VSCode 便携版")
 - [国家法律法规数据库](https://flk.npc.gov.cn)
@@ -199,6 +201,7 @@
 - [Editor.md](https://pandao.github.io/editor.md)
 - [SimpleMDE](https://simplemde.com)
 - [NetnrMD](https://md.js.org)
+- [File System Access](https://googlechromelabs.github.io/text-editor/)
 
 ### 社区 Community
 - [Firefox Monitor](https://monitor.firefox.com "查询密码泄漏")
@@ -217,7 +220,7 @@
 - [支付宝开放平台](https://openhome.alipay.com/developmentDocument.htm)
 - [阿里短信服务 API 接入指南](https://developer.aliyun.com/article/59928)
 - [七牛对象存储](https://developer.qiniu.com/kodo/sdk/csharp)
-- [存储 - 网易数帆](https://www.163yun.com/help/documents/15677623933583360)
+- [存储 - 网易数帆](https://sf.163.com/help/documents/15677623933583360)
 - [又拍云控制台](https://console.upyun.com/dashboard)
 - [腾讯云 对象存储 COS](https://cloud.tencent.com/product/cos)
 - [快递鸟](http://www.kdniao.com/api-all)
