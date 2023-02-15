@@ -12,12 +12,14 @@ let nrFunction = {
      * @param {any} theme 
      */
     setTheme: async (theme) => {
+        let domHtml = document.documentElement;
         let oldTheme = theme == "dark" ? "light" : "dark";
+        domHtml.className = domHtml.className.replace(oldTheme, theme);
+        domHtml.dataset.bsTheme = theme;
 
-        document.documentElement.className = document.documentElement.className.replace(oldTheme, theme);
-        document.documentElement.dataset.bsTheme = theme;
-
-        nrcShared.cookie('.theme', theme, 1000 * 3600 * 24 * 365);
+        let d = new Date();
+        d.setFullYear(d.getFullYear() + 1);
+        document.cookie = `.theme=${theme};path=/;expires=${d.toGMTString()}`;
     },
 
     /**
@@ -607,15 +609,17 @@ let nrFunction = {
      */
     reqServer: async (url, options) => {
         try {
-            options = options || {};
-            Object.assign(options, {
-                Pragma: 'no-cache',
-                'Cache-Control': 'no-cache'
-            })
+            let defaultOptions = { method: "GET" };
+            Object.assign(defaultOptions, options || {});
+
+            let defaultHeaders = { Pragma: 'no-cache', 'Cache-Control': 'no-cache' };
+            Object.assign(defaultHeaders, options.headers || {});
+
+            options.headers = defaultHeaders;
+            options = defaultOptions;
 
             //token
             if (nrVary.markToken != null && nrVary.markToken.length > 10 && !url.includes("githubusercontent")) {
-                options.headers = options.headers || {};
                 options.headers["authorization"] = `token ${nrVary.markToken}`;
             }
 

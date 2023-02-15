@@ -7,11 +7,11 @@ let nrcShared = {
             }
             return null;
         } else {
-            let kv = key + "=" + value + ";path=/";
+            let kv = `${key}=${value};path=/`;
             if (ms) {
                 let d = new Date();
                 d.setTime(d.getTime() + ms);
-                kv += ";expires=" + d.toGMTString();
+                kv = `${kv};expires=${d.toGMTString()}`;
             }
             document.cookie = kv;
         }

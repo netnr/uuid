@@ -105,6 +105,8 @@
 - [Compile](https://rextester.com "在线运行代码")
 - [OpenJDK Microsoft](https://adoptium.net/zh-CN/temurin/releases "java jdk")
 - [OpenJDK Eclipse Temurin](https://learn.microsoft.com/zh-cn/java/openjdk/download "java jdk")
+- [OpenJDK Red Hat](https://developers.redhat.com/products/openjdk/download "java jdk")
+- [Java SE](https://www.oracle.com/br/java/technologies/downloads/archive/ "java jdk")
 - [jsonapi](https://www.jsonapi.co)
 - [JSON Keeper](https://jsonkeeper.com)
 - [sematext](https://apps.sematext.com/ui/login "logs 日志")
