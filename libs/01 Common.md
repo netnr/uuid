@@ -32,7 +32,8 @@
 - [asciinema](https://asciinema.org "基于文本的终端录制")
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
 - [Code Beautify](https://codebeautify.org "在线工具")
-- [小鹿快传](https://deershare.com "P2P 文件传输")
+- [小鹿快传](https://deershare.com "p2p 文件传输")
+- [tl-rtc-file-tool](https://im.iamtsm.cn "p2p 网页工具")
 - [transfer.sh](https://transfer.sh "命令行共享文件")
 - [keep.sh](https://keep.sh "命令行共享文件")
 - [bashupload](https://bashupload.com "命令行共享文件")
@@ -120,7 +121,7 @@
 - [LOADING.IO](https://loading.io)
 - [MIMC](https://admin.mimc.chat.xiaomi.net/docs "小米推送服务")
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
-- [开发者实验室](https://cloud.tencent.com/developer/labs/gallery "在线 Linux 环境使用")
+- [腾讯云实验室](https://cloud.tencent.com/lab "在线 Linux 环境使用")
 - [carbon](https://carbon.now.sh "代码贴图")
 
 ### 网络 Network

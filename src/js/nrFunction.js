@@ -609,14 +609,10 @@ let nrFunction = {
      */
     reqServer: async (url, options) => {
         try {
-            let defaultOptions = { method: "GET" };
-            Object.assign(defaultOptions, options || {});
-
+            options = options || { method: "GET" };
             let defaultHeaders = { Pragma: 'no-cache', 'Cache-Control': 'no-cache' };
             Object.assign(defaultHeaders, options.headers || {});
-
             options.headers = defaultHeaders;
-            options = defaultOptions;
 
             //token
             if (nrVary.markToken != null && nrVary.markToken.length > 10 && !url.includes("githubusercontent")) {
