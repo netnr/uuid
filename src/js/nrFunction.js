@@ -429,7 +429,7 @@ let nrFunction = {
         let ckey = `${nrVary.markName}:${url}`;
         let result = await nrStorage.instanceUser.getItem(ckey);
         if (result == null) {
-            result = await nrFunction.reqServer(url, { type: "text" });
+            result = await nrFunction.reqServer(`${url}?_${nrcShared.random()}`, { type: "text" });
             if (result) {
                 await nrStorage.instanceUser.setItem(ckey, result);
             }
@@ -609,13 +609,11 @@ let nrFunction = {
      */
     reqServer: async (url, options) => {
         try {
-            options = options || { method: "GET" };
-            let defaultHeaders = { Pragma: 'no-cache', 'Cache-Control': 'no-cache' };
-            Object.assign(defaultHeaders, options.headers || {});
-            options.headers = defaultHeaders;
+            options = options || { method: "GET", Cache: 'no-cache' };
 
             //token
             if (nrVary.markToken != null && nrVary.markToken.length > 10 && !url.includes("githubusercontent")) {
+                options.headers = options.headers || {};
                 options.headers["authorization"] = `token ${nrVary.markToken}`;
             }
 

@@ -12,7 +12,7 @@ let nrVary = {
     markLocalPath: "/libs/index.json",
     markLocalJson: null,
 
-    markProxyServer: ['https://netnr.zme.ink/api/v1/Proxy?url='], //代理服务
+    markProxyServer: ['https://cors.zme.ink/'], //代理服务
     markProxyIndex: 0,
     markProxyUsed: false, //使用代理
 
