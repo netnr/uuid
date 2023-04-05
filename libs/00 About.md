@@ -1,4 +1,0 @@
-- [uuid 源码](https://github.com/netnr/uuid)
-- [uuid 分享](https://github.com/netnr/uuid/network/members)
-- [uuid 建议](https://github.com/netnr/uuid/issues)
-- [联系打赏](https://zme.ink)

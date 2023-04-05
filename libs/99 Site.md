@@ -1,5 +1,6 @@
 ### 干货
 - [秋水逸冰](https://teddysun.com)
+- [Cory LaViska](https://www.abeautifulsite.net)
 - [FakeUpdate](http://fakeupdate.net "假装升级")
 - [Learn X in Y minutes](https://learnxinyminutes.com "在 Y 分钟内学习 X")
 - [PostgreSQL Notes](https://postgresql.verite.pro)
@@ -37,7 +38,6 @@
 - [OneCoder](https://onecoder.site)
 - [豆田](https://doutian.me)
 - [ADoyle](http://adoyle.me/blog)
-- [赵俊](http://www.zhaojun.im)
 - [自由人](https://ifttl.com)
 - [耳先生](http://www.kilerd.me)
 - [Meowu](https://fullstackbb.com)
@@ -86,7 +86,6 @@
 - [HJW](https://hjwjw.github.io)
 - [Leriou](https://leriou.github.io)
 - [Goulash](https://hx1997.github.io)
-- [HK Talk](https://blog.hhking.cn)
 - [小歪](https://zhangslob.github.io)
 - [Kuhung](http://kuhungio.me)
 - [Jiajun](https://jiajunhuang.com)

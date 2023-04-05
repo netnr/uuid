@@ -1,3 +1,8 @@
+### 关于 About
+- [uuid 分享](https://github.com/netnr/uuid/network/members)
+- [uuid 建议](https://github.com/netnr/uuid/issues)
+- [联系打赏](https://zme.ink)
+
 ### 图像 Image
 - [壁纸](https://ss.netnr.com/wallpaper)
 - [TinyPNG](https://tinypng.com "图片压缩")
@@ -19,11 +24,13 @@
 ### 工具 Tool
 - [JSON 编辑器](https://je.js.org)
 - [IP.SB](https://ip.sb "IP 工具")
-- [Ping](https://ping.pe "ping 端口、检测墙")
+- [拨测](https://www.boce.com)
+- [阿里云拨测](https://boce.aliyun.com)
 - [CHECK-HOST](https://check-host.net)
 - [IPv6 测试](https://test-ipv6.com)
 - [http3check](https://http3check.net)
 - [Geekflare](https://geekflare.com "gf.dev")
+- [Site24x7 Tools](https://www.site24x7.com/tools/)
 - [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
 - [curl](https://curl.se/windows/)
 - [tcping](https://elifulkerson.com/projects/tcping.php "ping 端口")
