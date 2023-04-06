@@ -9,6 +9,8 @@
 - [Squoosh](https://squoosh.app "图片压缩")
 - [minuteImage](https://www.minuteimage.com "图片压缩")
 - [Photoshop](https://www.uupoop.com/#/old "在线 PS")
+- [iLoveIMG](https://www.iloveimg.com/zh-cn)
+- [身份证加水印](http://watermark.dxcweb.com)
 - [toonme](https://toonme.com "头像卡通化")
 - [佐糖](https://picwish.cn "抠图 证件照换底色 照片修复 压缩")
 - [Transparent PNG](https://png-pixel.com "透明的 PNG 像素 Base64 编码")
@@ -21,31 +23,31 @@
 - [iconfinder](https://www.iconfinder.com "图标")
 - [EmojiAll](https://www.emojiall.com "表情")
 
-### 工具 Tool
-- [JSON 编辑器](https://je.js.org)
-- [IP.SB](https://ip.sb "IP 工具")
-- [拨测](https://www.boce.com)
-- [阿里云拨测](https://boce.aliyun.com)
-- [CHECK-HOST](https://check-host.net)
-- [IPv6 测试](https://test-ipv6.com)
-- [http3check](https://http3check.net)
-- [Geekflare](https://geekflare.com "gf.dev")
-- [Site24x7 Tools](https://www.site24x7.com/tools/)
-- [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
-- [curl](https://curl.se/windows/)
-- [tcping](https://elifulkerson.com/projects/tcping.php "ping 端口")
-- [PsTools](https://docs.microsoft.com/zh-cn/sysinternals/downloads/pstools)
-- [asciinema](https://asciinema.org "基于文本的终端录制")
-- [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
-- [Code Beautify](https://codebeautify.org "在线工具")
-- [小鹿快传](https://deershare.com "p2p 文件传输")
-- [tl-rtc-file-tool](https://im.iamtsm.cn "p2p 网页工具")
-- [transfer.sh](https://transfer.sh "命令行共享文件")
-- [keep.sh](https://keep.sh "命令行共享文件")
-- [bashupload](https://bashupload.com "命令行共享文件")
-- [SaveTube](https://save.tube "下载 youtube 视频")
-- [OSS Insight](https://ossinsight.io "GitHub 开源软件洞察")
-- [Sysinternals](https://docs.microsoft.com/zh-cn/sysinternals "Windows 工具")
+### 图床 Bed
+- [图床资源](https://iao.su/pic.html)
+- [聚合图床](https://yh-pic.ihcloud.net/wangyi.html)
+- [TG 图床](https://imgtg.com)
+
+### 临时短信 Temporary SMS
+- <http://www.114sim.com>
+- <https://yunduanxin.net>
+- <https://receiveasms.com>
+- <https://www.yunjiema.top>
+- <https://www.clearcode.cn>
+- <https://mianfeijiema.com>
+- <https://ch.freephonenum.com>
+- <https://www.receive-sms-online.info>
+- <https://sms-online.co/receive-free-sms>
+- <https://www.zsrq.net>
+
+### 临时邮箱 Temporary mailbox
+- <https://rootsh.com>
+- <https://mail.td/zh>
+- <https://tempmail.cn>
+- <https://mailpoof.com/zh>
+- <https://www.mailtemp.net>
+- <https://www.moakt.com/zh>
+- <https://www.guerrillamail.com/zh>
 
 ### 画 Draw
 - [MindEditor](https://ss.netnr.com/mind "by kityminder 百度脑图")
@@ -53,6 +55,74 @@
 - [BPMNEditor](https://ss.netnr.com/bpmn "by bpmn-js")
 - [Excalidraw](https://excalidraw.com)
 - [GitMind](https://gitmind.cn "在线思维导图")
+
+### 资源 Resource
+- [SS](https://ss.netnr.com "脚本服务")
+- [VIP 视频解析](https://vv.zme.ink)
+- [点点字幕](http://www.ddzimu.com)
+- [云盘资源](https://yunpan1.com "阿里云盘资源")
+- [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
+- [FFmpeg Download](https://ffmpeg.org/download.html)
+- [FFmpeg Static](https://www.johnvansickle.com/ffmpeg "FFmpeg 静态构建包")
+- [EU](https://nic.eu.org "免费 eu.org 域名申请")
+- [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
+- [DownloadlyIR](https://downloadlyir.com)
+- [Portapps](https://portapps.io "VSCode 便携版")
+- [国家法律法规数据库](https://flk.npc.gov.cn)
+- [国外主机测评](https://www.zhujiceping.com)
+- [free-for.dev](https://free-for.dev)
+
+### 数据库 Database
+- [fish's dotNET](https://fishcodelib.com "数据库工具")
+- [DBMigration](https://fishcodelib.com/DBMigration.htm "数据库转换工具")
+- [convert-in](https://www.convert-in.com "Database migration and synchronization tools")
+- [DB2DB](http://www.szmesoft.com/DB2DB "数据库转换工具")
+- [db fiddle](https://dbfiddle.uk "免费的在线 SQL 环境进行实验和共享")
+- [SQL Fiddle](http://sqlfiddle.com "测试和共享 SQL 查询的应用程序")
+- [ConnectionStrings](https://www.connectionstrings.com "连接字符串参考")
+- [Database.Guide](https://database.guide "数据库指南")
+- [Remote MySQL](https://remotemysql.com "免费 MySQL 数据库")
+- [db4free.net](https://www.db4free.net "免费 MySQL 数据库")
+- [YugabyteDB](https://cloud.yugabyte.com "免费 PostgreSQL 数据库")
+- [ElephantSQL](https://www.elephantsql.com "免费 PostgreSQL 数据库")
+
+### 程序 Program
+- [Try.NET](https://try.dot.net "在线运行 .NET")
+- [Compile](https://rextester.com "在线运行代码")
+- [OpenJDK Microsoft](https://adoptium.net/zh-CN/temurin/releases "java jdk")
+- [OpenJDK Eclipse Temurin](https://learn.microsoft.com/zh-cn/java/openjdk/download "java jdk")
+- [OpenJDK Red Hat](https://developers.redhat.com/products/openjdk/download "java jdk")
+- [Java SE](https://www.oracle.com/br/java/technologies/downloads/archive/ "java jdk")
+- [jsonapi](https://www.jsonapi.co)
+- [JSON Keeper](https://jsonkeeper.com)
+- [sematext](https://apps.sematext.com/ui/login "logs 日志")
+- [全栈公开课](https://fullstackopen.com/zh)
+- [httpbin](https://httpbin.org "接口请求测试")
+- [npm](https://www.npmjs.com)
+- [nodejs](https://nodejs.org/en)
+- [LeanCloud](https://www.leancloud.cn)
+- [CSS Layout](https://csslayout.io)
+- [CSS Grid](https://cssgr.id)
+- [LOADING.IO](https://loading.io)
+- [MIMC](https://admin.mimc.chat.xiaomi.net/docs "小米推送服务")
+- [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
+- [腾讯云实验室](https://cloud.tencent.com/lab "在线 Linux 环境使用")
+- [carbon](https://carbon.now.sh "代码贴图")
+
+### 工具 Tool
+- [JSON 编辑器](https://je.js.org)
+- [IP.SB](https://ip.sb "IP 工具")
+- [Geekflare](https://geekflare.com "gf.dev")
+- [Site24x7 Tools](https://www.site24x7.com/tools/)
+- [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
+- [curl](https://curl.se/windows/)
+- [tcping](https://elifulkerson.com/projects/tcping.php "ping 端口")
+- [PsTools](https://docs.microsoft.com/zh-cn/sysinternals/downloads/pstools)
+- [asciinema](https://asciinema.org "基于文本的终端录制")
+- [Code Beautify](https://codebeautify.org "在线工具")
+- [SaveTube](https://save.tube "下载 youtube 视频")
+- [OSS Insight](https://ossinsight.io "GitHub 开源软件洞察")
+- [Sysinternals](https://docs.microsoft.com/zh-cn/sysinternals "Windows 工具")
 
 ### 正则 Regex
 - [Regex101](https://regex101.com "测试表达、生成代码")
@@ -81,56 +151,28 @@
 - [UUP dump](https://uupdump.net "系统镜像下载")
 - [KMS 激活](https://kms.zme.ink)
 
-### 资源 Resource
-- [SS](https://ss.netnr.com "脚本服务")
-- [VIP 视频解析](https://vv.zme.ink)
-- [点点字幕](http://www.ddzimu.com)
-- [云盘资源](https://yunpan1.com "阿里云盘资源")
-- [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
-- [FFmpeg Download](https://ffmpeg.org/download.html)
-- [FFmpeg Static](https://www.johnvansickle.com/ffmpeg "FFmpeg 静态构建包")
-- [EU](https://nic.eu.org "免费 eu.org 域名申请")
-- [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
-- [DownloadlyIR](https://downloadlyir.com)
-- [Portapps](https://portapps.io "VSCode 便携版")
-- [国家法律法规数据库](https://flk.npc.gov.cn)
-- [国外主机测评](https://www.zhujiceping.com)
-- [free-for.dev](https://free-for.dev)
+### 域名 Domain
+- <http://127.0.0.1.sslip.io>
+- <http://wifi.aliyun.com>
+- <http://114.taobao.com>
+- <http://safe.taobao.com>
+- <http://ecd.tencent.com>
+- [ICP 备案查询](https://beian.miit.gov.cn)
+- [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
 
-### 数据库 Database
-- [fish's dotNET](https://fishcodelib.com "数据库工具")
-- [DBMigration](https://fishcodelib.com/DBMigration.htm "数据库转换工具")
-- [convert-in](https://www.convert-in.com "Database migration and synchronization tools")
-- [DB2DB](http://www.szmesoft.com/DB2DB "数据库转换工具")
-- [db fiddle](https://dbfiddle.uk "免费的在线 SQL 环境进行实验和共享")
-- [SQL Fiddle](http://sqlfiddle.com "测试和共享 SQL 查询的应用程序")
-- [ConnectionStrings](https://www.connectionstrings.com "连接字符串参考")
-- [Database.Guide](https://database.guide "数据库指南")
-
-### 程序 Program
-- [Try.NET](https://try.dot.net "在线运行 .NET")
-- [Compile](https://rextester.com "在线运行代码")
-- [OpenJDK Microsoft](https://adoptium.net/zh-CN/temurin/releases "java jdk")
-- [OpenJDK Eclipse Temurin](https://learn.microsoft.com/zh-cn/java/openjdk/download "java jdk")
-- [OpenJDK Red Hat](https://developers.redhat.com/products/openjdk/download "java jdk")
-- [Java SE](https://www.oracle.com/br/java/technologies/downloads/archive/ "java jdk")
-- [jsonapi](https://www.jsonapi.co)
-- [JSON Keeper](https://jsonkeeper.com)
-- [sematext](https://apps.sematext.com/ui/login "logs 日志")
-- [全栈公开课](https://fullstackopen.com/zh)
-- [httpbin](https://httpbin.org "接口请求测试")
-- [npm](https://www.npmjs.com)
-- [nodejs](https://nodejs.org/en)
-- [LeanCloud](https://www.leancloud.cn)
-- [CSS Layout](https://csslayout.io)
-- [CSS Grid](https://cssgr.id)
-- [LOADING.IO](https://loading.io)
-- [MIMC](https://admin.mimc.chat.xiaomi.net/docs "小米推送服务")
-- [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
-- [腾讯云实验室](https://cloud.tencent.com/lab "在线 Linux 环境使用")
-- [carbon](https://carbon.now.sh "代码贴图")
+### 文件传输 File Transfer
+- [小鹿快传](https://deershare.com "p2p 文件传输")
+- [tl-rtc-file-tool](https://im.iamtsm.cn "p2p 网页工具")
+- [transfer.sh](https://transfer.sh "命令行共享文件")
+- [keep.sh](https://keep.sh "命令行共享文件")
+- [bashupload](https://bashupload.com "命令行共享文件")
 
 ### 网络 Network
+- [拨测](https://www.boce.com)
+- [阿里云拨测](https://boce.aliyun.com)
+- [CHECK-HOST](https://check-host.net)
+- [IPv6 测试](https://test-ipv6.com)
+- [http3check](https://http3check.net)
 - [测速网](https://www.speedtest.cn)
 - [ZeroTier](https://www.zerotier.com "全球区域网络")
 - [Tailscale](https://tailscale.com "可以正常工作的安全网络")
@@ -175,6 +217,11 @@
 - [goorm](https://www.goorm.io)
 - [Glitch](https://glitch.com)
 - [Gitpod](https://www.gitpod.io)
+- [Replit](https://replit.com)
+- [Railway](https://railway.app)
+- [Deno](https://deno.com/deploy)
+- [Cloudflare Pages](https://pages.cloudflare.com)
+- [Cyclic.sh](https://www.cyclic.sh)
 
 ### 集成开发环境 IDE
 - [StackBlitz](https://stackblitz.com "浏览器上跑 NodeJS")
