@@ -184,11 +184,13 @@
 
 ### CDN
 - [jsDelivr](https://www.jsdelivr.com)
+- [Staticfile](https://www.staticfile.org)
 - [字节跳动](https://cdn.bytedance.com)
 - [75CDN](https://cdn.baomitu.com)
 - [新浪 CDN](https://lib.sinaapp.com)
 - [cdnjs](https://cdnjs.com)
 - [Statically](https://statically.io)
+- [Microsoft Ajax CDN](https://learn.microsoft.com/en-us/aspnet/ajax/cdn/overview)
 
 ### SSL
 - [Let's Encrypt](https://letsencrypt.org)
@@ -259,6 +261,11 @@
 - [NetnrMD](https://md.js.org)
 - [File System Access](https://googlechromelabs.github.io/text-editor/)
 
+### 人工智能 AI
+- [文心一言](https://yiyan.baidu.com)
+- [Bard](https://bard.google.com)
+- [ChatGTP 合集](https://chatgpts.ninvfeng.xyz)
+
 ### 社区 Community
 - [Firefox Monitor](https://monitor.firefox.com "查询密码泄漏")
 - [Stack Overflow](https://stackoverflow.com)
@@ -269,7 +276,8 @@
 - [掘金](https://juejin.im)
 - [36 氪](https://36kr.com)
 
-### 接口 API
+### 文档 Document
+- [Installing ONLYOFFICE](https://helpcenter.onlyoffice.com/installation/docs-community-install-docker.aspx)
 - [第三方登录接入文档](https://zme.ink/Netnr.Login)
 - [微信支付 普通商户接入文档](https://pay.weixin.qq.com/wiki/doc/api/index.html)
 - [微信支付 APP 支付开发者文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)
