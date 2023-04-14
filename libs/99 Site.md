@@ -21,7 +21,6 @@
 - [蚊子](https://www.xiabingbao.com)
 - [Shen](http://litp.cn)
 - [小公主](https://xiaozhuanlan.com/u/5262714674)
-- [江边的旱鸭子](https://blog.joouis.com)
 - [JovenHe](https://hjw45611.github.io/blog)
 - [Kingname](https://www.kingname.info)
 - [Zxilly](https://learningman.top)

@@ -69,6 +69,7 @@
 - [DownloadlyIR](https://downloadlyir.com)
 - [Portapps](https://portapps.io "VSCode 便携版")
 - [国家法律法规数据库](https://flk.npc.gov.cn)
+- [营养指导网](http://www.articlesask.com)
 - [国外主机测评](https://www.zhujiceping.com)
 - [free-for.dev](https://free-for.dev)
 
@@ -157,6 +158,7 @@
 - <http://114.taobao.com>
 - <http://safe.taobao.com>
 - <http://ecd.tencent.com>
+- [TLD-LIST](https://zh-hans.tld-list.com "顶级域名的价格")
 - [ICP 备案查询](https://beian.miit.gov.cn)
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
 
