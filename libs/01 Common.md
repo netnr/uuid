@@ -26,7 +26,6 @@
 ### 图床 Bed
 - [图床资源](https://iao.su/pic.html)
 - [路过图床](https://imgse.com)
-- [TG 图床](https://imgtg.com)
 
 ### 临时短信 Temporary SMS
 - <http://www.114sim.com>
@@ -164,7 +163,6 @@
 
 ### 文件传输 File Transfer
 - [tl-rtc-file-tool](https://im.iamtsm.cn "p2p 网页工具")
-- [transfer.sh](https://transfer.sh "命令行共享文件")
 - [keep.sh](https://keep.sh "命令行共享文件")
 
 ### 网络 Network
