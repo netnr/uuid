@@ -50,7 +50,6 @@
 - [奶爸 de 笔记](https://blog.naibabiji.com)
 - [DongSuo](https://blog.islasher.com)
 - [碎碎念](https://kingsfish.github.io)
-- [太空船](https://www.boatsky.com)
 - [httpsMail](https://httpsmail.com)
 - [LEIRDY](https://www.leridy.pw)
 - [火瓜](http://huogua.net)

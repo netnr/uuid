@@ -17,3 +17,4 @@ Privatized deployment, update the index file `libs/index.json`, and then enable 
 https://uu.zme.ink/{name} `{name}` is your account, default `netnr`  
 https://uu.zme.ink/{name}/{repos} `{repos}` repository, default `uuid`  
 https://uu.zme.ink#{name}/{repos} offline   
+https://uu.zme.ink#_local 本地 Local

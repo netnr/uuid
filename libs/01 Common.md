@@ -32,7 +32,6 @@
 - <https://yunduanxin.net>
 - <https://receiveasms.com>
 - <https://www.yunjiema.top>
-- <https://www.clearcode.cn>
 - <https://mianfeijiema.com>
 - <https://ch.freephonenum.com>
 - <https://www.receive-sms-online.info>
@@ -252,7 +251,6 @@
 - [ReactPage](https://react-page.github.io)
 - [CKEditor](https://ckeditor.com)
 - [React Draft Wysiwyg](https://jpuri.github.io/react-draft-wysiwyg)
-- [Froala](https://froala.com)
 - [TinyMCE](https://www.tiny.cloud)
 - [StackEdit](https://stackedit.io/app)
 - [Editor.md](https://pandao.github.io/editor.md)
