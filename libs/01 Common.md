@@ -162,7 +162,9 @@
 
 ### 文件传输 File Transfer
 - [tl-rtc-file-tool](https://im.iamtsm.cn "p2p 网页工具")
+- [小鹿快传](https://deershare.com "p2p 文件传输")
 - [keep.sh](https://keep.sh "命令行共享文件")
+- [tmpfiles](https://tmpfiles.org "临时文件上次")
 
 ### 网络 Network
 - [拨测](https://www.boce.com)
