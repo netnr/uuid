@@ -59,7 +59,7 @@
 - [SS](https://ss.netnr.com "脚本服务")
 - [VIP 视频解析](https://vv.zme.ink)
 - [点点字幕](http://www.ddzimu.com)
-- [云盘资源](https://yunpan1.com "阿里云盘资源")
+- [云盘资源](https://yunpan1.cc "阿里云盘资源")
 - [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
 - [FFmpeg Download](https://ffmpeg.org/download.html)
 - [FFmpeg Static](https://www.johnvansickle.com/ffmpeg "FFmpeg 静态构建包")
@@ -123,6 +123,10 @@
 - [OSS Insight](https://ossinsight.io "GitHub 开源软件洞察")
 - [Sysinternals](https://docs.microsoft.com/zh-cn/sysinternals "Windows 工具")
 
+### 监控 Monitor
+- [Cronitor](https://cronitor.io)
+- [UptimeRobot](https://uptimerobot.com)
+
 ### 正则 Regex
 - [Regex101](https://regex101.com "测试表达、生成代码")
 - [站长工具正则表达式](http://tool.chinaz.com/regex/)
@@ -157,6 +161,7 @@
 - <http://safe.taobao.com>
 - <http://ecd.tencent.com>
 - [TLD-LIST](https://zh-hans.tld-list.com "顶级域名的价格")
+- [哪煮米](https://www.nazhumi.com "域名比价")
 - [ICP 备案查询](https://beian.miit.gov.cn)
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
 
@@ -244,7 +249,8 @@
 ### 编辑器 Editor
 - [Monaco-Editor](https://microsoft.github.io/monaco-editor)
 - [Ace](https://ace.c9.io)
-- [Ace Demo](https://ace.c9.io/build/kitchen-sink.html)
+- [CodeMirror](https://ace.c9.io/build/kitchen-sink.html)
+- [Ace](https://codemirror.net)
 - [lexical](https://playground.lexical.dev)
 - [Quill](https://quilljs.com)
 - [Trix](https://trix-editor.org)
@@ -258,6 +264,7 @@
 - [Editor.md](https://pandao.github.io/editor.md)
 - [SimpleMDE](https://simplemde.com)
 - [NetnrMD](https://md.js.org)
+- [crontab](https://crontab.guru)
 - [File System Access](https://googlechromelabs.github.io/text-editor/)
 
 ### 人工智能 AI
