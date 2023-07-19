@@ -142,6 +142,7 @@
 - [Office Convert](https://cn.office-converter.com)
 - [iLovePDF](https://www.ilovepdf.com/zh-cn)
 - [迅捷转换器](https://app.xunjiepdf.com)
+- [Alldoc](https://alldocs.app "pandoc")
 
 ### 镜像 Mirror
 - [网易开源镜像站](https://mirrors.163.com)
@@ -264,6 +265,7 @@
 - [Editor.md](https://pandao.github.io/editor.md)
 - [SimpleMDE](https://simplemde.com)
 - [NetnrMD](https://md.js.org)
+- [CherryMarkdown](https://tencent.github.io/cherry-markdown/examples/index.html)
 - [crontab](https://crontab.guru)
 - [File System Access](https://googlechromelabs.github.io/text-editor/)
 
