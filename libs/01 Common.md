@@ -109,7 +109,7 @@
 - [carbon](https://carbon.now.sh "代码贴图")
 
 ### 工具 Tool
-- [JSON 编辑器](https://je.js.org)
+- [JSON Editor](https://je.js.org "JSON 编辑器")
 - [IP.SB](https://ip.sb "IP 工具")
 - [Geekflare](https://geekflare.com "gf.dev")
 - [Site24x7 Tools](https://www.site24x7.com/tools/)
@@ -188,6 +188,8 @@
 - [QUIC TEST](https://quic.nginx.org/quic.html)
 
 ### CDN
+- [UNPKG](https://unpkg.com)
+- [npmmirror](https://npmmirror.com)
 - [jsDelivr](https://www.jsdelivr.com)
 - [Staticfile](https://www.staticfile.org)
 - [字节跳动](https://cdn.bytedance.com)
@@ -249,9 +251,9 @@
 
 ### 编辑器 Editor
 - [Monaco-Editor](https://microsoft.github.io/monaco-editor)
+- [CodeMirror](https://codemirror.net)
 - [Ace](https://ace.c9.io)
-- [CodeMirror](https://ace.c9.io/build/kitchen-sink.html)
-- [Ace](https://codemirror.net)
+- [Ace Demo](https://ace.c9.io/build/kitchen-sink.html)
 - [lexical](https://playground.lexical.dev)
 - [Quill](https://quilljs.com)
 - [Trix](https://trix-editor.org)
