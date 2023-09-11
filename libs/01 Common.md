@@ -8,7 +8,9 @@
 - [TinyPNG](https://tinypng.com "图片压缩")
 - [Squoosh](https://squoosh.app "图片压缩")
 - [minuteImage](https://www.minuteimage.com "图片压缩")
-- [Photoshop](https://www.uupoop.com/#/old "在线 PS")
+- [Photopea](https://www.photopea.com "在线 PS")
+- [稿定](https://www.uupoop.com/#/old "在线 PS")
+- [Pixlr](https://pixlr.com/cn/e/ "在线 PS")
 - [iLoveIMG](https://www.iloveimg.com/zh-cn)
 - [身份证加水印](http://watermark.dxcweb.com)
 - [toonme](https://toonme.com "头像卡通化")
@@ -71,6 +73,9 @@
 - [营养指导网](http://www.articlesask.com)
 - [国外主机测评](https://www.zhujiceping.com)
 - [free-for.dev](https://free-for.dev)
+
+### 下载 Download
+- [B站视频解析下载](https://bilibili.iiilab.com)
 
 ### 数据库 Database
 - [fish's dotNET](https://fishcodelib.com "数据库工具")
@@ -152,7 +157,6 @@
 
 ### 系统 System
 - [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
-- [UUP dump](https://uupdump.net "系统镜像下载")
 - [KMS 激活](https://kms.zme.ink)
 
 ### 域名 Domain

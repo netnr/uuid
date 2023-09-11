@@ -4,6 +4,7 @@
 - [FakeUpdate](http://fakeupdate.net "假装升级")
 - [Learn X in Y minutes](https://learnxinyminutes.com "在 Y 分钟内学习 X")
 - [PostgreSQL Notes](https://postgresql.verite.pro)
+- [最爱笑](https://zuiax.com)
 - [风土木中医纲](https://fengtm.com)
 
 ### 个人站点
@@ -111,7 +112,6 @@
 - [熊喵](http://www.xmpojie.com)
 - [胡大炮](https://hupeng.me)
 - [TMaize](http://blog.tmaize.net)
-- [inspoy](https://inspoy.cc)
 - [Chinsyo](http://chinsyo.com)
 - [珲少](http://huishao.cc)
 - [清风](http://huisao.cc)
