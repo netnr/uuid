@@ -28,6 +28,7 @@
 ### 图床 Bed
 - [图床资源](https://iao.su/pic.html)
 - [路过图床](https://imgse.com)
+- [Paste.Pics](https://paste.pics "临时截图")
 
 ### 临时短信 Temporary SMS
 - <http://www.114sim.com>
