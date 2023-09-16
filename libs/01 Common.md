@@ -11,6 +11,8 @@
 - [Photopea](https://www.photopea.com "在线 PS")
 - [稿定](https://www.uupoop.com/#/old "在线 PS")
 - [Pixlr](https://pixlr.com/cn/e/ "在线 PS")
+- [remove.bg](https://www.remove.bg "移除背景")
+- [removal.ai](https://removal.ai)
 - [iLoveIMG](https://www.iloveimg.com/zh-cn)
 - [身份证加水印](http://watermark.dxcweb.com)
 - [toonme](https://toonme.com "头像卡通化")
