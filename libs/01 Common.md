@@ -62,6 +62,7 @@
 
 ### 资源 Resource
 - [SS](https://ss.netnr.com "脚本服务")
+- [帮小忙](https://tool.browser.qq.com "腾讯QQ浏览器在线工具箱")
 - [VIP 视频解析](https://vv.zme.ink)
 - [点点字幕](http://www.ddzimu.com)
 - [云盘资源](https://yunpan1.cc "阿里云盘资源")
@@ -138,7 +139,6 @@
 
 ### 正则 Regex
 - [Regex101](https://regex101.com "测试表达、生成代码")
-- [站长工具正则表达式](http://tool.chinaz.com/regex/)
 - [脚本之家正则表达式](http://tools.jb51.net/regex/javascript)
 
 ### 安全 Safe
@@ -169,7 +169,7 @@
 - <http://114.taobao.com>
 - <http://safe.taobao.com>
 - <http://ecd.tencent.com>
-- [TLD-LIST](https://zh-hans.tld-list.com "顶级域名的价格")
+- [TLD-LIST](https://tld-list.com "顶级域名的价格")
 - [哪煮米](https://www.nazhumi.com "域名比价")
 - [ICP 备案查询](https://beian.miit.gov.cn)
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
@@ -299,7 +299,6 @@
 
 ### 文档 Document
 - [Installing ONLYOFFICE](https://helpcenter.onlyoffice.com/installation/docs-community-install-docker.aspx)
-- [第三方登录接入文档](https://zme.ink/Netnr.Login)
 - [微信支付 普通商户接入文档](https://pay.weixin.qq.com/wiki/doc/api/index.html)
 - [微信支付 APP 支付开发者文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)
 - [支付宝开放平台](https://openhome.alipay.com/developmentDocument.htm)

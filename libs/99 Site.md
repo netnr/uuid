@@ -92,7 +92,6 @@
 - [JeeInn](https://www.jeeinn.com)
 - [豪翔天下](https://haofly.net)
 - [Fish](https://love67.net)
-- [sens](https://dj9399.github.io)
 - [IT 干货](https://www.sufaith.com)
 - [十七度](https://www.shiqidu.com)
 - [小川](https://fengxc.me)
@@ -116,5 +115,4 @@
 - [珲少](http://huishao.cc)
 - [清风](http://huisao.cc)
 - [David Yin](https://seo.g2soft.net)
-- [且听书吟](https://yufan.me)
 - [应景图](http://www.yingjingtu.com)
