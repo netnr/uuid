@@ -234,7 +234,7 @@
 - [render](https://render.com)
 - [heroku](https://www.heroku.com)
 - [Microsoft Azure](https://portal.azure.com)
-- [goorm](https://www.goorm.io)
+- [goorm](https://ide.goorm.io)
 - [Glitch](https://glitch.com)
 - [Gitpod](https://www.gitpod.io)
 - [Replit](https://replit.com)

@@ -5,6 +5,7 @@
 - [Learn X in Y minutes](https://learnxinyminutes.com "在 Y 分钟内学习 X")
 - [PostgreSQL Notes](https://postgresql.verite.pro)
 - [最爱笑](https://zuiax.com)
+- [保安堂](https://www.baoantang.com)
 - [风土木中医纲](https://fengtm.com)
 
 ### 个人站点
@@ -58,14 +59,12 @@
 - [Zhu.Yang](https://generalthink.github.io)
 - [何晓东](https://alpha2016.github.io)
 - [白俊遥](https://baijunyao.com)
-- [hyperxu](https://www.hyperxu.com)
 - [鱼喃](https://blog.newnius.com)
 - [逐鹿](http://amonxu.com)
 - [SPhard](http://www.sphard.com)
 - [jdhao](https://jdhao.github.io)
 - [梦遥奇缘](https://www.idiot6.com)
 - [鹞之神乐](https://kagura.me)
-- [搞机男](https://www.gaojinan.com)
 - [KAIX.IN](https://kaix.in)
 - [超能小紫](https://www.mokeyjay.com)
 - [旧时光](https://www.jiushig.com)
@@ -116,3 +115,4 @@
 - [清风](http://huisao.cc)
 - [David Yin](https://seo.g2soft.net)
 - [应景图](http://www.yingjingtu.com)
+- [Jiajun的技术笔记](https://jiajunhuang.com)
