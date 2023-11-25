@@ -60,20 +60,6 @@
 - [GitMind](https://gitmind.cn "在线思维导图")
 - [AntV](https://antv.antgroup.com "数据可视化")
 
-### 资源 Resource
-- [SS](https://ss.netnr.com "脚本服务")
-- [帮小忙](https://tool.browser.qq.com "腾讯QQ浏览器在线工具箱")
-- [VIP 视频解析](https://vv.zme.ink)
-- [点点字幕](http://www.ddzimu.com)
-- [云盘资源](https://yunpan1.cc "阿里云盘资源")
-- [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
-- [EU](https://nic.eu.org "免费 eu.org 域名申请")
-- [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
-- [国家法律法规数据库](https://flk.npc.gov.cn)
-- [营养指导网](http://www.articlesask.com)
-- [国外主机测评](https://www.zhujiceping.com)
-- [free-for.dev](https://free-for.dev)
-
 ### 数据库 Database
 - [fish's dotNET](https://fishcodelib.com "数据库工具")
 - [DBMigration](https://fishcodelib.com/DBMigration.htm "数据库转换工具")
@@ -103,15 +89,28 @@
 - [npm](https://www.npmjs.com)
 - [nodejs](https://nodejs.org/en)
 - [LeanCloud](https://www.leancloud.cn)
-- [CSS Layout](https://csslayout.io)
 - [LOADING.IO](https://loading.io)
 - [MIMC](https://admin.mimc.chat.xiaomi.net/docs "小米推送服务")
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
 - [腾讯云实验室](https://cloud.tencent.com/lab "在线 Linux 环境使用")
 - [carbon](https://carbon.now.sh "代码贴图")
 
+### 资源 Resource
+- [VIP 视频解析](https://vv.zme.ink)
+- [云盘资源](https://yunpan1.cc "阿里云盘资源")
+- [点点字幕](http://www.ddzimu.com)
+- [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
+- [EU](https://nic.eu.org "免费 eu.org 域名申请")
+- [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
+- [国家法律法规数据库](https://flk.npc.gov.cn)
+- [营养指导网](http://www.articlesask.com)
+- [国外主机测评](https://www.zhujiceping.com)
+- [free-for.dev](https://free-for.dev)
+
 ### 工具 Tool
+- [SS](https://ss.netnr.com "脚本服务")
 - [JSON Editor](https://je.js.org "JSON 编辑器")
+- [帮小忙](https://tool.browser.qq.com "腾讯QQ浏览器在线工具箱")
 - [IP.SB](https://ip.sb "IP 工具")
 - [Geekflare](https://geekflare.com "gf.dev")
 - [Site24x7 Tools](https://www.site24x7.com/tools/)
