@@ -67,21 +67,12 @@
 - [点点字幕](http://www.ddzimu.com)
 - [云盘资源](https://yunpan1.cc "阿里云盘资源")
 - [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
-- [FFmpeg Download](https://ffmpeg.org/download.html)
-- [FFmpeg Static](https://www.johnvansickle.com/ffmpeg "FFmpeg 静态构建包")
 - [EU](https://nic.eu.org "免费 eu.org 域名申请")
 - [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
-- [Downloadly](https://downloadlynet.ir)
-- [DownloadlyIR](https://downloadlyir.com)
-- [Portapps](https://portapps.io "VSCode 便携版")
 - [国家法律法规数据库](https://flk.npc.gov.cn)
 - [营养指导网](http://www.articlesask.com)
 - [国外主机测评](https://www.zhujiceping.com)
 - [free-for.dev](https://free-for.dev)
-
-### 下载 Download
-- [B站视频解析下载](https://bilibili.iiilab.com)
-- [SaveTube](https://save.tube "下载 youtube 视频")
 
 ### 数据库 Database
 - [fish's dotNET](https://fishcodelib.com "数据库工具")
@@ -124,14 +115,33 @@
 - [IP.SB](https://ip.sb "IP 工具")
 - [Geekflare](https://geekflare.com "gf.dev")
 - [Site24x7 Tools](https://www.site24x7.com/tools/)
-- [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
-- [curl](https://curl.se/windows/)
 - [tcping](https://elifulkerson.com/projects/tcping.php "ping 端口")
-- [PsTools](https://docs.microsoft.com/zh-cn/sysinternals/downloads/pstools)
 - [asciinema](https://asciinema.org "基于文本的终端录制")
 - [Code Beautify](https://codebeautify.org "在线工具")
 - [OSS Insight](https://ossinsight.io "GitHub 开源软件洞察")
+
+### 系统 System
+- [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
+- [KMS 激活](https://kms.zme.ink)
+
+### 下载 Download
+- [Downloadly](https://downloadlynet.ir)
+- [DownloadlyIR](https://downloadlyir.com)
+- [Portapps](https://portapps.io "VSCode 便携版")
+- [PortableApps](https://portableapps.com "便携版")
+- [FFmpeg Download](https://ffmpeg.org/download.html)
+- [FFmpeg Static](https://www.johnvansickle.com/ffmpeg "FFmpeg 静态构建包")
+- [PsTools](https://docs.microsoft.com/zh-cn/sysinternals/downloads/pstools)
 - [Sysinternals](https://docs.microsoft.com/zh-cn/sysinternals "Windows 工具")
+- [curl](https://curl.se/windows/)
+- [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
+- [腾讯软件中心](https://pc.qq.com)
+- [B站视频解析下载](https://bilibili.iiilab.com)
+- [SaveTube](https://save.tube "下载 youtube 视频")
+
+### 浏览器 Browser
+- [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
+- [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
 
 ### 监控 Monitor
 - [Cronitor](https://cronitor.io)
@@ -158,10 +168,6 @@
 - [阿里巴巴开源镜像站](https://developer.aliyun.com/mirror)
 - [腾讯云软件源](https://mirrors.cloud.tencent.com)
 - [USTC](https://mirrors.ustc.edu.cn)
-
-### 系统 System
-- [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
-- [KMS 激活](https://kms.zme.ink)
 
 ### 域名 Domain
 - <http://127.0.0.1.sslip.io>
