@@ -46,7 +46,6 @@
 ### 临时邮箱 Temporary mailbox
 - <https://rootsh.com>
 - <https://mail.td/zh>
-- <https://tempmail.cn>
 - <https://mailpoof.com/zh>
 - <https://www.mailtemp.net>
 - <https://www.moakt.com/zh>

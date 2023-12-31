@@ -100,7 +100,6 @@
 - [醉乐轩](http://behappy.cc)
 - [萧宸宇](https://iiiyu.com)
 - [VVBLOG](https://blog.vvzero.com)
-- [前端集合](https://geek100.com)
 - [scnace](http://blog.scnace.me)
 - [Akkuman](http://hacktech.cn)
 - [美阅](http://www.moonue.com)
