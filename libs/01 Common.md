@@ -98,6 +98,7 @@
 - [VIP 视频解析](https://vv.zme.ink)
 - [云盘资源](https://yunpan1.cc "阿里云盘资源")
 - [点点字幕](http://www.ddzimu.com)
+- [live](https://live.fanmingming.com "m3u8")
 - [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
 - [EU](https://nic.eu.org "免费 eu.org 域名申请")
 - [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
