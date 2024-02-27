@@ -44,7 +44,6 @@
 - <https://www.zsrq.net>
 
 ### 临时邮箱 Temporary mailbox
-- <https://rootsh.com>
 - <https://mail.td/zh>
 - <https://mailpoof.com/zh>
 - <https://www.mailtemp.net>
@@ -181,8 +180,6 @@
 
 ### 文件传输 File Transfer
 - [tl-rtc-file-tool](https://im.iamtsm.cn "p2p 网页工具")
-- [小鹿快传](https://deershare.com "p2p 文件传输")
-- [keep.sh](https://keep.sh "命令行共享文件")
 - [tmpfiles](https://tmpfiles.org "临时文件上次")
 
 ### 网络 Network
@@ -232,7 +229,6 @@
 - [CODING](https://coding.net)
 - [GitLab](https://gitlab.com)
 - [Bitbucket](https://bitbucket.org)
-- [Gogs](https://try.gogs.io)
 - [Netlify](https://www.netlify.com)
 - [Vercel](https://vercel.com/home)
 - [京东](https://www.jdcloud.com/cn/products/codecommit "需要登录访问")
@@ -290,7 +286,7 @@
 
 ### 人工智能 AI
 - [文心一言](https://yiyan.baidu.com)
-- [Bard](https://bard.google.com)
+- [Gemini](https://gemini.google.com)
 - [ChatGTP 合集](https://chatgpts.ninvfeng.xyz)
 
 ### 社区 Community

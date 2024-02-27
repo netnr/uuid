@@ -11,7 +11,6 @@
 ### 个人站点
 - [胡骊](https://blog.foxail.org)
 - [雨戈林多](https://moonagic.com)
-- [启智网](http://www.7qizhi.com)
 - [御坂研究所](http://nosuchfield.com)
 - [Allen Hua](http://hellodk.cn)
 - [星空工作室](https://xingkong2014.github.io)
@@ -105,7 +104,6 @@
 - [美阅](http://www.moonue.com)
 - [脑袋](http://ifelsend.com)
 - [偷渡鱼](https://touduyu.com)
-- [LUOYE](https://luoyefe.com)
 - [熊喵](http://www.xmpojie.com)
 - [胡大炮](https://hupeng.me)
 - [TMaize](http://blog.tmaize.net)
@@ -115,4 +113,3 @@
 - [David Yin](https://seo.g2soft.net)
 - [应景图](http://www.yingjingtu.com)
 - [Jiajun的技术笔记](https://jiajunhuang.com)
-- []
