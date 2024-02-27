@@ -9,7 +9,7 @@
 - [Squoosh](https://squoosh.app "图片压缩")
 - [minuteImage](https://www.minuteimage.com "图片压缩")
 - [Photopea](https://www.photopea.com "在线 PS")
-- [稿定](https://www.uupoop.com/#/old "在线 PS")
+- [稿定](https://ps.gaoding.com "在线 PS")
 - [Pixlr](https://pixlr.com/cn/e/ "在线 PS")
 - [remove.bg](https://www.remove.bg "移除背景")
 - [removal.ai](https://removal.ai)
