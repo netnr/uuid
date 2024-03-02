@@ -173,6 +173,9 @@
 - <http://114.taobao.com>
 - <http://safe.taobao.com>
 - <http://ecd.tencent.com>
+- <http://devd.io>
+- <https://get.localhost.direct>
+- <https://readme.localtest.me>
 - [TLD-LIST](https://tld-list.com "顶级域名的价格")
 - [哪煮米](https://www.nazhumi.com "域名比价")
 - [ICP 备案查询](https://beian.miit.gov.cn)
@@ -206,7 +209,6 @@
 - [jsDelivr](https://www.jsdelivr.com)
 - [Staticfile](https://www.staticfile.org)
 - [字节跳动](https://cdn.bytedance.com)
-- [75CDN](https://cdn.baomitu.com)
 - [新浪 CDN](https://lib.sinaapp.com)
 - [cdnjs](https://cdnjs.com)
 - [Statically](https://statically.io)
@@ -216,6 +218,8 @@
 - [Let's Encrypt](https://letsencrypt.org)
 - [SSL For Free](https://www.sslforfree.com "免费申请 SSL 证书")
 - [FreeSSL](https://freessl.cn "免费申请 SSL 证书")
+- [免费SSL](https://www.mianfeissl.com)
+- [OHTTPS](https://ohttps.com)
 - [Qualys SSL Labs](https://www.ssllabs.com)
 - [SSL/TLS 安全评估报告](https://myssl.com)
 - [SSL 证书格式转换工具](https://www.chinassl.net/ssltools/convert-ssl.html)
