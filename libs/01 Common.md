@@ -107,6 +107,7 @@
 - [free-for.dev](https://free-for.dev)
 
 ### 工具 Tool
+- [KMS 激活](https://kms.zme.ink)
 - [SS](https://ss.netnr.com "脚本服务")
 - [JSON Editor](https://je.js.org "JSON 编辑器")
 - [帮小忙](https://tool.browser.qq.com "腾讯QQ浏览器在线工具箱")
@@ -117,12 +118,23 @@
 - [asciinema](https://asciinema.org "基于文本的终端录制")
 - [Code Beautify](https://codebeautify.org "在线工具")
 - [OSS Insight](https://ossinsight.io "GitHub 开源软件洞察")
+- [Regex101](https://regex101.com "测试表达、生成代码")
+- [脚本之家正则表达式](http://tools.jb51.net/regex/javascript)
+- [腾讯哈勃分析系统](https://habo.qq.com "分析检测恶意软件")
+- [Jotti](https://virusscan.jotti.org/zh-CN/scan-file "分析检测恶意软件")
+- [VirusTotal](https://www.virustotal.com "分析检测恶意软件")
+- [UptimeRobot](https://uptimerobot.com)
+- [Cronitor](https://cronitor.io)
+- [crontab.guru](https://crontab.guru)
+- [cRonstrue](https://bradymholt.github.io/cRonstrue/)
+- [Crontab Generator](https://crontab-generator.org)
+- [Cron Helper](https://cron.help)
 
-### 系统 System
-- [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
-- [KMS 激活](https://kms.zme.ink)
 
 ### 下载 Download
+- [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
+- [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
+- [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
 - [Downloadly](https://downloadlynet.ir)
 - [DownloadlyIR](https://downloadlyir.com)
 - [Portapps](https://portapps.io "VSCode 便携版")
@@ -136,23 +148,6 @@
 - [腾讯软件中心](https://pc.qq.com)
 - [B站视频解析下载](https://bilibili.iiilab.com)
 - [SaveTube](https://save.tube "下载 youtube 视频")
-
-### 浏览器 Browser
-- [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
-- [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
-
-### 监控 Monitor
-- [Cronitor](https://cronitor.io)
-- [UptimeRobot](https://uptimerobot.com)
-
-### 正则 Regex
-- [Regex101](https://regex101.com "测试表达、生成代码")
-- [脚本之家正则表达式](http://tools.jb51.net/regex/javascript)
-
-### 安全 Safe
-- [腾讯哈勃分析系统](https://habo.qq.com "分析检测恶意软件")
-- [Jotti](https://virusscan.jotti.org/zh-CN/scan-file "分析检测恶意软件")
-- [VirusTotal](https://www.virustotal.com "分析检测恶意软件")
 
 ### 转换 Convert
 - [FreeConvert](https://www.freeconvert.com)
