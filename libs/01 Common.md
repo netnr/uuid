@@ -133,6 +133,11 @@
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
+- [Ventoy](https://www.ventoy.net/cn/index.html)
+- [WePE](https://www.wepe.com.cn/download.html "微PE工具箱")
+- [Hikari PE](https://hikaricalyx.com/hakureipe/ "Hikari PE")
+- [Hakurei PE](https://hikaricalyx.com/hakureipe/ "Hakurei PE 6")
+- [UNetbootin](https://unetbootin.github.io)
 - [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
 - [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
 - [Downloadly](https://downloadlynet.ir)
