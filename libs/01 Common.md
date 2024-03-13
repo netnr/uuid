@@ -130,12 +130,11 @@
 - [Crontab Generator](https://crontab-generator.org)
 - [Cron Helper](https://cron.help)
 
-
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
 - [Ventoy](https://www.ventoy.net/cn/index.html)
 - [WePE](https://www.wepe.com.cn/download.html "微PE工具箱")
-- [Hikari PE](https://hikaricalyx.com/hakureipe/ "Hikari PE")
+- [Hikari PE](https://hikaricalyx.com/hikari-pe-sc/ "Hikari PE")
 - [Hakurei PE](https://hikaricalyx.com/hakureipe/ "Hakurei PE 6")
 - [UNetbootin](https://unetbootin.github.io)
 - [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
@@ -226,6 +225,7 @@
 - [SSL Converter](https://www.sslshopper.com/ssl-converter.html "证书格式转换")
 - [SSL 配置生成](https://ssl-config.mozilla.org)
 - [badssl](https://badssl.com "坏的 SSL 用于测试")
+- [crt.sh](https://crt.sh "证书搜索")
 
 ### 托管 Hosting
 - [GitHub](https://github.com)
