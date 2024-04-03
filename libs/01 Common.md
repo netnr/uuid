@@ -45,7 +45,7 @@
 
 ### 临时邮箱 Temporary mailbox
 - <https://mail.td/zh>
-- <https://mailpoof.com/zh>
+- <https://mailpoof.com>
 - <https://www.mailtemp.net>
 - <https://www.moakt.com/zh>
 - <https://www.guerrillamail.com/zh>
@@ -140,7 +140,7 @@
 - [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
 - [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
 - [Downloadly](https://downloadlynet.ir)
-- [DownloadlyIR](https://downloadlyir.com)
+- [九号仓库](https://www.jiudy.com)
 - [Portapps](https://portapps.io "VSCode 便携版")
 - [PortableApps](https://portableapps.com "便携版")
 - [FFmpeg Download](https://ffmpeg.org/download.html)
