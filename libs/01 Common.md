@@ -129,6 +129,8 @@
 - [cRonstrue](https://bradymholt.github.io/cRonstrue/)
 - [Crontab Generator](https://crontab-generator.org)
 - [Cron Helper](https://cron.help)
+- [PHPHub](https://phphub.net/ "PHP 的在线工具")
+- [Pythonium](https://pythonium.net/ "Python 的在线工具")
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
