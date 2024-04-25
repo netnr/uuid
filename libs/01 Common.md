@@ -129,6 +129,7 @@
 - [cRonstrue](https://bradymholt.github.io/cRonstrue/)
 - [Crontab Generator](https://crontab-generator.org)
 - [Cron Helper](https://cron.help)
+- [NSSM](https://nssm.cc/download "Windows 服务")
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
@@ -192,7 +193,6 @@
 - [IPv6 测试](https://test-ipv6.com)
 - [http3check](https://http3check.net)
 - [测速网](https://www.speedtest.cn)
-- [LibreSpeed](https://www.librespeed.cn)
 - [中国科学技术大学测速](https://test.ustc.edu.cn)
 - [南京大学测速站](http://test.nju.edu.cn)
 - [ZeroTier](https://www.zerotier.com "全球区域网络")
