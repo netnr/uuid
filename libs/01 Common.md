@@ -202,6 +202,7 @@
 - [Azure Speed](https://www.azurespeed.com/Azure/Latency "Azure 测速")
 - [Cloudflare CNAME](https://cdn.wzfou.com)
 - [QUIC TEST](https://quic.nginx.org/quic.html)
+- [CroxyProxy](https://www.croxyproxy.com "网站代理")
 
 ### CDN
 - [UNPKG](https://unpkg.com)
