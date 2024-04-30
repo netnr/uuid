@@ -65,6 +65,7 @@
 - [DB2DB](http://www.szmesoft.com/DB2DB "数据库转换工具")
 - [db fiddle](https://dbfiddle.uk "免费的在线 SQL 环境进行实验和共享")
 - [SQL Fiddle](http://sqlfiddle.com "测试和共享 SQL 查询的应用程序")
+- [SQL Online Compiler](https://sqliteonline.com "在线 SQL")
 - [ConnectionStrings](https://www.connectionstrings.com "连接字符串参考")
 - [Database.Guide](https://database.guide "数据库指南")
 - [Remote MySQL](https://remotemysql.com "免费 MySQL 数据库")
@@ -161,6 +162,8 @@
 - [iLovePDF](https://www.ilovepdf.com/zh-cn)
 - [迅捷转换器](https://app.xunjiepdf.com)
 - [Alldoc](https://alldocs.app "pandoc")
+- [Pandoc](https://pandoc.org/demos.html)
+- [PDF to Word Converter](https://www.downloadpdftowordconverter.org)
 
 ### 镜像 Mirror
 - [网易开源镜像站](https://mirrors.163.com)
