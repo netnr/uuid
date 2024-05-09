@@ -155,6 +155,9 @@
 - [B站视频解析下载](https://bilibili.iiilab.com)
 - [SaveTube](https://save.tube "下载 youtube 视频")
 - [APK Downloader](https://apk.support/apk-downloader "apk 下载")
+- [Hugging Face](https://huggingface.co)
+- [AI快站](https://aifasthub.com)
+- [魔搭社区](https://www.modelscope.cn)
 
 ### 转换 Convert
 - [FreeConvert](https://www.freeconvert.com)
