@@ -72,6 +72,8 @@
 - [db4free.net](https://www.db4free.net "免费 MySQL 数据库")
 - [YugabyteDB](https://cloud.yugabyte.com "免费 PostgreSQL 数据库")
 - [ElephantSQL](https://www.elephantsql.com "免费 PostgreSQL 数据库")
+- [Adminer](https://www.adminer.org)
+- [sqliteviz](https://sqliteviz.com/app/ "SQLite 管理器")
 
 ### 程序 Program
 - [Try.NET](https://try.dot.net "在线运行 .NET")
