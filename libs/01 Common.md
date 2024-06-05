@@ -265,7 +265,6 @@
 - [StackBlitz](https://stackblitz.com "浏览器上跑 NodeJS")
 - [CodePen](https://codepen.io/pen)
 - [CodeSandbox](https://codesandbox.io/s)
-- [StackBlitz](https://stackblitz.com)
 - [JSFiddle](https://jsfiddle.net)
 - [JS Bin](https://jsbin.com)
 - [PlayCode](https://playcode.io/new)
