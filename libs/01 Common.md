@@ -159,8 +159,6 @@
 - [飞鱼视频下载助手](https://www.feiyudo.com)
 - [APK Downloader](https://apk.support/apk-downloader "apk 下载")
 - [CrxDL](https://crxdl.com "扩展插件 CRX")
-- [Hugging Face](https://huggingface.co)
-- [AI快站](https://aifasthub.com)
 - [魔搭社区](https://www.modelscope.cn)
 
 ### 转换 Convert
@@ -303,6 +301,9 @@
 - [文心一言](https://yiyan.baidu.com)
 - [Gemini](https://gemini.google.com)
 - [ChatGTP 合集](https://chatgpts.ninvfeng.xyz)
+- [Hugging Face](https://huggingface.co)
+- [HF-Mirror](https://hf-mirror.com "Huggingface 镜像站")
+- [AI快站](https://aifasthub.com)
 
 ### 社区 Community
 - [Firefox Monitor](https://monitor.firefox.com "查询密码泄漏")
