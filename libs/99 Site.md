@@ -37,7 +37,6 @@
 - [OneCoder](https://onecoder.site)
 - [豆田](https://doutian.me)
 - [ADoyle](http://adoyle.me/blog)
-- [自由人](https://ifttl.com)
 - [耳先生](http://www.kilerd.me)
 - [Meowu](https://fullstackbb.com)
 - [Mr.zeng](https://iszengmh.github.io)

@@ -35,7 +35,6 @@
 ### 临时短信 Temporary SMS
 - <http://www.114sim.com>
 - <https://yunduanxin.net>
-- <https://receiveasms.com>
 - <https://www.yunjiema.top>
 - <https://mianfeijiema.com>
 - <https://ch.freephonenum.com>
@@ -133,6 +132,9 @@
 - [Crontab Generator](https://crontab-generator.org)
 - [Cron Helper](https://cron.help)
 - [NSSM](https://nssm.cc/download "Windows 服务")
+- [Git History](https://githistory.xyz)
+- [HWiNFO](https://www.hwinfo.com "系统信息、监控、诊断")
+- [CPUID](https://www.cpuid.com "CPU-Z HWMONITOR POWERMAX")
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
@@ -316,7 +318,7 @@
 - [36 氪](https://36kr.com)
 
 ### 文档 Document
-- [Installing ONLYOFFICE](https://helpcenter.onlyoffice.com/installation/docs-community-install-docker.aspx)
+- [ONLYOFFICE](https://helpcenter.onlyoffice.com/installation/docs-community-install-docker.aspx)
 - [微信支付 普通商户接入文档](https://pay.weixin.qq.com/wiki/doc/api/index.html)
 - [微信支付 APP 支付开发者文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)
 - [支付宝开放平台](https://openhome.alipay.com/developmentDocument.htm)
