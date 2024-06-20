@@ -153,6 +153,7 @@
 - [FFmpeg Static](https://www.johnvansickle.com/ffmpeg "FFmpeg 静态构建包")
 - [PsTools](https://docs.microsoft.com/zh-cn/sysinternals/downloads/pstools)
 - [Sysinternals](https://docs.microsoft.com/zh-cn/sysinternals "Windows 工具")
+- [cURL for Windows](http://www.confusedbycode.com/curl/)
 - [curl](https://curl.se/windows/)
 - [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
 - [腾讯软件中心](https://pc.qq.com)
