@@ -138,6 +138,7 @@
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
+- [MAS](https://massgrave.dev/genuine-installation-media)
 - [Ventoy](https://www.ventoy.net/cn/index.html)
 - [WePE](https://www.wepe.com.cn/download.html "微PE工具箱")
 - [Hikari PE](https://hikaricalyx.com/hikari-pe-sc/ "Hikari PE")
