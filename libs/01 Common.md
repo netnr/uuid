@@ -193,6 +193,8 @@
 - [哪煮米](https://www.nazhumi.com "域名比价")
 - [ICP 备案查询](https://beian.miit.gov.cn)
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
+- [DNSDumpster.com](https://dnsdumpster.com)
+- [查子域](https://chaziyu.com)
 
 ### 文件传输 File Transfer
 - [transfer.zip](https://transfer.zip "p2p")
