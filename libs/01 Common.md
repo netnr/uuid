@@ -137,8 +137,9 @@
 - [CPUID](https://www.cpuid.com "CPU-Z HWMONITOR POWERMAX")
 
 ### 下载 Download
-- [MSDN 我告诉你](https://msdn.itellyou.cn "系统镜像下载")
-- [MAS](https://massgrave.dev/genuine-installation-media)
+- [MSDN 我告诉你](https://msdn.itellyou.cn "MSDN ISO 系统镜像下载")
+- [MAS](https://massgrave.dev/genuine-installation-media "MSDN ISO 系统镜像下载")
+- [MSDN 原版系统](https://www.imsdn.cn "MSDN ISO 系统镜像下载")
 - [Ventoy](https://www.ventoy.net/cn/index.html)
 - [WePE](https://www.wepe.com.cn/download.html "微PE工具箱")
 - [Hikari PE](https://hikaricalyx.com/hikari-pe-sc/ "Hikari PE")
