@@ -19,7 +19,6 @@
 - [Lingjia](https://mutoo.im)
 - [Ground Oddity](http://jujuba.me)
 - [极客笔记](https://guoch.xyz)
-- [蚊子](https://www.xiabingbao.com)
 - [Shen](http://litp.cn)
 - [小公主](https://xiaozhuanlan.com/u/5262714674)
 - [JovenHe](https://hjw45611.github.io/blog)

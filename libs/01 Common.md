@@ -146,6 +146,7 @@
 - [Hakurei PE](https://hikaricalyx.com/hakureipe/ "Hakurei PE 6")
 - [UNetbootin](https://unetbootin.github.io)
 - [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
+- [Floorp Browser](https://floorp.app "Firefox portable 便携版")
 - [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
 - [Downloadly](https://downloadlynet.ir)
 - [九号仓库](https://www.jiudy.com)
@@ -278,7 +279,7 @@
 - [Plunker](https://plnkr.co/edit)
 - [JSRUN](https://jsrun.net)
 - [dabblet](https://dabblet.com)
-- [GCC Compiler](https://gcc.godbolt.org)
+- [Compiler Explorer](https://godbolt.org)
 - [OnlineGDB](https://www.onlinegdb.com)
 - [CodeChef](https://www.codechef.com/ide)
 - [Ideone](https://www.ideone.com)
@@ -312,7 +313,6 @@
 - [ChatGTP 合集](https://chatgpts.ninvfeng.xyz)
 - [Hugging Face](https://huggingface.co)
 - [HF-Mirror](https://hf-mirror.com "Huggingface 镜像站")
-- [AI快站](https://aifasthub.com)
 
 ### 社区 Community
 - [Firefox Monitor](https://monitor.firefox.com "查询密码泄漏")
