@@ -105,6 +105,9 @@
 - [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
 - [国家法律法规数据库](https://flk.npc.gov.cn)
 - [营养指导网](http://www.articlesask.com)
+- [中国医药信息查询平台](https://www.dayi.org.cn)
+- [识典古籍](https://www.shidianguji.com)
+- [LKs 网站推荐合集](https://lkssite.vip)
 - [国外主机测评](https://www.zhujiceping.com)
 - [free-for.dev](https://free-for.dev)
 
