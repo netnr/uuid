@@ -138,6 +138,7 @@
 - [Git History](https://githistory.xyz)
 - [HWiNFO](https://www.hwinfo.com "系统信息、监控、诊断")
 - [CPUID](https://www.cpuid.com "CPU-Z HWMONITOR POWERMAX")
+- [Z2H字帖](https://paper.z2h.cn)
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "MSDN ISO 系统镜像下载")
