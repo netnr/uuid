@@ -72,7 +72,6 @@
 - [SPhard](http://sphard.com)
 - [fate0](http://blog.fatezero.org)
 - [咖啡机](https://www.cnblogs.com/strick)
-- [HJW](https://hjwjw.github.io)
 - [Leriou](https://leriou.github.io)
 - [Goulash](https://hx1997.github.io)
 - [小歪](https://zhangslob.github.io)

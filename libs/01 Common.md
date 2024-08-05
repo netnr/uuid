@@ -139,6 +139,7 @@
 - [HWiNFO](https://www.hwinfo.com "系统信息、监控、诊断")
 - [CPUID](https://www.cpuid.com "CPU-Z HWMONITOR POWERMAX")
 - [Z2H字帖](https://paper.z2h.cn)
+- [Firefox Monitor](https://monitor.firefox.com "查询密码泄漏")
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "MSDN ISO 系统镜像下载")
@@ -317,16 +318,6 @@
 - [ChatGTP 合集](https://chatgpts.ninvfeng.xyz)
 - [Hugging Face](https://huggingface.co)
 - [HF-Mirror](https://hf-mirror.com "Huggingface 镜像站")
-
-### 社区 Community
-- [Firefox Monitor](https://monitor.firefox.com "查询密码泄漏")
-- [Stack Overflow](https://stackoverflow.com)
-- [V2EX](https://www.v2ex.com)
-- [OSCHINA](https://www.oschina.net)
-- [SegmentFault](https://segmentfault.com)
-- [知乎](https://www.zhihu.com)
-- [掘金](https://juejin.im)
-- [36 氪](https://36kr.com)
 
 ### 文档 Document
 - [ONLYOFFICE](https://helpcenter.onlyoffice.com/installation/docs-community-install-docker.aspx)
