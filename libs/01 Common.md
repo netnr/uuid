@@ -150,6 +150,7 @@
 - [Hikari PE](https://hikaricalyx.com/hikari-pe-sc/ "Hikari PE")
 - [Hakurei PE](https://hikaricalyx.com/hakureipe/ "Hakurei PE 6")
 - [UNetbootin](https://unetbootin.github.io)
+- [dotnet releases-index](https://github.com/dotnet/core/blob/main/release-notes/releases-index.json)
 - [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
 - [Floorp Browser](https://floorp.app "Firefox portable 便携版")
 - [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
