@@ -4,7 +4,6 @@
 - [FakeUpdate](http://fakeupdate.net "假装升级")
 - [Learn X in Y minutes](https://learnxinyminutes.com "在 Y 分钟内学习 X")
 - [PostgreSQL Notes](https://postgresql.verite.pro)
-- [最爱笑](https://zuiax.com)
 - [保安堂](https://www.baoantang.com)
 - [风土木中医纲](https://fengtm.com)
 
@@ -66,7 +65,6 @@
 - [微风](http://leybreeze.com)
 - [Fengz](http://sync.sh)
 - [Paybase](https://paybase.cn)
-- [RunDouble](http://iamwr.com)
 - [故事熊](https://felixxiong.github.io)
 - [SmartKeyerror](https://smartkeyerror.com)
 - [SPhard](http://sphard.com)

@@ -82,7 +82,6 @@
 - [OpenJDK Red Hat](https://developers.redhat.com/products/openjdk/download "java jdk")
 - [Java SE](https://www.oracle.com/br/java/technologies/downloads/archive/ "java jdk")
 - [jsonapi](https://www.jsonapi.co)
-- [JSON Keeper](https://jsonkeeper.com)
 - [sematext](https://apps.sematext.com/ui/login "logs 日志")
 - [全栈公开课](https://fullstackopen.com/zh)
 - [httpbin](https://httpbin.org "接口请求测试")
@@ -272,7 +271,6 @@
 - [Railway](https://railway.app)
 - [Deno](https://deno.com/deploy)
 - [Cloudflare Pages](https://pages.cloudflare.com)
-- [Cyclic.sh](https://www.cyclic.sh)
 - [Supabase](https://supabase.com)
 
 ### 集成开发环境 IDE
