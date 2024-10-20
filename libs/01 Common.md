@@ -168,6 +168,7 @@
 - [YouTube 视频解析下载](https://youtube.iiilab.com)
 - [SaveTube](https://save.tube "下载 youtube 视频")
 - [飞鱼视频下载助手](https://www.feiyudo.com)
+- [Kedou 视频解析](https://www.kedou.life)
 - [APK Downloader](https://apk.support/apk-downloader "apk 下载")
 - [CrxDL](https://crxdl.com "扩展插件 CRX")
 - [魔搭社区](https://www.modelscope.cn)
