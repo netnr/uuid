@@ -165,7 +165,7 @@
 - [curl](https://curl.se/windows/)
 - [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
 - [腾讯软件中心](https://pc.qq.com)
-- [B站视频解析下载](https://bilibili.iiilab.com)
+- [YouTube 视频解析下载](https://youtube.iiilab.com)
 - [SaveTube](https://save.tube "下载 youtube 视频")
 - [飞鱼视频下载助手](https://www.feiyudo.com)
 - [APK Downloader](https://apk.support/apk-downloader "apk 下载")
@@ -182,10 +182,23 @@
 - [PDF to Word Converter](https://www.downloadpdftowordconverter.org)
 
 ### 镜像 Mirror
+- [MirrorZ](https://mirrorz.org)
 - [网易开源镜像站](https://mirrors.163.com)
 - [阿里巴巴开源镜像站](https://developer.aliyun.com/mirror)
 - [腾讯云软件源](https://mirrors.cloud.tencent.com)
 - [USTC](https://mirrors.ustc.edu.cn)
+
+### CDN
+- [UNPKG](https://unpkg.com)
+- [npmmirror](https://npmmirror.com)
+- [jsDelivr](https://www.jsdelivr.com)
+- [Staticfile](https://www.staticfile.org)
+- [字节跳动](https://cdn.bytedance.com)
+- [新浪 CDN](https://lib.sinaapp.com)
+- [cdnjs](https://cdnjs.com)
+- [SUSTech](https://mirrors.sustech.edu.cn/help/cdnjs.html "南方科技大学开源镜像站")
+- [Statically](https://statically.io)
+- [Microsoft Ajax CDN](https://learn.microsoft.com/en-us/aspnet/ajax/cdn/overview)
 
 ### 域名 Domain
 - <http://127.0.0.1.sslip.io>
@@ -226,17 +239,6 @@
 - [Cloudflare CNAME](https://cdn.wzfou.com)
 - [QUIC TEST](https://quic.nginx.org/quic.html)
 - [CroxyProxy](https://www.croxyproxy.com "网站代理")
-
-### CDN
-- [UNPKG](https://unpkg.com)
-- [npmmirror](https://npmmirror.com)
-- [jsDelivr](https://www.jsdelivr.com)
-- [Staticfile](https://www.staticfile.org)
-- [字节跳动](https://cdn.bytedance.com)
-- [新浪 CDN](https://lib.sinaapp.com)
-- [cdnjs](https://cdnjs.com)
-- [Statically](https://statically.io)
-- [Microsoft Ajax CDN](https://learn.microsoft.com/en-us/aspnet/ajax/cdn/overview)
 
 ### SSL
 - [Let's Encrypt](https://letsencrypt.org)
