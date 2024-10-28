@@ -45,7 +45,6 @@
 ### 临时邮箱 Temporary mailbox
 - <https://mail.td/zh>
 - <https://mailpoof.com>
-- <https://www.mailtemp.net>
 - <https://www.moakt.com/zh>
 - <https://www.guerrillamail.com/zh>
 
@@ -154,7 +153,6 @@
 - [Floorp Browser](https://floorp.app "Firefox portable 便携版")
 - [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
 - [Downloadly](https://downloadlynet.ir)
-- [九号仓库](https://www.jiudy.com)
 - [Portapps](https://portapps.io "VSCode 便携版")
 - [PortableApps](https://portableapps.com "便携版")
 - [FFmpeg Download](https://ffmpeg.org/download.html)
@@ -334,7 +332,6 @@
 - [快递鸟](http://www.kdniao.com/api-all)
 - [百度搜索提示](https://suggestion.baidu.com/su?wd=kld)
 - [百度搜索提示](https://www.baidu.com/sugrec?prod=pc&wd=kld&cb=fn)
-- [World Time API](http://worldtimeapi.org)
 
 ### 游戏 Game
 - [PVZ 同人创作论坛](https://www.pvz.moe)
