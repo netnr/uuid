@@ -91,7 +91,6 @@
 - [VVBLOG](https://blog.vvzero.com)
 - [scnace](http://blog.scnace.me)
 - [美阅](http://www.moonue.com)
-- [脑袋](http://ifelsend.com)
 - [胡大炮](https://hupeng.me)
 - [TMaize](http://blog.tmaize.net)
 - [Chinsyo](http://chinsyo.com)
