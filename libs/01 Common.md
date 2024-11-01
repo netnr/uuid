@@ -49,6 +49,7 @@
 - <https://www.guerrillamail.com/zh>
 
 ### 画 Draw
+- [画布](https://canvas.apps.chrome)
 - [MindEditor](https://ss.netnr.com/mind "by kityminder 百度脑图")
 - [GraphEditor](https://ss.netnr.com/graph "by mxGraph")
 - [BPMNEditor](https://ss.netnr.com/bpmn "by bpmn-js")
