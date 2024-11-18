@@ -3,7 +3,7 @@
 - [uuid 建议](https://github.com/netnr/uuid/issues)
 - [联系打赏](https://zme.ink)
 
-### 图、画 Image、Draw
+### 图画 Image
 - [壁纸](https://ss.netnr.com/wallpaper)
 - [TinyPNG](https://tinypng.com "图片压缩")
 - [Squoosh](https://squoosh.app "图片压缩")
@@ -28,7 +28,8 @@
 - [iconfinder](https://www.iconfinder.com "图标")
 - [EmojiAll](https://www.emojiall.com "表情")
 - [画布](https://canvas.apps.chrome)
-- [签名板](http://szimek.github.io/signature_pad/)
+- [signature_pad](http://szimek.github.io/signature_pad/ "签名板")
+- [paint-board](https://songlh.top/paint-board/ "画板")
 - [MindEditor](https://ss.netnr.com/mind "by kityminder 百度脑图")
 - [GraphEditor](https://ss.netnr.com/graph "by mxGraph")
 - [BPMNEditor](https://ss.netnr.com/bpmn "by bpmn-js")
