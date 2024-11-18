@@ -3,7 +3,7 @@
 - [uuid 建议](https://github.com/netnr/uuid/issues)
 - [联系打赏](https://zme.ink)
 
-### 图像 Image
+### 图、画 Image、Draw
 - [壁纸](https://ss.netnr.com/wallpaper)
 - [TinyPNG](https://tinypng.com "图片压缩")
 - [Squoosh](https://squoosh.app "图片压缩")
@@ -11,6 +11,7 @@
 - [Photopea](https://www.photopea.com "在线 PS")
 - [稿定](https://ps.gaoding.com "在线 PS")
 - [Pixlr](https://pixlr.com/cn/e/ "在线 PS")
+- [miniPaint](https://viliusle.github.io/miniPaint/)
 - [remove.bg](https://www.remove.bg "移除背景")
 - [removal.ai](https://removal.ai)
 - [iLoveIMG](https://www.iloveimg.com/zh-cn)
@@ -26,11 +27,32 @@
 - [阿里巴巴矢量图标库](https://www.iconfont.cn "icon")
 - [iconfinder](https://www.iconfinder.com "图标")
 - [EmojiAll](https://www.emojiall.com "表情")
+- [画布](https://canvas.apps.chrome)
+- [签名板](http://szimek.github.io/signature_pad/)
+- [MindEditor](https://ss.netnr.com/mind "by kityminder 百度脑图")
+- [GraphEditor](https://ss.netnr.com/graph "by mxGraph")
+- [BPMNEditor](https://ss.netnr.com/bpmn "by bpmn-js")
+- [Excalidraw](https://excalidraw.com)
+- [GitMind](https://gitmind.cn "在线思维导图")
+- [SimpleMindMap](https://wanglin2.github.io/mind-map/ "思维导图")
+- [AntV](https://antv.antgroup.com "数据可视化")
 
 ### 图床 Bed
 - [图床资源](https://iao.su/pic.html)
 - [路过图床](https://imgse.com)
 - [Paste.Pics](https://paste.pics "临时截图")
+
+### 视频 Video
+- [VIP 视频解析](https://vv.zme.ink)
+- [点点字幕](http://www.ddzimu.com)
+- [live](https://live.fanmingming.com "m3u8")
+- [YouTube 视频解析下载](https://youtube.iiilab.com)
+- [SaveTube](https://save.tube "下载 youtube 视频")
+- [飞鱼视频下载助手](https://www.feiyudo.com)
+- [Kedou 视频解析](https://www.kedou.life)
+- [蜜蜂剪辑](https://beecut.cn/online-video-editor)
+- [Video Trimmer](https://online-video-cutter.com)
+- [FlexClip](https://www.flexclip.com/cn/)
 
 ### 临时短信 Temporary SMS
 - <http://www.114sim.com>
@@ -47,15 +69,6 @@
 - <https://mailpoof.com>
 - <https://www.moakt.com/zh>
 - <https://www.guerrillamail.com/zh>
-
-### 画 Draw
-- [画布](https://canvas.apps.chrome)
-- [MindEditor](https://ss.netnr.com/mind "by kityminder 百度脑图")
-- [GraphEditor](https://ss.netnr.com/graph "by mxGraph")
-- [BPMNEditor](https://ss.netnr.com/bpmn "by bpmn-js")
-- [Excalidraw](https://excalidraw.com)
-- [GitMind](https://gitmind.cn "在线思维导图")
-- [AntV](https://antv.antgroup.com "数据可视化")
 
 ### 数据库 Database
 - [fish's dotNET](https://fishcodelib.com "数据库工具")
@@ -91,23 +104,9 @@
 - [LOADING.IO](https://loading.io)
 - [MIMC](https://admin.mimc.chat.xiaomi.net/docs "小米推送服务")
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
+- [Windows 98](https://98.js.org)
 - [腾讯云实验室](https://cloud.tencent.com/lab "在线 Linux 环境使用")
 - [carbon](https://carbon.now.sh "代码贴图")
-
-### 资源 Resource
-- [VIP 视频解析](https://vv.zme.ink)
-- [云盘资源](https://yunpan1.cc "阿里云盘资源")
-- [点点字幕](http://www.ddzimu.com)
-- [live](https://live.fanmingming.com "m3u8")
-- [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
-- [EU](https://nic.eu.org "免费 eu.org 域名申请")
-- [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
-- [国家法律法规数据库](https://flk.npc.gov.cn)
-- [中国医药信息查询平台](https://www.dayi.org.cn)
-- [识典古籍](https://www.shidianguji.com)
-- [LKs 网站推荐合集](https://lkssite.vip)
-- [国外主机测评](https://www.zhujiceping.com)
-- [free-for.dev](https://free-for.dev)
 
 ### 工具 Tool
 - [KMS 激活](https://kms.zme.ink)
@@ -138,6 +137,25 @@
 - [CPUID](https://www.cpuid.com "CPU-Z HWMONITOR POWERMAX")
 - [Z2H字帖](https://paper.z2h.cn)
 - [Firefox Monitor](https://monitor.firefox.com "查询密码泄漏")
+- [FreeConvert](https://www.freeconvert.com)
+- [Office Convert](https://cn.office-converter.com)
+- [iLovePDF](https://www.ilovepdf.com/zh-cn)
+- [迅捷转换器](https://app.xunjiepdf.com)
+- [Alldoc](https://alldocs.app "pandoc")
+- [Pandoc](https://pandoc.org/demos.html)
+- [PDF to Word Converter](https://www.downloadpdftowordconverter.org)
+
+### 资源 Resource
+- [云盘资源](https://yunpan1.cc "阿里云盘资源")
+- [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
+- [EU](https://nic.eu.org "免费 eu.org 域名申请")
+- [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
+- [国家法律法规数据库](https://flk.npc.gov.cn)
+- [中国医药信息查询平台](https://www.dayi.org.cn)
+- [识典古籍](https://www.shidianguji.com)
+- [LKs 网站推荐合集](https://lkssite.vip)
+- [国外主机测评](https://www.zhujiceping.com)
+- [free-for.dev](https://free-for.dev)
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "MSDN ISO 系统镜像下载")
@@ -163,22 +181,9 @@
 - [curl](https://curl.se/windows/)
 - [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
 - [腾讯软件中心](https://pc.qq.com)
-- [YouTube 视频解析下载](https://youtube.iiilab.com)
-- [SaveTube](https://save.tube "下载 youtube 视频")
-- [飞鱼视频下载助手](https://www.feiyudo.com)
-- [Kedou 视频解析](https://www.kedou.life)
 - [APK Downloader](https://apk.support/apk-downloader "apk 下载")
 - [CrxDL](https://crxdl.com "扩展插件 CRX")
 - [魔搭社区](https://www.modelscope.cn)
-
-### 转换 Convert
-- [FreeConvert](https://www.freeconvert.com)
-- [Office Convert](https://cn.office-converter.com)
-- [iLovePDF](https://www.ilovepdf.com/zh-cn)
-- [迅捷转换器](https://app.xunjiepdf.com)
-- [Alldoc](https://alldocs.app "pandoc")
-- [Pandoc](https://pandoc.org/demos.html)
-- [PDF to Word Converter](https://www.downloadpdftowordconverter.org)
 
 ### 镜像 Mirror
 - [MirrorZ](https://mirrorz.org)
