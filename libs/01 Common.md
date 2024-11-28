@@ -19,6 +19,7 @@
 - [toonme](https://toonme.com "头像卡通化")
 - [佐糖](https://picwish.cn "抠图 证件照换底色 照片修复 压缩")
 - [Transparent PNG](https://png-pixel.com "透明的 PNG 像素 Base64 编码")
+- [docsmall](https://docsmall.com)
 - [SVG 编辑器](https://www.iconfinder.com/editor/)
 - [SVG Sprite Generator](https://svgsprit.es "SVG 雪碧图")
 - [CSS Sprite](http://www.spritecow.com "雪碧图")
@@ -142,7 +143,6 @@
 - [Office Convert](https://cn.office-converter.com)
 - [iLovePDF](https://www.ilovepdf.com/zh-cn)
 - [迅捷转换器](https://app.xunjiepdf.com)
-- [Alldoc](https://alldocs.app "pandoc")
 - [Pandoc](https://pandoc.org/demos.html)
 - [PDF to Word Converter](https://www.downloadpdftowordconverter.org)
 
