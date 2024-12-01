@@ -38,6 +38,8 @@
 - [GitMind](https://gitmind.cn "在线思维导图")
 - [SimpleMindMap](https://wanglin2.github.io/mind-map/ "思维导图")
 - [AntV](https://antv.antgroup.com "数据可视化")
+- [FastStone Image Viewer](https://www.faststone.org/FSIVDownload.htm "图片查看器")
+- [Imagine](https://www.nyam.pe.kr/dev/imagine/ "图片查看器")
 
 ### 图床 Bed
 - [图床资源](https://iao.su/pic.html)
