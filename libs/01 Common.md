@@ -25,6 +25,7 @@
 - [CSS Sprite](http://www.spritecow.com "雪碧图")
 - [Lorem Picsum](https://picsum.photos "占位图")
 - [unDraw](https://undraw.co "插图、插画")
+- [Haikei](https://app.haikei.app "svg 背景图")
 - [阿里巴巴矢量图标库](https://www.iconfont.cn "icon")
 - [iconfinder](https://www.iconfinder.com "图标")
 - [EmojiAll](https://www.emojiall.com "表情")
