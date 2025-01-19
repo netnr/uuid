@@ -15,7 +15,6 @@
 - [remove.bg](https://www.remove.bg "移除背景")
 - [removal.ai](https://removal.ai)
 - [iLoveIMG](https://www.iloveimg.com/zh-cn)
-- [身份证加水印](http://watermark.dxcweb.com)
 - [toonme](https://toonme.com "头像卡通化")
 - [佐糖](https://picwish.cn "抠图 证件照换底色 照片修复 压缩")
 - [Transparent PNG](https://png-pixel.com "透明的 PNG 像素 Base64 编码")
@@ -73,7 +72,6 @@
 - <https://mail.td/zh>
 - <https://mailpoof.com>
 - <https://www.moakt.com/zh>
-- <https://www.guerrillamail.com/zh>
 
 ### 数据库 Database
 - [fish's dotNET](https://fishcodelib.com "数据库工具")
@@ -215,7 +213,6 @@
 - <http://ecd.tencent.com>
 - <http://devd.io>
 - <https://get.localhost.direct>
-- <https://readme.localtest.me>
 - [TLD-LIST](https://tld-list.com "顶级域名的价格")
 - [哪煮米](https://www.nazhumi.com "域名比价")
 - [ICP 备案查询](https://beian.miit.gov.cn)
@@ -223,20 +220,24 @@
 - [DNSDumpster.com](https://dnsdumpster.com)
 - [查子域](https://chaziyu.com)
 
-### 文件传输 File Transfer
+### 传输 Transfer
 - [transfer.zip](https://transfer.zip "p2p")
 - [p2pf.cn](https://p2pf.cn)
 - [tl-rtc-file-tool](https://im.iamtsm.cn "p2p 网页工具")
 - [tmpfiles](https://tmpfiles.org "临时文件上次")
+- [WebRTC Trickle ICE](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice)
 
 ### 网络 Network
 - [拨测](https://www.boce.com)
 - [阿里云拨测](https://boce.aliyun.com)
 - [CHECK-HOST](https://check-host.net)
+- [IP 查询](https://ipw.cn)
 - [IPv6 测试](https://test-ipv6.com)
+- [IPv6 测试聚合站](https://ipv6.stream)
 - [http3check](https://http3check.net)
 - [测速网](https://www.speedtest.cn)
 - [中国科学技术大学测速](https://test.ustc.edu.cn)
+- [东北大学网络测速](https://speed.neu6.edu.cn)
 - [南京大学测速站](http://test.nju.edu.cn)
 - [ZeroTier](https://www.zerotier.com "全球区域网络")
 - [Tailscale](https://tailscale.com "可以正常工作的安全网络")
@@ -256,7 +257,6 @@
 - [Qualys SSL Labs](https://www.ssllabs.com)
 - [SSL/TLS 安全评估报告](https://myssl.com)
 - [SSL 证书格式转换工具](https://www.chinassl.net/ssltools/convert-ssl.html)
-- [SSL Converter](https://www.sslshopper.com/ssl-converter.html "证书格式转换")
 - [SSL 配置生成](https://ssl-config.mozilla.org)
 - [badssl](https://badssl.com "坏的 SSL 用于测试")
 - [crt.sh](https://crt.sh "证书搜索")
