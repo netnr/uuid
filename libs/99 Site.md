@@ -72,7 +72,6 @@
 - [小歪](https://zhangslob.github.io)
 - [Kuhung](http://kuhungio.me)
 - [Jiajun](https://jiajunhuang.com)
-- [黑龙波](https://www.heilongbo.com)
 - [臨池不輟](https://keelii.com)
 - [crossoverJie](https://crossoverjie.top)
 - [清白之年](https://ilibing.github.io)
