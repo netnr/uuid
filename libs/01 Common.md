@@ -145,6 +145,7 @@
 - [迅捷转换器](https://app.xunjiepdf.com)
 - [Pandoc](https://pandoc.org/demos.html)
 - [PDF to Word Converter](https://www.downloadpdftowordconverter.org)
+- [iFixit 维修手册](https://www.ifixit.com "维修手册")
 
 ### 资源 Resource
 - [云盘资源](https://yunpan1.cc "阿里云盘资源")
