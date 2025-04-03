@@ -124,7 +124,6 @@
 - [Code Beautify](https://codebeautify.org "在线工具")
 - [OSS Insight](https://ossinsight.io "GitHub 开源软件洞察")
 - [Regex101](https://regex101.com "测试表达、生成代码")
-- [脚本之家正则表达式](http://tools.jb51.net/regex/javascript)
 - [Jotti](https://virusscan.jotti.org/zh-CN/scan-file "分析检测恶意软件")
 - [VirusTotal](https://www.virustotal.com "分析检测恶意软件")
 - [UptimeRobot](https://uptimerobot.com)
@@ -144,13 +143,12 @@
 - [iLovePDF](https://www.ilovepdf.com/zh-cn)
 - [迅捷转换器](https://app.xunjiepdf.com)
 - [Pandoc](https://pandoc.org/demos.html)
-- [PDF to Word Converter](https://www.downloadpdftowordconverter.org)
 - [iFixit 维修手册](https://www.ifixit.com "维修手册")
 
 ### 资源 Resource
 - [云盘资源](https://yunpan1.cc "阿里云盘资源")
 - [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
-- [EU](https://nic.eu.org "免费 eu.org 域名申请")
+- [EU.ORG](https://nic.eu.org "免费 eu.org 域名申请")
 - [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
 - [国家法律法规数据库](https://flk.npc.gov.cn)
 - [中国医药信息查询平台](https://www.dayi.org.cn)
@@ -205,7 +203,6 @@
 
 ### 域名 Domain
 - <http://127.0.0.1.sslip.io>
-- <http://wifi.aliyun.com>
 - <http://114.taobao.com>
 - <http://safe.taobao.com>
 - <http://ecd.tencent.com>
@@ -321,6 +318,7 @@
 - [文心一言](https://yiyan.baidu.com)
 - [Gemini](https://gemini.google.com)
 - [ChatGTP 合集](https://chatgpts.ninvfeng.xyz)
+- [free-chatgpt](https://github.com/LiLittleCat/awesome-free-chatgpt)
 - [Hugging Face](https://huggingface.co)
 - [HF-Mirror](https://hf-mirror.com "Huggingface 镜像站")
 
