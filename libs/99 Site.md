@@ -60,7 +60,6 @@
 - [鹞之神乐](https://kagura.me)
 - [KAIX.IN](https://kaix.in)
 - [超能小紫](https://www.mokeyjay.com)
-- [旧时光](https://www.jiushig.com)
 - [微风](http://leybreeze.com)
 - [Paybase](https://paybase.cn)
 - [故事熊](https://felixxiong.github.io)
@@ -92,4 +91,4 @@
 - [清风](http://huisao.cc)
 - [David Yin](https://seo.g2soft.net)
 - [Jiajun的技术笔记](https://jiajunhuang.com)
-- ["Yowko's Notes"](https://blog.yowko.com)
+- [Yowko's Notes](https://blog.yowko.com)

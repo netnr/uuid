@@ -286,8 +286,9 @@
 - [WebRTC Trickle ICE](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice)
 
 ### AI、文档
-- [文心一言](https://yiyan.baidu.com)
+- [DeepSeek](https://www.deepseek.com)
 - [Gemini](https://gemini.google.com)
+- [文心一言](https://yiyan.baidu.com)
 - [ChatGTP 合集](https://chatgpts.ninvfeng.xyz)
 - [free-chatgpt](https://github.com/LiLittleCat/awesome-free-chatgpt)
 - [Hugging Face](https://huggingface.co)
