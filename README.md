@@ -1,6 +1,6 @@
 # uuid
-A decentralized favorites and bookmarks based on Git hosting  
-一个基于 Git 托管去中心化的收藏夹，书签
+基于 Git 托管的收藏夹/书签
+Favorites/Bookmarks hosted on Git
 
 ### Demo 示例
 <https://uu.zme.ink>  
