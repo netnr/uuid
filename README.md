@@ -1,5 +1,5 @@
 # uuid
-基于 Git 托管的收藏夹/书签
+基于 Git 托管的收藏夹/书签  
 Favorites/Bookmarks hosted on Git
 
 ### Demo 示例
