@@ -189,6 +189,7 @@
 - [阿里巴巴开源镜像站](https://developer.aliyun.com/mirror)
 - [腾讯云软件源](https://mirrors.cloud.tencent.com)
 - [USTC](https://mirrors.ustc.edu.cn)
+- [Alpine Linux 镜像](https://mirrors.alpinelinux.org)
 - [UNPKG](https://unpkg.com)
 - [npmmirror](https://npmmirror.com)
 - [jsDelivr](https://www.jsdelivr.com)
@@ -321,6 +322,7 @@
 ### 文档 Document
 - [ONLYOFFICE](https://helpcenter.onlyoffice.com/docs/installation/community)
 - [FaceFusion](https://docs.facefusion.io "人脸处理")
+- [.NET 支持策略](https://dotnet.microsoft.com/zh-cn/platform/support/policy/dotnet-core)
 - [微信支付接入文档](https://pay.weixin.qq.com/doc/v2)
 - [支付宝开放平台](https://openhome.alipay.com/developmentDocument.htm)
 - [阿里短信服务 API 接入指南](https://developer.aliyun.com/article/59928)
