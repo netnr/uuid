@@ -1,25 +1,25 @@
 {
-    "--- user info": "个人信息",
-    "user": {
-        "login": "netnr",
-        "avatar_url": "https://zme.ink/favicon.ico",
-        "name": null,
-        "company": null,
-        "blog": "https://zme.ink",
-        "location": "Chongqing, China",
-        "bio": "work life balance"
+  "--- user info": "个人信息",
+  "user": {
+    "login": "netnr",
+    "name": "netnr",
+    "avatar_url": "/favicon.ico",
+    "company": "Netnrs",
+    "blog": "https://zme.ink",
+    "location": "Chongqing, China",
+    "bio": "基于 Git 托管的收藏夹/书签"
+  },
+  "--- libs file index": "libs 文件索引",
+  "libs": [
+    {
+      "name": "01 Common.md",
+      "type": "file",
+      "download_url": "/libs/01%20Common.md"
     },
-    "--- libs file index": "libs 文件索引",
-    "libs": [
-        {
-            "name": "01 Common.md",
-            "download_url": "/libs/01%20Common.md",
-            "type": "file"
-        },
-        {
-            "name": "99 Site.md",
-            "download_url": "/libs/99%20Site.md",
-            "type": "file"
-        }
-    ]
+    {
+      "name": "99 Site.md",
+      "type": "file",
+      "download_url": "/libs/99%20Site.md"
+    }
+  ]
 }

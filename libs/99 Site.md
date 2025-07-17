@@ -8,7 +8,6 @@
 - [风土木中医纲](https://fengtm.com)
 
 ### 个人站点
-- [胡骊](https://blog.foxail.org)
 - [雨戈林多](https://moonagic.com)
 - [御坂研究所](http://nosuchfield.com)
 - [Allen Hua](http://hellodk.cn)
@@ -55,7 +54,6 @@
 - [逐鹿](http://amonxu.com)
 - [SPhard](http://www.sphard.com)
 - [jdhao](https://jdhao.github.io)
-- [梦遥奇缘](https://www.idiot6.com)
 - [鹞之神乐](https://kagura.me)
 - [KAIX.IN](https://kaix.in)
 - [超能小紫](https://www.mokeyjay.com)
