@@ -45,7 +45,6 @@
 - [imgur](https://imgur.com/upload)
 - [图床资源](https://iao.su/pic.html)
 - [路过图床](https://imgse.com)
-- [Paste.Pics](https://paste.pics "临时截图")
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "MSDN ISO 系统镜像下载")
@@ -98,7 +97,6 @@
 - [sms-online.co](https://sms-online.co/receive-free-sms)
 - [zsrq.net](https://www.zsrq.net)
 - [mail.td/zh](https://mail.td/zh)
-- [mailpoof.com](https://mailpoof.com)
 - [moakt.com/zh](https://www.moakt.com/zh)
 - [Pinggy](https://pinggy.io)
 
@@ -199,8 +197,6 @@
 - [UNPKG](https://unpkg.com)
 - [npmmirror](https://npmmirror.com)
 - [jsDelivr](https://www.jsdelivr.com)
-- [字节跳动](https://cdn.bytedance.com)
-- [新浪 CDN](https://lib.sinaapp.com)
 - [cdnjs](https://cdnjs.com)
 - [SUSTech](https://mirrors.sustech.edu.cn/help/cdnjs.html "南方科技大学开源镜像站")
 - [Microsoft Ajax CDN](https://learn.microsoft.com/en-us/aspnet/ajax/cdn/overview)
