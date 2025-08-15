@@ -9,7 +9,7 @@
 
 ### 个人站点
 - [雨戈林多](https://moonagic.com)
-- [御坂研究所](http://nosuchfield.com)
+- [御坂研究所](https://www.nosuchfield.com)
 - [Allen Hua](http://hellodk.cn)
 - [星空工作室](https://xingkong2014.github.io)
 - [梦旭随想](http://blog.ihypo.net)
@@ -31,7 +31,7 @@
 - [4F5DA2](http://blog.4f5da2.com)
 - [OneCoder](https://onecoder.site)
 - [豆田](https://doutian.me)
-- [ADoyle](http://adoyle.me/blog)
+- [ADoyle](http://blog.adoyle.me)
 - [耳先生](http://www.kilerd.me)
 - [Meowu](https://fullstackbb.com)
 - [Mr.zeng](https://iszengmh.github.io)

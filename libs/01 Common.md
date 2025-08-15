@@ -83,7 +83,6 @@
 - [SaveTube](https://save.tube "下载 youtube 视频")
 - [飞鱼视频下载助手](https://www.feiyudo.com)
 - [Kedou 视频解析](https://www.kedou.life)
-- [点点字幕](http://www.ddzimu.com)
 - [HWiNFO](https://www.hwinfo.com "系统信息、监控、诊断")
 - [CPUID](https://www.cpuid.com "CPU-Z HWMONITOR POWERMAX")
 
