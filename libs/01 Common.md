@@ -316,7 +316,6 @@
 - [识典古籍](https://www.shidianguji.com)
 - [LKs 网站推荐合集](https://lkssite.vip)
 - [free-for.dev](https://free-for.dev)
-- [PVZ 同人创作论坛](https://www.pvz.moe)
 
 ### 文档 Document
 - [ONLYOFFICE](https://helpcenter.onlyoffice.com/docs/installation/community)
