@@ -8,7 +8,7 @@
 - [Pexels](https://www.pexels.com/zh-cn/ "免费素材图片")
 - [TinyPNG](https://tinypng.com "图片压缩")
 - [Squoosh](https://squoosh.app "图片压缩")
-- [minuteImage](https://www.minuteimage.com "图片压缩")
+- [ShotEasy Compress](https://shoteasy.fun/image-compressor/ "图片压缩")
 - [docsmall](https://docsmall.com)
 - [iLoveIMG](https://www.iloveimg.com/zh-cn)
 - [佐糖](https://picwish.cn "抠图 证件照换底色 照片修复 压缩")
