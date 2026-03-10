@@ -24,7 +24,6 @@
 - [hongfs](http://www.hongfs.cn)
 - [静静是小花](https://susan007.github.io)
 - [Toeii](https://toeii.github.io)
-- [Artin](http://lengthmin.me)
 - [4F5DA2](http://blog.4f5da2.com)
 - [OneCoder](https://onecoder.site)
 - [豆田](https://doutian.me)
