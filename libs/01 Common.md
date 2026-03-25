@@ -59,7 +59,7 @@
 - [百分浏览器](https://www.centbrowser.cn/history.html "Chromium 便携版")
 - [Floorp Browser](https://floorp.app "Firefox portable 便携版")
 - [firefox-esr-portable](https://portapps.io/app/phyrox-esr-portable/ "firefox esr portable 便携版")
-- [Downloadly](https://downloadlynet.ir)
+- [Supermium](https://win32subsystem.live/supermium/)
 - [Portapps](https://portapps.io "VSCode 便携版")
 - [PortableApps](https://portableapps.com "便携版")
 - [FFmpeg Download](https://ffmpeg.org/download.html)
@@ -107,7 +107,7 @@
 - [WebRTC Trickle ICE](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice)
 
 ### AI
-- [LMArena](https://lmarena.ai)
+- [Arena](https://arena.ai "LMArena")
 - [Qwen](https://chat.qwen.ai)
 - [DeepSeek](https://www.deepseek.com)
 - [Hugging Face](https://huggingface.co)
@@ -171,11 +171,11 @@
 - [114.taobao.com](http://114.taobao.com)
 - [safe.taobao.com](http://safe.taobao.com)
 - [ecd.tencent.com](http://ecd.tencent.com)
-- [devd.io](http://devd.io)
 - [get.localhost.direct](https://get.localhost.direct)
 - [Cloudflare CNAME](https://cdn.wzfou.com)
 - [TLD-LIST](https://tld-list.com "顶级域名的价格")
 - [哪煮米](https://www.nazhumi.com "域名比价")
+- [TLDHub](https://tldhub.com)
 - [Domcomp](https://domcomp.com)
 - [cheapest-domains](https://tldes.com/cheapest-domains)
 - [查子域](https://chaziyu.com)
@@ -238,7 +238,6 @@
 - [sqliteviz](https://sqliteviz.com/app/ "SQLite 管理器")
 
 ### Playground
-- [Try.NET](https://try.dot.net "在线运行 .NET")
 - [Compile](https://rextester.com "在线运行代码")
 - [httpbin](https://httpbin.org "接口请求测试")
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
@@ -257,7 +256,6 @@
 - [OnlineGDB](https://www.onlinegdb.com)
 - [CodeChef](https://www.codechef.com/ide)
 - [Ideone](https://www.ideone.com)
-- [crontab](https://crontab.guru)
 - [iptables](https://iptablesgenerator.totalbits.com)
 - [File System Access](https://googlechromelabs.github.io/text-editor/)
 
