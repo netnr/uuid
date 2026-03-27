@@ -154,7 +154,6 @@
 - [ZeroTier](https://www.zerotier.com "全球区域网络")
 - [Tailscale](https://tailscale.com "可以正常工作的安全网络")
 - [KSA](https://ksa.kanxue.com "看雪安全接入")
-- [CroxyProxy](https://www.croxyproxy.com "网站代理")
 - [EU.ORG](https://nic.eu.org "免费 eu.org 域名申请")
 - [JS.ORG](https://js.org "JavaScript 项目免费域名申请")
 - [Let's Encrypt](https://letsencrypt.org)
@@ -182,6 +181,14 @@
 - [DNSDumpster.com](https://dnsdumpster.com)
 - [ICP 备案查询](https://beian.miit.gov.cn)
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
+
+### Proxy、CORS、WISP
+- [seep.eu.org](https://seep.eu.org "CORS")
+- [cors.eu.org](https://cors.eu.org "CORS")
+- [codetabs CORS Proxy](https://codetabs.com/cors-proxy/cors-proxy.html)
+- [wisp-protocol](https://wisp.mercurywork.shop)
+- [libcurl.js](https://libcurl.js.org "CORS WISP")
+- [CroxyProxy](https://www.croxyproxy.com "网站代理")
 
 ### Mirror、CDN
 - [MirrorZ](https://mirrorz.org)
