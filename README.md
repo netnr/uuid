@@ -3,8 +3,8 @@
 Favorites/Bookmarks hosted on Git
 
 ### Demo 示例
-<https://uu.zme.ink>  
-<https://uu.zme.ink/netnr>
+<https://uu.netnr.eu.org>  
+<https://uu.netnr.eu.org/netnr>
 
 ### Usage 使用
 Fork 项目，从浏览器导出书签 HTML，再转换书签为 Markdown，保存到 `libs/*.md`  
@@ -14,7 +14,7 @@ Fork project, export bookmark HTML from browser, convert bookmark to Markdown, s
 Privatized deployment, update the index file `libs/index.json`, and then enable the local Local on the page
 
 ### Visit 访问
-https://uu.zme.ink/{name} `{name}` is your account, default `netnr`  
-https://uu.zme.ink/{name}/{repos} `{repos}` repository, default `uuid`  
-https://uu.zme.ink#{name}/{repos} offline   
-https://uu.zme.ink#_local 本地 Local
+https://uu.netnr.eu.org/{name} `{name}` is your account, default `netnr`  
+https://uu.netnr.eu.org/{name}/{repos} `{repos}` repository, default `uuid`  
+https://uu.netnr.eu.org#{name}/{repos} offline   
+https://uu.netnr.eu.org#_local 本地 Local

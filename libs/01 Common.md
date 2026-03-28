@@ -1,10 +1,10 @@
 ### 关于
 - [uuid 分享](https://github.com/netnr/uuid/network/members)
 - [uuid 建议](https://github.com/netnr/uuid/issues)
-- [联系打赏](https://zme.ink)
+- [联系打赏](https://netnr.github.io)
 
 ### 图画
-- [壁纸](https://ss.netnr.com/wallpaper)
+- [壁纸](https://ss.netnr.eu.org/wallpaper)
 - [Pexels](https://www.pexels.com/zh-cn/ "免费素材图片")
 - [TinyPNG](https://tinypng.com "图片压缩")
 - [Squoosh](https://squoosh.app "图片压缩")
@@ -115,7 +115,7 @@
 - [魔搭社区](https://www.modelscope.cn)
 
 ### 工具
-- [SS](https://ss.netnr.com "脚本服务 ss.js.org")
+- [SS](https://ss.netnr.eu.org "脚本服务 ss.netnr.com")
 - [JSON Editor](https://je.js.org "JSON 编辑器")
 - [帮小忙](https://tool.browser.qq.com "腾讯QQ浏览器在线工具箱")
 - [Code Beautify](https://codebeautify.org "在线工具")
@@ -287,8 +287,8 @@
 - [CherryMarkdown](https://tencent.github.io/cherry-markdown/examples/index.html)
 
 ### 综合 Mix
-- [KMS 激活](https://kms.zme.ink)
-- [VIP 视频解析](https://vv.zme.ink)
+- [KMS 激活](https://kms.netnr.eu.org)
+- [VIP 视频解析](https://vv.netnr.eu.org)
 - [AntV](https://antv.antgroup.com "数据可视化")
 - [carbon](https://carbon.now.sh "代码贴图")
 - [全栈公开课](https://fullstackopen.com/zh)

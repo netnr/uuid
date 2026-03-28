@@ -157,14 +157,14 @@
 `),g.showNotification("转换完成","success")}catch(e){console.error(e),g.showNotification("转换失败","error")}})}break;case"about":{let e=`
                         <div style="line-height: 1.6;">
                             <p><strong>GitHub:</strong> <a href="https://github.com/netnr" target="_blank">https://github.com/netnr</a></p>
-                            <p><strong>联系打赏:</strong> <a href="https://zme.ink" target="_blank">https://zme.ink</a></p>
+                            <p><strong>联系打赏:</strong> <a href="https://netnr.github.io" target="_blank">https://netnr.github.io</a></p>
                             <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--border-color);">
                             <p>缓存后可离线使用</p>
                             <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--border-color);">
                             <p>Fork 项目，从浏览器导出书签 HTML，再转换书签为 Markdown，保存到 libs/*.md</p>
                             <p>私有化部署，更新索引文件 libs/index.json，页面再启用 本地 Local</p>
                             <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--border-color);">
-                            <p>uuid.fun 于 2028-11-09 8:00 到期，计划不再续费，启用子域名：<a href="https://uu.zme.ink" target="_blank">https://uu.zme.ink</a></p>
+                            <p>uuid.fun 于 2028-11-09 8:00 到期，计划不再续费，启用子域名：<a href="https://uu.netnr.eu.org" target="_blank">https://uu.netnr.eu.org</a></p>
                         </div>
                     `;g.createModal("关于",e,[{text:"关闭",action:"close-modal"}])}}},reqUser:async(e,t)=>{let r=`https://api.github.com/users/${e}`,a=`${e}:${r}`,n=await h.instanceUser.getItem(a);return(null==n||t)&&(n=await g.reqServer(r))&&(await h.instanceUser.setItem(a,n),await h.instanceUser.setItem(`${e}:update-time`,Date.now())),n},reqLibs:async(e,t,r,a)=>{let n=`https://api.github.com/repos/${e}/${t}/contents/${r}`,o=`${e}:${n}`,i=await h.instanceUser.getItem(o);return(null==i||a)&&(i=await g.reqServer(n))&&await h.instanceUser.setItem(o,i),i},reqRaw:async e=>{let t=`${m.flagName}:${e}`,r=await h.instanceUser.getItem(t);return null==r&&(r=await g.reqServer(`${e}?_${d.random()}`,{type:"text"}))&&await h.instanceUser.setItem(t,r),r},convertHtml:(e,t)=>{for(let r=0;r<e.children.length;r++){let a=e.children[r];switch(a.nodeName){case"H3":t.push(""),t.push("### "+a.innerHTML);break;case"DL":case"P":g.convertHtml(a,t);break;case"DT":if(1==a.children.length){let e=a.querySelector("a"),r="["+e.innerHTML.replace(/`/g,"\\`")+"]("+e.href;e.title&&(r+=' "'+e.title+'"'),t.push("- "+r+")")}else g.convertHtml(a,t)}}},viewUser:async()=>{let e;if(m.flagLocalUsed?(m.flagLocalJson=await g.reqServer(m.flagLocalPath),m.flagLocalJson?e=m.flagLocalJson.user:g.showNotification("加载失败","error")):e=await g.reqUser(m.flagName),e){m.domAvatar.onerror=function(){m.domAvatar.src="/favicon.ico",m.domAvatar.onerror=null},m.domAvatar.src=e.avatar_url;let t=e.name||e.login,r=e.bio||"",a=e.company||"",n=e.location||"",o=e.blog||"",i=`
                 <div class="uuid-user-info-content">
