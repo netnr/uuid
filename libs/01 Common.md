@@ -1,7 +1,7 @@
 ### 关于
 - [uuid 分享](https://github.com/netnr/uuid/network/members)
 - [uuid 建议](https://github.com/netnr/uuid/issues)
-- [联系打赏](https://netnr.github.io)
+- [联系打赏](https://i.netnr.eu.org)
 
 ### 图画
 - [壁纸](https://ss.netnr.eu.org/wallpaper)

@@ -157,7 +157,7 @@
 `),g.showNotification("转换完成","success")}catch(e){console.error(e),g.showNotification("转换失败","error")}})}break;case"about":{let e=`
                         <div style="line-height: 1.6;">
                             <p><strong>GitHub:</strong> <a href="https://github.com/netnr" target="_blank">https://github.com/netnr</a></p>
-                            <p><strong>联系打赏:</strong> <a href="https://netnr.github.io" target="_blank">https://netnr.github.io</a></p>
+                            <p><strong>联系打赏:</strong> <a href="https://i.netnr.eu.org" target="_blank">https://i.netnr.eu.org</a></p>
                             <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--border-color);">
                             <p>缓存后可离线使用</p>
                             <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--border-color);">
