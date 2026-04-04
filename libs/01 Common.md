@@ -35,9 +35,9 @@
 - [画布](https://canvas.apps.chrome)
 - [signature_pad](http://szimek.github.io/signature_pad/ "签名板")
 - [paint-board](https://songlh.top/paint-board/ "画板")
-- [MindEditor](https://ss.js.org/mind "by kityminder 百度脑图")
-- [GraphEditor](https://ss.js.org/graph "by mxGraph")
-- [BPMNEditor](https://ss.js.org/bpmn "by bpmn-js")
+- [MindEditor](https://ss.netnr.eu.org/mind "by kityminder 百度脑图")
+- [GraphEditor](https://ss.netnr.eu.org/graph "by mxGraph")
+- [BPMNEditor](https://ss.netnr.eu.org/bpmn "by bpmn-js")
 - [Excalidraw](https://excalidraw.com)
 - [GitMind](https://gitmind.cn "在线思维导图")
 - [SimpleMindMap](https://wanglin2.github.io/mind-map/ "思维导图")
@@ -97,7 +97,6 @@
 - [zsrq.net](https://www.zsrq.net)
 - [mail.td/zh](https://mail.td/zh)
 - [moakt.com/zh](https://www.moakt.com/zh)
-- [Pinggy](https://pinggy.io)
 
 ### 文件传输
 - [transfer.zip](https://transfer.zip "p2p")
@@ -116,7 +115,7 @@
 
 ### 工具
 - [SS](https://ss.netnr.eu.org "脚本服务 ss.netnr.com")
-- [JSON Editor](https://je.js.org "JSON 编辑器")
+- [JSON Editor](https://je.netnr.eu.org "JSON 编辑器 je.js.org")
 - [帮小忙](https://tool.browser.qq.com "腾讯QQ浏览器在线工具箱")
 - [Code Beautify](https://codebeautify.org "在线工具")
 - [Site24x7 Tools](https://www.site24x7.com/tools/)
@@ -189,6 +188,7 @@
 - [wisp-protocol](https://wisp.mercurywork.shop)
 - [libcurl.js](https://libcurl.js.org "CORS WISP")
 - [CroxyProxy](https://www.croxyproxy.com "网站代理")
+- [Pinggy](https://pinggy.io)
 
 ### Mirror、CDN
 - [MirrorZ](https://mirrorz.org)
@@ -283,7 +283,7 @@
 - [StackEdit](https://stackedit.io/app)
 - [Editor.md](https://pandao.github.io/editor.md)
 - [SimpleMDE](https://simplemde.com)
-- [NetnrMD](https://md.js.org)
+- [NetnrMD](https://md.netnr.eu.org "md.js.org")
 - [CherryMarkdown](https://tencent.github.io/cherry-markdown/examples/index.html)
 
 ### 综合 Mix
@@ -321,13 +321,12 @@
 - [free-for.dev](https://free-for.dev)
 
 ### 文档 Document
+- [.NET 支持策略](https://dotnet.microsoft.com/zh-cn/platform/support/policy/dotnet-core)
 - [ONLYOFFICE](https://helpcenter.onlyoffice.com/docs/installation/community)
 - [FaceFusion](https://docs.facefusion.io "人脸处理")
-- [.NET 支持策略](https://dotnet.microsoft.com/zh-cn/platform/support/policy/dotnet-core)
 - [微信支付接入文档](https://pay.weixin.qq.com/doc/v2)
 - [七牛对象存储](https://developer.qiniu.com/kodo/sdk/csharp)
 - [又拍云控制台](https://console.upyun.com/dashboard)
-- [快递鸟](https://www.kdniao.com/api-all)
 - [百度搜索提示](https://suggestion.baidu.com/su?wd=kld)
 - [百度搜索提示](https://www.baidu.com/sugrec?prod=pc&wd=kld&cb=fn)
 - [安全可靠测评](https://www.itsec.gov.cn/aqkkcp/)
