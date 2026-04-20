@@ -45,7 +45,6 @@
 ### 图床
 - [imgur](https://imgur.com/upload)
 - [图床资源](https://iao.su/pic.html)
-- [路过图床](https://imgse.com)
 
 ### 下载 Download
 - [MSDN 我告诉你](https://msdn.itellyou.cn "MSDN ISO 系统镜像下载")
@@ -114,7 +113,7 @@
 - [魔搭社区](https://www.modelscope.cn)
 
 ### 工具
-- [SS](https://ss.netnr.eu.org "脚本服务 ss.netnr.com")
+- [SS](https://ss.netnr.eu.org "脚本服务 ss.netnr.com ss.js.org")
 - [JSON Editor](https://je.netnr.eu.org "JSON 编辑器 je.js.org")
 - [帮小忙](https://tool.browser.qq.com "腾讯QQ浏览器在线工具箱")
 - [Code Beautify](https://codebeautify.org "在线工具")
@@ -133,7 +132,6 @@
 - [ping.pe](https://ping.pe)
 - [CHECK-HOST](https://check-host.net)
 - [http3check](https://http3check.net)
-- [IP 查询](https://ipw.cn)
 - [IP.SB](https://ip.sb "IP 工具")
 - [拨测](https://www.boce.com)
 - [TCPTest](https://www.tcptest.cn)
@@ -168,7 +166,6 @@
 - [127.0.0.1.sslip.io](http://127.0.0.1.sslip.io)
 - [114.taobao.com](http://114.taobao.com)
 - [safe.taobao.com](http://safe.taobao.com)
-- [ecd.tencent.com](http://ecd.tencent.com)
 - [get.localhost.direct](https://get.localhost.direct)
 - [Cloudflare CNAME](https://cdn.wzfou.com)
 - [TLD-LIST](https://tld-list.com "顶级域名的价格")
