@@ -19,7 +19,6 @@
 - [Zxilly](https://learningman.top)
 - [邱军雅](https://qiujunya.com)
 - [Serenader](http://blog.serenader.me)
-- [wniu](http://wniuob.com)
 - [静静是小花](https://susan007.github.io)
 - [Toeii](https://toeii.github.io)
 - [4F5DA2](http://blog.4f5da2.com)
