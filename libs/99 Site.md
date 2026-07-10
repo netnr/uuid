@@ -43,7 +43,6 @@
 - [逐鹿](http://amonxu.com)
 - [SPhard](http://www.sphard.com)
 - [jdhao](https://jdhao.github.io)
-- [鹞之神乐](https://kagura.me)
 - [KAIX.IN](https://kaix.in)
 - [超能小紫](https://www.mokeyjay.com)
 - [微风](http://leybreeze.com)

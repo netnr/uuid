@@ -229,7 +229,7 @@
 - [fish's dotNET](https://fishcodelib.com "数据库工具")
 - [DBMigration](https://fishcodelib.com/DBMigration.htm "数据库转换工具")
 - [convert-in](https://www.convert-in.com "Database migration and synchronization tools")
-- [DB2DB](http://www.szmesoft.com/DB2DB "数据库转换工具")
+- [DB2DB](http://www.szmesoft.com/db2db/ "数据库转换工具")
 - [db fiddle](https://dbfiddle.uk "免费的在线 SQL 环境进行实验和共享")
 - [SQL Online Compiler](https://sqliteonline.com "在线 SQL")
 - [ConnectionStrings](https://www.connectionstrings.com "连接字符串参考")
