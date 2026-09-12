@@ -40,7 +40,6 @@
 - [Zhu.Yang](https://generalthink.github.io)
 - [何晓东](https://alpha2016.github.io)
 - [鱼喃](https://blog.newnius.com)
-- [逐鹿](http://amonxu.com)
 - [SPhard](http://www.sphard.com)
 - [jdhao](https://jdhao.github.io)
 - [KAIX.IN](https://kaix.in)

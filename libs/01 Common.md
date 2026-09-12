@@ -176,13 +176,15 @@
 - [ICP 备案查询](https://beian.miit.gov.cn)
 - [阿里云 ICP 备案检查](https://beian.aliyun.com/pcContainer/domainCheck "需要登录")
 
-### Proxy、CORS、WISP
+### Proxy、CORS、WISP、Forward
 - [seep.eu.org](https://seep.eu.org "CORS")
 - [cors.eu.org](https://cors.eu.org "CORS")
 - [wisp-protocol](https://wisp.mercurywork.shop)
 - [libcurl.js](https://libcurl.js.org "CORS WISP")
 - [CroxyProxy](https://www.croxyproxy.com "网站代理")
 - [Pinggy](https://pinggy.io)
+- [Sandhole](https://sandhole.com.br "ssh -R 80:localhost:4321 demo.sandhole.com.br")
+- [sish](https://docs.ssi.sh)
 
 ### Mirror、CDN
 - [MirrorZ](https://mirrorz.org)
@@ -233,7 +235,6 @@
 - [Instatus](https://instatus.com/pricing)
 
 ### 数据库 Database
-- [fish's dotNET](https://fishcodelib.com "数据库工具")
 - [DBMigration](https://fishcodelib.com/DBMigration.htm "数据库转换工具")
 - [convert-in](https://www.convert-in.com "Database migration and synchronization tools")
 - [DB2DB](https://www.szmesoft.com/product-group/db2db/ "数据库转换工具")
@@ -250,7 +251,6 @@
 - [sqliteviz](https://sqliteviz.com/app/ "SQLite 管理器")
 
 ### Playground
-- [Compile](https://rextester.com "在线运行代码")
 - [httpbin](https://httpbin.org "接口请求测试")
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
 - [Windows 98](https://98.js.org)
