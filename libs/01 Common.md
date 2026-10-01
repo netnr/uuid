@@ -71,7 +71,6 @@
 - [腾讯软件中心](https://pc.qq.com)
 - [APK Downloader](https://mi9.com/apk-downloader "apk 下载")
 - [CrxDL](https://crxdl.com "扩展插件 CRX")
-- [云盘资源](https://yunpan1.cc "阿里云盘资源")
 - [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Home.aspx "微软更新目录")
 - [OpenJDK Microsoft](https://adoptium.net/zh-CN/temurin/releases "java jdk")
 - [OpenJDK Eclipse Temurin](https://learn.microsoft.com/zh-cn/java/openjdk/download "java jdk")
@@ -82,6 +81,9 @@
 - [Kedou 视频解析](https://www.kedou.life)
 - [HWiNFO](https://www.hwinfo.com "系统信息、监控、诊断")
 - [CPUID](https://www.cpuid.com "CPU-Z HWMONITOR POWERMAX")
+- [云盘资源](https://yunpan1.cc)
+- [海搜](https://haisou.cc "云盘搜索")
+- [97盘搜](https://pansoo.cn "云盘搜索")
 
 ### 临时服务
 - [114sim.com](http://www.114sim.com)
@@ -247,7 +249,7 @@
 - [pgrust](https://pgrust.com "PostgreSQL Rust")
 - [PGlite](https://pglite.dev/repl/ "PostgreSQL")
 - [DuckDB](https://shell.duckdb.org)
-- [ConnectionStrings](https://www.connectionstrings.com "连接字符串参考")
+- [ConnectionStrings](https://www.connectionstrings.com "连接字符串")
 - [Database.Guide](https://database.guide "数据库指南")
 - [Remote MySQL](https://remotemysql.com "免费 MySQL 数据库")
 - [YugabyteDB](https://cloud.yugabyte.com "免费 PostgreSQL 数据库")
@@ -326,7 +328,7 @@
 - [free-for.dev](https://free-for.dev)
 
 ### 文档 Document
-- [.NET 支持策略](https://dotnet.microsoft.com/zh-cn/platform/support/policy/dotnet-core)
+- [.NET 支持策略](https://aka.ms/dotnet-core-support)
 - [ONLYOFFICE](https://helpcenter.onlyoffice.com/docs/installation/community)
 - [FaceFusion](https://docs.facefusion.io "人脸处理")
 - [微信支付接入文档](https://pay.weixin.qq.com/doc/v2)
