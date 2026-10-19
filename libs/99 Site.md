@@ -63,7 +63,6 @@
 - [醉乐轩](http://behappy.cc)
 - [VVBLOG](https://blog.vvzero.com)
 - [scnace](http://blog.scnace.me)
-- [美阅](http://www.moonue.com)
 - [TMaize](http://blog.tmaize.net)
 - [珲少](http://huishao.cc)
 - [清风](http://huisao.cc)

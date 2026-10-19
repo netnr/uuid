@@ -45,7 +45,7 @@
 - [图床资源](https://iao.su/pic.html)
 
 ### 下载 Download
-- [MSDN 我告诉你](https://msdn.itellyou.cn "MSDN ISO 系统镜像下载")
+- [MSDN 我告诉你](https://next.itellyou.cn "MSDN ISO 系统镜像下载")
 - [MAS](https://massgrave.dev/genuine-installation-media "MSDN ISO 系统镜像下载")
 - [MSDN 原版系统](https://www.imsdn.cn "MSDN ISO 系统镜像下载")
 - [Ventoy](https://www.ventoy.net/cn/index.html)
@@ -67,7 +67,7 @@
 - [curl](https://curl.se/windows/)
 - [GNU Wget](https://eternallybored.org/misc/wget "Windows 安装 Wget")
 - [tcping](https://elifulkerson.com/projects/tcping.php "ping 端口")
-- [NSSM](https://nssm.cc/download "Windows 服务")
+- [NSSM](https://nssm.cc "Windows 服务")
 - [腾讯软件中心](https://pc.qq.com)
 - [APK Downloader](https://mi9.com/apk-downloader "apk 下载")
 - [CrxDL](https://crxdl.com "扩展插件 CRX")
@@ -172,7 +172,7 @@
 - [哪煮米](https://www.nazhumi.com "域名比价")
 - [TLDHub](https://tldhub.com)
 - [Domcomp](https://domcomp.com)
-- [cheapest-domains](https://tldes.com/cheapest-domains)
+- [tldes](https://tldes.com/all-tlds)
 - [查子域](https://chaziyu.com)
 - [DNSDumpster.com](https://dnsdumpster.com)
 - [ICP 备案查询](https://beian.miit.gov.cn)
