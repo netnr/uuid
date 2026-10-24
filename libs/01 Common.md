@@ -258,6 +258,8 @@
 
 ### Playground
 - [httpbin](https://httpbin.org "接口请求测试")
+- [v86](https://copy.sh/v86)
+- [v64](https://v64-2ys.pages.dev)
 - [JSLinux](https://bellard.org/jslinux "基于浏览器的操作系统")
 - [Windows 98](https://98.js.org)
 - [腾讯云实验室](https://cloud.tencent.com/lab "在线 Linux 环境使用")
