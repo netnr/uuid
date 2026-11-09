@@ -37,7 +37,6 @@
 
 ### 图床
 - [imgur](https://imgur.com/upload)
-- [图床资源](https://iao.su/pic.html)
 
 ### 下载 Download
 - [MSDN 我告诉你](https://next.itellyou.cn "MSDN ISO 系统镜像下载")
